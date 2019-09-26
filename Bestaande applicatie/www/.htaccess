@@ -1,0 +1,14 @@
+RewriteEngine On
+
+#thermoscan
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^thermoscan/([0-9a-zA-Z_-]*)/([0-9a-zA-Z_-]*)/([0-9a-zA-Z_-]*)/([0-9]*)$ thermoscanfoto.php?city=$1&subcity=$2&side=$3&id=$4 [QSA]
+RewriteRule ^thermoscan/([0-9a-zA-Z_-]*)/([0-9a-zA-Z_-]*)/([0-9]*)$ thermoscanfoto.php?city=$1&subcity=$1&side=$2&id=$3 [QSA]
+
+#getimage
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^getimg/([0-9a-zA-Z_-]*)/([0-9a-zA-Z_-]*)/([0-9a-zA-Z_-]*)/([0-9]*)$ getimage.php?city=$1&subcity=$2&side=$3&id=$4 [QSA]
+
+#getpdf
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^downloadpdf/([0-9a-zA-Z_-]*)/([0-9a-zA-Z_-]*)/([0-9a-zA-Z_-]*)/([0-9]*)$ getpdf.php?city=$1&subcity=$2&side=$3&id=$4 [QSA]
