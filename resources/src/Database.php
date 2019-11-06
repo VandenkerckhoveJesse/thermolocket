@@ -104,7 +104,11 @@ class Database
         $query = self::UPDATEUSER;
         $values = array(':id' => $id, ':name' => $name, ':password' => $password, ':email' => $email, ':enabled' => $enabled);
         try {
+            echo "test";
             //todo jesse doe hier verder
+        }
+        catch(Exception $e){
+
         }
     }
 

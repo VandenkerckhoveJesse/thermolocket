@@ -1,7 +1,7 @@
 <?php
-include_once "./config.php";
-include_once "./src/Database.php";
-include_once "./src/Models/User.php";
+include_once "../resources/config.php";
+include_once "../resources/src/Database.php";
+include_once "../resources/src/Models/User.php";
 
 echo "welcome";
 
