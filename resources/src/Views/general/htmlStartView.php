@@ -5,8 +5,8 @@
     <title><?php echo $pageTitle ?></title>
     <meta name="author" content="Vincent Elias" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
-    <link rel="stylesheet" type="text/css" href="assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css" href="/public_html/assets/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/public_html/assets/css/screen.css" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -15,7 +15,7 @@
     />
 
     <?php 
-    require_once("../resources/config.php");
+   
 
     if(isset($cssFiles)){
       
@@ -27,9 +27,6 @@
       <?php }
 }
 
-
     ?>
-
-   
   </head>
   <body>

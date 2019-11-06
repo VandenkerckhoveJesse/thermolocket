@@ -14,6 +14,7 @@ define('DB_NAME', 'thermolocket');
 //Mode: development or production
 define("MODE","DEVELOPMENT");
 
-define("DEVELOPMENT_ASSETS_PATH","../public_html/assets/");
-define("PRODUCTION_ASSETS_PATH","/public_html/assets/");
+define("DEVELOPMENT_ASSETS_PATH","/public_html/assets/");
+define("PRODUCTION_ASSETS_PATH","/assets/");
+
 
