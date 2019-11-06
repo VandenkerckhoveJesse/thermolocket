@@ -15,7 +15,7 @@
     />
 
     <?php 
-    require("../resources/config.php");
+    require_once("../resources/config.php");
 
     if(isset($cssFiles)){
       

@@ -1,7 +1,7 @@
 <?php
 if(isset($jsFiles)){
 
-     require("../resources/config.php");
+    
 
       
     $jsLink=constant(MODE."_ASSETS_PATH")."js/";
