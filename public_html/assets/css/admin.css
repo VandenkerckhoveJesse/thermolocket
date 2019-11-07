@@ -13,3 +13,78 @@ input[type="submit"] {
   padding: 6px 10px;
   transition: background-color 0.3s;
 }
+
+button:hover {
+  background-color: rgb(56, 56, 255) !important;
+}
+
+header {
+  background-color: #3455c4;
+}
+
+header h2 {
+  font-size: 1.5rem;
+  color: rgb(236, 236, 236);
+}
+
+.container {
+  max-width: 100%;
+}
+
+.sidebar {
+  background-color: rgb(46, 46, 46);
+  color: rgb(236, 236, 236);
+}
+
+.sidebar li {
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 12px;
+}
+
+.sidebar li a {
+  padding-left: 28px;
+  font-size: 1.2rem;
+  display: inline-block;
+  color: rgb(236, 236, 236);
+  font-weight: 600;
+}
+
+.sidebar li:hover a {
+  text-decoration: none;
+}
+
+.sidebar li {
+  display: inline-block;
+  background: url("../media/user-icon.png") no-repeat;
+  background-position: 0 4px;
+  background-size: 18px;
+}
+
+.user-count:before {
+  content: "Gebruikers: ";
+}
+
+.username:before {
+  content: "Gebruiker beheren: ";
+}
+
+.edit-user-details label {
+  display: block;
+}
+
+.current-towns {
+  height: 200px;
+  overflow-y: scroll;
+}
+
+.current-towns li a:hover {
+  color: red !important;
+  cursor: pointer;
+  text-decoration: line-through !important;
+}
+
+.delete-town-selection {
+  color: red !important;
+  text-decoration: line-through !important;
+}

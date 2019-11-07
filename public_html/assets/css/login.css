@@ -2,16 +2,6 @@
   text-align: center;
 }
 
-.admin-content button:hover {
-  background-color: rgb(94, 94, 255);
-}
-
-body {
-  font-size: 1rem;
-  background-color: #f5f5f5;
-  font-family: "Neutrif pro", "sans-serif";
-}
-
 .login-container div {
   display: inline-block;
   background-color: white;
@@ -27,12 +17,6 @@ body {
   margin-right: auto;
 }
 
-input {
-  padding: 7px;
-  border-radius: 7px;
-  border: 1px solid #e4e6e7;
-}
-
 .login-container input:nth-child(2) {
   margin-bottom: 30px;
 }
@@ -40,75 +24,4 @@ input {
 .login-container input[type="submit"] {
   background-color: black;
   color: white;
-}
-
-.container {
-  max-width: 100%;
-}
-
-.sidebar {
-  background-color: rgb(46, 46, 46);
-  color: rgb(236, 236, 236);
-}
-
-.admin-header {
-  background-color: rgb(94, 94, 255);
-}
-
-.admin-header h2 {
-  font-size: 1.5rem;
-  color: rgb(236, 236, 236);
-}
-
-.sidebar li {
-  display: inline-block;
-  width: 100%;
-  padding-bottom: 12px;
-}
-
-.sidebar li a {
-  padding-left: 28px;
-  font-size: 1.2rem;
-  display: inline-block;
-  color: rgb(236, 236, 236);
-  font-weight: 600;
-}
-
-.sidebar li:hover a {
-  text-decoration: none;
-}
-
-.sidebar li {
-  display: inline-block;
-  background: url("../media/user-icon.png") no-repeat;
-  background-position: 0 4px;
-  background-size: 18px;
-}
-
-.user-count:before {
-  content: "Gebruikers: ";
-}
-
-.username:before {
-  content: "Gebruiker beheren: ";
-}
-
-.edit-user-details label {
-  display: block;
-}
-
-.current-towns {
-  height: 200px;
-  overflow-y: scroll;
-}
-
-.current-towns li a:hover {
-  color: red !important;
-  cursor: pointer;
-  text-decoration: line-through !important;
-}
-
-.delete-town-selection {
-  color: red !important;
-  text-decoration: line-through !important;
 }

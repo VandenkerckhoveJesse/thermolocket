@@ -1,7 +1,9 @@
+<header class="w-100">
+<h2 class="ml-3 p-3 mb-0">Thermoloket Admin panel</h2>
+      </header>
+
 <div class="container h-100">
-      <div class="row">
-        <h2 class="ml-3 p-3 mb-0">Thermoloket Admin panel</h2>
-      </div>
+        
       <div class="row h-100 ">
         <div class="col-2 sidebar p-4">
           <nav>
