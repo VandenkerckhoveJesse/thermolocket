@@ -5,31 +5,31 @@
 <div class="container h-100">
         
       <div class="row h-100 ">
-        <div class="col-2 sidebar p-4">
+        <div class="col-4 col-lg-2 sidebar p-4">
           <nav>
             <ul>
               <li><a href="users.html">Gebruikers</a></li>
-              <li><a href="rapporten">Rapporten</a></li>
+              <li><a href="rapporten">Gegevens aanpassen</a></li>
             </ul>
           </nav>
         </div>
-        <div class="col-10 p-4 admin-content">
+        <div class="col-8 col-lg-10 p-4">
           <div class="row">
-            <div class="col-6">
-              <h2 class="username mb-5">Johndoe</h2>
+            <div class="col-12 col-lg-6">
+              <h2 class="username mb-4">Johndoe</h2>
               <form
                 class="edit-user-details"
                 action="/update-user"
                 method="POST"
               >
                 <label for="username">Gebruikersnaam aanpassen:</label>
-                <input class="d-block" type="text" id="username" />
+                <input class="d-block w-50" type="text" id="username" />
 
                 <label for="username">Email aanpassen:</label>
-                <input class="mb-3" type="text" id="username" />
+                <input class="mb-3 w-50" type="text" id="username" />
 
                 <label for="password">Wachtwoord aanpassen:</label>
-                <input type="password" id="password" placeholder="Wachtwoord" />
+                <input class="mb-3" type="password" id="password" placeholder="Wachtwoord" />
                 <input
                   class="mb-3"
                   type="password"
@@ -57,11 +57,11 @@
                   >Disabled</label
                 >
 
-                <input type="submit" class="d-block" value="Opslaan" />
+                <input class="mb-4 d-block" type="submit" class="d-block" value="Opslaan" />
               </form>
             </div>
-            <div class="col-6">
-              <h2>Gemeentes</h2>
+            <div class="col-12 col-lg-6">
+              <h2 class="mb-4">Gemeentes</h2>
               <p>Deze gebruiker heeft toegang tot volgende gemeentes:</p>
               <form action="#">
                 <input
@@ -71,7 +71,7 @@
                   placeholder="gemeente zoeken"
                 />
               </form>
-              <ul class="current-towns mb-4">
+              <ul class="current-towns mb-3">
                 <li id="8000"><a>Brugge (8000)</a></li>
                 <li id="8490"><a>a Jabbeke (8490)</a></li>
                 <li id="8370"><a>Blankenberge (8370)</a></li>
@@ -86,7 +86,7 @@
                 <li id="3501"><a>Wimmertingen (3501)</a></li>
               </ul>
 
-              <button>Opslaan</button>
+              <button class="mb-4">Opslaan</button>
 
               <h2>Gemeentes Toevoegen</h2>
               <form action="#">
