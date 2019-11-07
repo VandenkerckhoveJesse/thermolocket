@@ -2,10 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Title</title>
+    <title><?php echo $pageTitle ?></title>
     <meta name="author" content="Vincent Elias" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/public_html/assets/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/public_html/assets/css/screen.css" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -13,13 +14,19 @@
       crossorigin="anonymous"
     />
 
-    <?php foreach($cssFile as $cssFile) { ?>
-  <p>
-    <?php echo $post->author; ?>
-    <a href='?controller=posts&action=show&id=<?php echo $post->id; ?>'>See content</a>
-  </p>
-<?php } ?>
+    <?php 
+   
 
-    <link rel="stylesheet" type="text/css" href="assets/css/screen.css" />
+    if(isset($cssFiles)){
+      
+    $cssLink=constant(MODE."_ASSETS_PATH")."css/";
+
+
+    foreach($cssFiles as $cssFile) { ?>
+      <link rel="stylesheet" type="text/css" href="<?php echo $cssLink.$cssFile?>" />
+      <?php }
+}
+
+    ?>
   </head>
   <body>

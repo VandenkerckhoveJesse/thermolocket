@@ -1,8 +1,16 @@
 <?php
-
+include_once "../Helper.php";
 
 class User
 {
+    const INSERTUSER = 'INSERT INTO users (name, password, email, enabled) 
+                    VALUES (:name , :password, :email, :enabled)';
+    const SELECTUSERBYID = 'SELECT * FROM users WHERE (id = :id)';
+    const SELECTUSERBYNAME = 'SELECT * FROM users WHERE (name = :name)';
+    const SELECTUSERS = 'SELECT * FROM users';
+    const UPDATEUSER = 'UPDATE users SET name = :name, password = :password, email = :email, enabled = :enabled WHERE id = :id';
+    const DELETEUSER = 'DELETE FROM users WHERE id = :id';
+
     private $id;
     private $name;
     private $password;
@@ -10,20 +18,130 @@ class User
     private $email;
     private $enabled;
 
+
+    public static function add($name, $password, $email, $enabled) {
+        $conn = Database::getInstance()->conn;
+        $name = trim($name);
+        $password = trim($password);
+        if(!Helper::isUserNameValid($name)) {
+            throw new Exception('Invalid username');
+        }
+        if(!Helper::isPasswordValid($password)) {
+            throw new Exception('Invalid password');
+        }
+        $email = trim($email);
+        $enabled = (is_null($enabled) ? true : $enabled);
+        $query = self::INSERTUSER;
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+        $values = array(':name' => $name, ":password" => $hash, ":email" => $email, ":enabled" => $enabled);
+        try{
+            $res = $conn->prepare($query);
+            $res->execute($values);
+        }
+        catch (PDOException $e){
+            echo $e;
+        }
+
+        return self::getById($conn->lastInsertId());
+    }
+
+    public static function getAll() {
+        $query = self::SELECTUSERS;
+        $stmt = Database::getInstance()->conn->query($query);
+        $users = $stmt->fetchAll(PDO::FETCH_CLASS, 'User');
+        return $users;
+    }
+
+    public static function getById($id) {
+        $query = self::SELECTUSERBYID;
+        $values = array(":id" => $id);
+
+        try{
+            $res = Database::getInstance()->conn->prepare($query);
+            $res->setFetchMode(PDO::FETCH_CLASS, 'User');
+            $res->execute($values);
+        } catch(PDOException $e) {
+            throw new Exception('Something went wrong');
+        }
+        $user = $res->fetch();
+        return $user;
+    }
+
+    public static function getByName($name) {
+        $query = self::SELECTUSERBYNAME;
+        $values = array(":name" => $name);
+
+        try{
+            $res = Database::getInstance()->conn->prepare($query);
+            $res->setFetchMode(PDO::FETCH_CLASS, 'User');
+            $res->execute($values);
+        } catch(PDOException $e) {
+            throw new Exception('Something went wrong');
+        }
+        $user = $res->fetch();
+        return $user;
+    }
+
+    public static function edit($id, $name, $password, $email, $enabled) {
+        $name = trim($name);
+        $password = trim($password);
+        if(!Helper::isUserNameValid($name)) {
+            throw new Exception('Invalid username');
+        }
+        if(!Helper::isPasswordValid($password)) {
+            throw new Exception('Invalid password');
+        }
+        $email = trim($email);
+        $enabled = (is_null($enabled) ? true : $enabled);
+        $query = self::UPDATEUSER;
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+        $values = array(':id' => $id, ':name' => $name, ':password' => $hash, ':email' => $email, ':enabled' => $enabled);
+        try {
+            $res = Database::getInstance()->conn->prepare($query);
+            $res->execute($values);
+        }
+        catch(Exception $e){
+            throw new Exception('Database query error');
+        }
+        return self::getUserById($id);
+    }
+
+    public static function delete($id) {
+        $query = self::DELETEUSER;
+        $values = array(':id' => $id);
+
+        try{
+            $res = Database::getInstance()->conn->prepare($query);
+            $res->execute($values);
+        } catch(PDOException $e) {
+            throw new Exception('Database query error');
+        }
+
+        try{
+            Session::deleteByUserId($id);
+        } catch (Exception $e) {
+            throw $e;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
     /**
      * @return mixed
      */
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
     }
 
     /**
@@ -35,27 +153,11 @@ class User
     }
 
     /**
-     * @param mixed $name
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-    }
-
-    /**
      * @return mixed
      */
     public function getPassword()
     {
         return $this->password;
-    }
-
-    /**
-     * @param mixed $password
-     */
-    public function setPassword($password)
-    {
-        $this->password = $password;
     }
 
     /**
@@ -67,27 +169,11 @@ class User
     }
 
     /**
-     * @param mixed $last_login
-     */
-    public function setLastLogin($last_login)
-    {
-        $this->last_login = $last_login;
-    }
-
-    /**
      * @return mixed
      */
     public function getEmail()
     {
         return $this->email;
-    }
-
-    /**
-     * @param mixed $email
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
     }
 
     /**
@@ -97,17 +183,6 @@ class User
     {
         return $this->enabled;
     }
-
-    /**
-     * @param mixed $enabled
-     */
-    public function setEnabled($enabled)
-    {
-        $this->enabled = $enabled;
-    }
-
-
-
 
 }
 
