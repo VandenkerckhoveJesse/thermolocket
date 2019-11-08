@@ -156,7 +156,7 @@ animationSelect.addEventListener("change", () => {
 
 function showImage() {
   document.querySelector(".house-image").innerHTML +=
-    "<img src='../../../images/" +
+    "<img src='images/" +
     "0" +
     imageNumber +
     ".jpg" +
@@ -171,7 +171,7 @@ function nextImage() {
   removeElement(".house-image img");
   imageNumber++;
   document.querySelector(".house-image").innerHTML +=
-    "<img src='../../../images/" +
+    "<img src='images/" +
     "0" +
     imageNumber +
     ".jpg" +
@@ -186,7 +186,7 @@ function prevImage() {
   removeElement(".house-image img");
   imageNumber--;
   document.querySelector(".house-image").innerHTML +=
-    "<img src='../../../images/" +
+    "<img src='images/" +
     "0" +
     imageNumber +
     ".jpg" +
