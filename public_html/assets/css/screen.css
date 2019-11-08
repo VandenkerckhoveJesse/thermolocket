@@ -1,12 +1,12 @@
 @font-face {
   font-family: Neutrif pro;
-  src: url("/public_html/assets/fonts/Neutrif Pro Regular.otf");
+  src: url("/public_html/assets/fonts/NeutrifProRegular.otf");
   font-weight: 400;
 }
 
 @font-face {
   font-family: Neutrif pro;
-  src: url("/public_html/assets/fonts/Neutrif Pro Medium.otf");
+  src: url("/public_html/assets/fonts/NeutrifProMedium.otf");
   font-weight: 500;
 }
 
@@ -18,7 +18,7 @@
 
 @font-face {
   font-family: Neutrif pro;
-  src: url("/public_html/assets/fonts/Neutrif Pro SemiBold.otf");
+  src: url("/public_html/assets/fonts/NeutrifProSemiBold.otf");
   font-weight: 700;
 }
 
