@@ -25,8 +25,8 @@
                 <label for="username">Gebruikersnaam aanpassen:</label>
                 <input class="d-block w-50" type="text" id="username" />
 
-                <label for="username">Email aanpassen:</label>
-                <input class="mb-3 w-50" type="text" id="username" />
+                <label for="email">Email aanpassen:</label>
+                <input class="mb-3 w-50" type="text" id="email" />
 
                 <label for="password">Wachtwoord aanpassen:</label>
                 <input class="mb-3" type="password" id="password" placeholder="Wachtwoord" />
@@ -65,7 +65,7 @@
               <p>Deze gebruiker heeft toegang tot volgende gemeentes:</p>
               <form action="#">
                 <input
-                  class="mb-2"
+                  class="mb-2 search-current-town"
                   type="text"
                   name="search"
                   placeholder="gemeente zoeken"
@@ -91,14 +91,14 @@
               <h2>Gemeentes Toevoegen</h2>
               <form action="#">
                 <input
-                  class="mb-2"
+                  class="mb-2 search-town"
                   type="text"
                   name="search"
                   placeholder="gemeente zoeken"
                 />
               </form>
 
-              <ul>
+              <ul class="towns">
                 <li>
                   <input
                     type="checkbox"

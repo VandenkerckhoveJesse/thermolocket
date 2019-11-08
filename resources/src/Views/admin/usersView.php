@@ -16,7 +16,11 @@
         <div class="col-8 col-lg-10 p-4">
           <h2 class="user-count mb-5">20</h2>
 
-          <table class="table">
+          <form action="#">
+            <input class="mb-4" type="text" id="search-user" placeholder="Zoek een gebruiker">
+          </form>
+
+          <table class="table users-list">
             <thead>
               <tr>
                 <th scope="col">#</th>
@@ -27,25 +31,26 @@
             </thead>
             <tbody>
               <tr>
-                <th scope="row">1</th>
-                <td>Johndoe</td>
-                <td>5/11/19</td>
+                <th class="user-list-user-id" scope="row">1</th>
+                <td class="user-list-username">Johndoe</td>
+                <td class="user-list-last-login">5/11/19</td>
                 <td><a href="edit-user" class="button">Beheren</a></td>
               </tr>
 
-              <tr>
-                <th scope="row">1</th>
-                <td>Johndoe</td>
-                <td>5/11/19</td>
+               <tr>
+                <th class="user-list-user-id" scope="row">1</th>
+                <td class="user-list-username">Janedoe</td>
+                <td class="user-list-last-login">5/11/19</td>
                 <td><a href="edit-user" class="button">Beheren</a></td>
               </tr>
 
-              <tr>
-                <th scope="row">1</th>
-                <td>Johndoe</td>
-                <td>5/11/19</td>
+                <tr>
+                <th class="user-list-user-id" scope="row">1</th>
+                <td class="user-list-username">Jakedoe</td>
+                <td class="user-list-last-login">5/11/19</td>
                 <td><a href="edit-user" class="button">Beheren</a></td>
               </tr>
+
             </tbody>
           </table>
       </div>

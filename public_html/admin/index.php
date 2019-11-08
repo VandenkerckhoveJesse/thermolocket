@@ -3,7 +3,7 @@ include_once("../../resources/config.php");
 
 $pageTitle="Admin panel";
 $cssFiles=["admin.css"];
-$jsFiles=["admin.js"];
+$jsFiles=["userList.js"];
 
 
 include_once("../../resources/src/Views/general/htmlStartView.php");
