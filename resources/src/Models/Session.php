@@ -5,6 +5,8 @@ class Session
 {
     const DELETESESSIONSOFUSER = 'DELETE FROM user_sessions WHERE (user_id = :user_id)';
     const REPLACESESSION = 'REPLACE INTO sessions (id, user_id, login_time) VALUES (:id, :user_id, NOW())';
+    const SELECTSESSIONBYID = 'SELECT * FROM sessions WHERE (id = :id)';
+    const SELECTVALIDSESSIONBYID = 'SELECT * FROM sessions WHERE (id = :id) AND (login_time >= (NOW() - INTERVAL 7 DAY))';
 
     private $id;
     private $user_id;
@@ -21,9 +23,50 @@ class Session
         }
     }
 
-    public static function deleteByUserId($userid) {
+    public static function getById($id) {
+        $query = self::SELECTSESSIONBYID;
+        $values = array(":id" => $id);
+
+        try{
+            $res = Database::getInstance()->conn->prepare($query);
+            $res->setFetchMode(PDO::FETCH_CLASS, 'Session');
+            $res->execute($values);
+        } catch(PDOException $e) {
+            throw new Exception('Something went wrong');
+        }
+        $session = $res->fetch();
+        return $session;
+    }
+
+    public static function getValidById($id) {
+        $query = self::SELECTVALIDSESSIONBYID;
+        $values = array(":id" => $id);
+
+        try{
+            $res = Database::getInstance()->conn->prepare($query);
+            $res->setFetchMode(PDO::FETCH_CLASS, 'Session');
+            $res->execute($values);
+        } catch(PDOException $e) {
+            throw new Exception('Something went wrong');
+        }
+        $session = $res->fetch();
+        return $session;
+    }
+
+    public static function deleteById($sessionid) {
+        $query = 'DELETE FROM sessions WHERE (id = :id)';
+        $values = array(':id' => $sessionid);
+        try{
+            $res = Database::getInstance()->conn->prepare($query);
+            $res->execute($values);
+        } catch(PDOException $e) {
+            throw new Exception("Database query error");
+        }
+    }
+
+    public static function deleteByUserId($user_id) {
         $query = self::DELETESESSIONSOFUSER;
-        $values = array(":user_id" => $userid);
+        $values = array(":user_id" => $user_id);
 
         try {
             $res = Database::getInstance()->conn->prepare($query);

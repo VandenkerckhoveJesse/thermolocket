@@ -1,6 +1,5 @@
 <?php
-include_once "../Helper.php";
-
+include_once "../resources/src/Database.php";
 class User
 {
     const INSERTUSER = 'INSERT INTO users (name, password, email, enabled) 
