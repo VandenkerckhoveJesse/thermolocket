@@ -1,3 +1,8 @@
+<?php
+$cssLink=constant(MODE."_ASSETS_PATH")."css/";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,9 +14,7 @@
     <link rel="stylesheet" type="text/css" href="/public_html/assets/css/screen.css" />
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
+      href="<?php echo $cssLink?>bootstrap.min.css"
     />
 
     <?php 
@@ -19,8 +22,6 @@
 
     if(isset($cssFiles)){
       
-    $cssLink=constant(MODE."_ASSETS_PATH")."css/";
-
 
     foreach($cssFiles as $cssFile) { ?>
       <link rel="stylesheet" type="text/css" href="<?php echo $cssLink.$cssFile?>" />
