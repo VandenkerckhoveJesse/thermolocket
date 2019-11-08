@@ -3,10 +3,10 @@
 
 class Session
 {
-    const DELETESESSIONSOFUSER = 'DELETE FROM user_sessions WHERE (user_id = :user_id)';
-    const REPLACESESSION = 'REPLACE INTO sessions (id, user_id, login_time) VALUES (:id, :user_id, NOW())';
-    const SELECTSESSIONBYID = 'SELECT * FROM sessions WHERE (id = :id)';
-    const SELECTVALIDSESSIONBYID = 'SELECT * FROM sessions WHERE (id = :id) AND (login_time >= (NOW() - INTERVAL 7 DAY))';
+    const DELETESESSIONSOFUSER = 'DELETE FROM sessies WHERE (gebruikers_id = :user_id)';
+    const REPLACESESSION = 'REPLACE INTO sessies (id, gebruikers_id, login_tijd) VALUES (:id, :user_id, NOW())';
+    const SELECTSESSIONBYID = 'SELECT * FROM sessies WHERE (id = :id)';
+    const SELECTVALIDSESSIONBYID = 'SELECT * FROM sessies WHERE (id = :id) AND (login_tijd >= (NOW() - INTERVAL 7 DAY))';
 
     private $id;
     private $user_id;

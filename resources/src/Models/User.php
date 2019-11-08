@@ -2,13 +2,13 @@
 include_once "../resources/src/Database.php";
 class User
 {
-    const INSERTUSER = 'INSERT INTO users (name, password, email, enabled) 
+    const INSERTUSER = 'INSERT INTO gebruikers (naam, wachtwoord, email, ingeschakeld) 
                     VALUES (:name , :password, :email, :enabled)';
-    const SELECTUSERBYID = 'SELECT * FROM users WHERE (id = :id)';
-    const SELECTUSERBYNAME = 'SELECT * FROM users WHERE (name = :name)';
-    const SELECTUSERS = 'SELECT * FROM users';
-    const UPDATEUSER = 'UPDATE users SET name = :name, password = :password, email = :email, enabled = :enabled WHERE id = :id';
-    const DELETEUSER = 'DELETE FROM users WHERE id = :id';
+    const SELECTUSERBYID = 'SELECT * FROM gebruikers WHERE (id = :id)';
+    const SELECTUSERBYNAME = 'SELECT * FROM gebruikers WHERE (naam = :name)';
+    const SELECTUSERS = 'SELECT * FROM gebruikers';
+    const UPDATEUSER = 'UPDATE gebruikers SET naam = :name, wachtwoord = :password, email = :email, ingeschakeld = :enabled WHERE id = :id';
+    const DELETEUSER = 'DELETE FROM gebruikers WHERE id = :id';
 
     private $id;
     private $name;
