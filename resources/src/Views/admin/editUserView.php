@@ -16,21 +16,22 @@
         <div class="col-8 col-lg-10 p-4">
           <div class="row">
             <div class="col-12 col-lg-6">
-              <h2 class="username mb-4">Johndoe</h2>
+              <h2 class="username mb-4"><?echo $user->getName();?></h2>
               <form
                 class="edit-user-details"
-                action="/update-user"
-                method="POST"
+                action=""
+                method="post"
               >
                 <label for="username">Gebruikersnaam aanpassen:</label>
-                <input class="d-block w-50" type="text" id="username" />
+                <input name="username" class="d-block w-50" type="text" id="username" value="<?echo $user->getName();?>" />
 
                 <label for="email">Email aanpassen:</label>
-                <input class="mb-3 w-50" type="text" id="email" />
+                <input name="email" class="mb-3 w-50" type="text" id="email" value="<?echo $user->getEmail();?>" />
 
                 <label for="password">Wachtwoord aanpassen:</label>
-                <input class="mb-3" type="password" id="password" placeholder="Wachtwoord" />
+                <input name="password" class="mb-3" type="password" id="password" placeholder="Wachtwoord" />
                 <input
+                  name="repeat-password"
                   class="mb-3"
                   type="password"
                   id="repeat-password"
@@ -43,6 +44,9 @@
                   name="status"
                   value="enabled"
                   id="status-enabled"
+                    <? if($user->getEnabled()): ?>
+                        checked="checked"
+                    <?endif;?>
                 />
                 <label class="d-inline-block mr-2" for="status-enabled"
                   >Enabled</label
@@ -52,12 +56,15 @@
                   name="status"
                   value="disabled"
                   id="status-disabled"
+                  <? if(!$user->getEnabled()): ?>
+                  checked="checked"
+                  <?endif;?>
                 />
                 <label class="d-inline-block mb-4" for="status-disabled"
                   >Disabled</label
                 >
 
-                <input class="mb-4 d-block" type="submit" class="d-block" value="Opslaan" />
+                <input class="mb-4 d-block" type="submit" class="d-block" value="Opslaan" name="update" />
               </form>
             </div>
             <div class="col-12 col-lg-6">

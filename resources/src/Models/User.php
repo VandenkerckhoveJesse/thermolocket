@@ -8,6 +8,7 @@ class User
     const SELECTUSERBYNAME = 'SELECT '.self::ALIASES.' FROM gebruikers WHERE (naam = :name)';
     const SELECTUSERS = 'SELECT '.self::ALIASES.' FROM gebruikers';
     const UPDATEUSER = 'UPDATE gebruikers SET naam = :name, wachtwoord = :password, email = :email, ingeschakeld = :enabled WHERE id = :id';
+    const UPDATEUSERWITHOUTPASSWORD = 'UPDATE gebruikers SET naam = :name, email = :email, ingeschakeld = :enabled WHERE id = :id';
     const DELETEUSER = 'DELETE FROM gebruikers WHERE id = :id';
 
 
@@ -94,6 +95,7 @@ class User
         }
         $email = trim($email);
         $enabled = (is_null($enabled) ? true : $enabled);
+        $enabled = $enabled ? 1 : 0;
         $query = self::UPDATEUSER;
         $hash = password_hash($password, PASSWORD_DEFAULT);
         $values = array(':id' => $id, ':name' => $name, ':password' => $hash, ':email' => $email, ':enabled' => $enabled);
@@ -102,10 +104,33 @@ class User
             $res->execute($values);
         }
         catch(Exception $e){
+            echo $e;
             throw new Exception('Database query error');
         }
-        return self::getUserById($id);
+        return self::getById($id);
     }
+
+    public static function editWithoutPassword($id, $name, $email, $enabled) {
+        $name = trim($name);
+        if(!Helper::isUserNameValid($name)) {
+            throw new Exception('Invalid username');
+        }
+        $email = trim($email);
+        $enabled = (is_null($enabled) ? true : $enabled);
+        $enabled = $enabled ? 1 : 0;
+        $query = self::UPDATEUSERWITHOUTPASSWORD;
+        $values = array(':id' => $id, ':name' => $name, ':email' => $email, ':enabled' => $enabled);
+        try {
+            $res = Database::getInstance()->conn->prepare($query);
+            $res->execute($values);
+        }
+        catch(Exception $e){
+            echo $e;
+            throw new Exception('Database query error');
+        }
+        return self::getById($id);
+    }
+
 
     public static function delete($id) {
         $query = self::DELETEUSER;

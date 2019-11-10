@@ -52,4 +52,14 @@ class UserController
         User::add($name, $password, $email, $enabled);
     }
 
+    public function editUser($id, $name, $password,$repeat_password, $email, $enabled) {
+        $enabled = $enabled === 'true' ? true : false;
+        if($password !== '') {
+            User::edit($id, $name, $password, $email, $enabled);
+        } else {
+            User::editWithoutPassword($id, $name, $email, $enabled);
+        }
+
+    }
+
 }

@@ -33,7 +33,7 @@
                 <th class="user-list-user-id" scope="row"><?echo $user->getId();?></th>
                 <td class="user-list-username"><?echo $user->getName();?></td>
                 <td class="user-list-last-login"><?echo $user->getLastLogin();?></td>
-                <td><a href="edit-user" class="button">Beheren</a></td>
+                <td><a href="edit-user.php?id=<?echo $user->getId();?>" class="button">Beheren</a></td>
               </tr>
             <? endforeach; ?>
             </tbody>

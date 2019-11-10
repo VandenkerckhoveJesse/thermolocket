@@ -11,7 +11,6 @@ $cssFiles=["admin.css"];
 $jsFiles=["userList.js"];
 
 $users = User::getAll();
-var_dump($users);
 
 include_once("../../resources/src/Views/general/htmlStartView.php");
 include_once("../../resources/src/Views/admin/usersView.php");
