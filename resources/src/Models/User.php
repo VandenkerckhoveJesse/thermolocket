@@ -1,5 +1,4 @@
 <?php
-include_once "../resources/src/Database.php";
 class User
 {
     const INSERTUSER = 'INSERT INTO gebruikers (naam, wachtwoord, email, ingeschakeld) 

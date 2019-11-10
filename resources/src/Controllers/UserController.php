@@ -1,6 +1,4 @@
 <?php
-include_once '../resources/src/Models/User.php';
-include_once '../resources/src/Models/Session.php';
 class UserController
 {
 
@@ -46,6 +44,12 @@ class UserController
         if(session_status() == PHP_SESSION_ACTIVE) {
             Session::replace(session_id(), $user->getId());
         }
+    }
+
+    public function createUser($name, $password, $repeat_password, $email, $enabled) {
+        $enabled = $enabled === 'true' ? true : false;
+        //todo check if repeat is same as password
+        User::add($name, $password, $email, $enabled);
     }
 
 }
