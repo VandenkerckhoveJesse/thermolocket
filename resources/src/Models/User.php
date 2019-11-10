@@ -1,13 +1,15 @@
 <?php
 class User
 {
-    const INSERTUSER = 'INSERT INTO gebruikers (naam, wachtwoord, email, ingeschakeld) 
+    const ALIASES = "id, naam as name, wachtwoord as password, laatste_login as last_login, email, ingeschakeld as enabled";
+    const INSERTUSER = 'INSERT INTO gebruikers (naam, wachtwoord, email, ingeschakeld)
                     VALUES (:name , :password, :email, :enabled)';
-    const SELECTUSERBYID = 'SELECT * FROM gebruikers WHERE (id = :id)';
-    const SELECTUSERBYNAME = 'SELECT * FROM gebruikers WHERE (naam = :name)';
-    const SELECTUSERS = 'SELECT * FROM gebruikers';
+    const SELECTUSERBYID = 'SELECT '.self::ALIASES.' FROM gebruikers WHERE (id = :id)';
+    const SELECTUSERBYNAME = 'SELECT '.self::ALIASES.' FROM gebruikers WHERE (naam = :name)';
+    const SELECTUSERS = 'SELECT '.self::ALIASES.' FROM gebruikers';
     const UPDATEUSER = 'UPDATE gebruikers SET naam = :name, wachtwoord = :password, email = :email, ingeschakeld = :enabled WHERE id = :id';
     const DELETEUSER = 'DELETE FROM gebruikers WHERE id = :id';
+
 
     private $id;
     private $name;
@@ -29,6 +31,7 @@ class User
         }
         $email = trim($email);
         $enabled = (is_null($enabled) ? true : $enabled);
+        $enabled = $enabled ? 1 : 0;
         $query = self::INSERTUSER;
         $hash = password_hash($password, PASSWORD_DEFAULT);
         $values = array(':name' => $name, ":password" => $hash, ":email" => $email, ":enabled" => $enabled);

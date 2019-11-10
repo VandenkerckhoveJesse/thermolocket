@@ -1,9 +1,7 @@
 <header class="w-100">
 <h2 class="ml-3 p-3 mb-0">Thermoloket Admin panel</h2>
       </header>
-
 <div class="container h-100">
-        
       <div class="row h-100 ">
         <div class="col-4 col-lg-2 sidebar p-4">
           <nav>
@@ -30,27 +28,14 @@
               </tr>
             </thead>
             <tbody>
+            <?php foreach($users as $user): ?>
               <tr>
-                <th class="user-list-user-id" scope="row">1</th>
-                <td class="user-list-username">Johndoe</td>
-                <td class="user-list-last-login">5/11/19</td>
+                <th class="user-list-user-id" scope="row"><?echo $user->getId();?></th>
+                <td class="user-list-username"><?echo $user->getName();?></td>
+                <td class="user-list-last-login"><?echo $user->getLastLogin();?></td>
                 <td><a href="edit-user" class="button">Beheren</a></td>
               </tr>
-
-               <tr>
-                <th class="user-list-user-id" scope="row">1</th>
-                <td class="user-list-username">Janedoe</td>
-                <td class="user-list-last-login">5/11/19</td>
-                <td><a href="edit-user" class="button">Beheren</a></td>
-              </tr>
-
-                <tr>
-                <th class="user-list-user-id" scope="row">1</th>
-                <td class="user-list-username">Jakedoe</td>
-                <td class="user-list-last-login">5/11/19</td>
-                <td><a href="edit-user" class="button">Beheren</a></td>
-              </tr>
-
+            <? endforeach; ?>
             </tbody>
           </table>
       </div>

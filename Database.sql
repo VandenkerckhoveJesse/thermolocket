@@ -3,7 +3,7 @@ create table gebruikers
     id         		int auto_increment,
     naam       		varchar(30)          not null,
     wachtwoord 		varchar(60)          not null,
-    laaste_login 	int                  null,
+    laatste_login 	int                  null,
     email      		varchar(50)          null,
     ingeschakeld    tinyint(1) default 0 not null,
     constraint 		gebruikers_id_uindex
