@@ -9,3 +9,9 @@ echo "welcome";
 echo " test";
 
 $controller = new UserController();
+try{
+    $user = $controller->sessionLogin();
+    echo $user->getName();
+} catch(Exception $e) {
+    echo $e->getMessage();
+}
