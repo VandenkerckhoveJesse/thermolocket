@@ -1,7 +1,7 @@
     <div class="container">
         <div>
             <div class="row">
-                <div class="col-5">
+                <div class="col-12 col-xl-5">
                     <div class="house-image"></div>
                     <div class="form-row mt-4">
                         <div class="col-sm-4">
@@ -22,7 +22,7 @@
                     </div>
                 </div>
 
-                <div class="col-7">
+                <div class="col-12 col-xl-7">
                     <div class="container overflow-hidden">
                         <div class="multisteps-form">
                             <div class="row progression-bar">
