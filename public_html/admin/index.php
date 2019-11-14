@@ -1,10 +1,10 @@
 <?php
 include_once("../../resources/config.php");
-include_once("../../resources/src/Controllers/UserController.php");
-include_once("../../resources/src/Models/User.php");
-include_once("../../resources/src/Models/Session.php");
-include_once("../../resources/src/Database.php");
-include_once("../../resources/src/Helper.php");
+include_once("../../resources/src/Controllers/UserController.class.php");
+include_once("../../resources/src/Models/User.class.php");
+include_once("../../resources/src/Models/Session.class.php");
+include_once("../../resources/src/Database.class.php");
+include_once("../../resources/src/Helper.class.php");
 
 $pageTitle="Admin panel";
 $cssFiles=["admin.css"];
