@@ -209,7 +209,7 @@ function addImage() {
   console.log(lenghtUl);
   if (lenghtUl <= 2) {
     document.querySelector("ul").innerHTML +=
-      "<li class='list-inline-item'><img src='images/" +
+      "<li class='list-inline-item col-4 pr-2 pb-2'><img src='images/" +
       "0" +
       chosenImage +
       ".jpg" +
