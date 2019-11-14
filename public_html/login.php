@@ -1,11 +1,15 @@
 <?php
-include_once "../resources/config.php";
-include_once "../resources/src/Controllers/UserController.php";
-echo "<pre>";
-print_r($_POST);
-echo "</pre>";
+include_once("../resources/config.php");
+include_once("../resources/src/Controllers/UserController.php");
+include_once("../resources/src/Models/User.php");
+include_once("../resources/src/Models/Session.php");
+include_once("../resources/src/Database.php");
+include_once("../resources/src/Helper.php");
+echo session_id();
+$userController = new UserController();
+//echo $userController->getUserBySession(session_id())->getName();
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    $userController = new UserController();
+
     $username = $_POST["username"];
     $password = $_POST["password"];
     if($userController->login($username, $password)){

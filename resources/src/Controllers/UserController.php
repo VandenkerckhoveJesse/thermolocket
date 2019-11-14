@@ -10,11 +10,10 @@ class UserController
         } catch (Exception $e) {
             return false;
         }
-        if(!get_class($user) == 'User') {
+        if(isset($user) && !$user) {
             return false;
         }
-
-        if($user->getEnabled() || password_verify($password, $user->getPassword())) {
+        if($user->getEnabled() && password_verify($password, $user->getPassword())) {
             $this->registerLoginSession($user);
             return TRUE;
         }
@@ -31,6 +30,11 @@ class UserController
             return true;
         }
         return false;
+    }
+
+    public function getUserBySession($session_id) {
+        $session = Session::getById($session_id);
+        $user = User::getById($session->getUserId());
     }
 
     public function logout() {
