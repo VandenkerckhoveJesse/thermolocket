@@ -8,31 +8,38 @@ class UserController
         try{
             $user = User::getByName($name);
         } catch (Exception $e) {
-            return false;
+            throw new Exception("Database query error");
         }
-        if(isset($user) && !$user) {
-            return false;
+        if(!$user) {
+            throw new Exception("User does not exist");
         }
-        if($user->getEnabled() && password_verify($password, $user->getPassword())) {
+        if($user->authenticate($password)) {
             $this->registerLoginSession($user);
-            return TRUE;
+            return $user;
+        } else {
+            throw new Exception("Wrong password or user not enabled");
         }
-        return FALSE;
+
     }
 
     public function sessionLogin() {
         if(session_status() == PHP_SESSION_ACTIVE) {
-            $session = Session::getValidById(session_id());
-            $user = User::getById($session->getUserId());
-            if(!$user->getEnabled() || is_null($user)) {
-                return false;
+            try{
+                $session = Session::getValidById(session_id());
+                $user = User::getById($session->getUserId());
+                if($user->getEnabled()) {
+                    return $user;
+                } else {
+                    throw new Exception("User is disabled");
+                }
+            } catch (Error $e) {
+                throw new Exception("User or session does not exist");
             }
-            return true;
         }
-        return false;
+        throw new Exception("Session is not enabled");
     }
 
-    public function getUserBySession($session_id) {
+    private function getUserBySession($session_id) {
         $session = Session::getById($session_id);
         $user = User::getById($session->getUserId());
     }

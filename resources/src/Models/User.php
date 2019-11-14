@@ -20,6 +20,17 @@ class User
     private $enabled;
 
 
+    public function authenticate($password) {
+        return $this->enabled && password_verify($password, $this->password);
+    }
+
+
+
+
+    /*
+     * Database functions
+     */
+
     public static function add($name, $password, $email, $enabled) {
         $conn = Database::getInstance()->conn;
         $name = trim($name);
@@ -152,15 +163,9 @@ class User
 
 
 
-
-
-
-
-
-
-
-
-
+    /*
+     * Getters and Setters
+     */
 
     /**
      * @return mixed
@@ -176,14 +181,6 @@ class User
     public function getName()
     {
         return $this->name;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getPassword()
-    {
-        return $this->password;
     }
 
     /**

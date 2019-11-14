@@ -3,10 +3,11 @@
 
 class Session
 {
+    const ALIASES = "id, gebruikers_id as user_id, login_tijd as login_time";
     const DELETESESSIONSOFUSER = 'DELETE FROM sessies WHERE (gebruikers_id = :user_id)';
     const REPLACESESSION = 'REPLACE INTO sessies (id, gebruikers_id, login_tijd) VALUES (:id, :user_id, NOW())';
-    const SELECTSESSIONBYID = 'SELECT * FROM sessies WHERE (id = :id)';
-    const SELECTVALIDSESSIONBYID = 'SELECT * FROM sessies WHERE (id = :id) AND (login_tijd >= (NOW() - INTERVAL 7 DAY))';
+    const SELECTSESSIONBYID = 'SELECT '.self::ALIASES.' FROM sessies WHERE (id = :id)';
+    const SELECTVALIDSESSIONBYID = 'SELECT '.self::ALIASES.' FROM sessies WHERE (id = :id) AND (login_tijd >= (NOW() - INTERVAL 7 DAY))';
 
     private $id;
     private $user_id;
