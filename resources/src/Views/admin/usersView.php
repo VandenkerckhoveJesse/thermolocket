@@ -35,7 +35,7 @@
                 <td class="user-list-last-login"><?echo $user->getLastLogin();?></td>
                 <td><a href="edit-user.php?id=<?echo $user->getId();?>" class="button">Beheren</a></td>
               </tr>
-            <? endforeach; ?>
+            <?php endforeach; ?>
             </tbody>
           </table>
       </div>
