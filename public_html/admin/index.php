@@ -1,10 +1,8 @@
 <?php
 include_once("../../resources/config.php");
-include_once("../../resources/src/Controllers/UserController.class.php");
-include_once("../../resources/src/Models/User.class.php");
-include_once("../../resources/src/Models/Session.class.php");
-include_once("../../resources/src/Database.class.php");
-include_once("../../resources/src/Helper.class.php");
+include_once ("../../resources/autoloader.php");
+Helper::authenticate("admin");
+
 
 $pageTitle="Admin panel";
 $cssFiles=["admin.css"];
