@@ -35,7 +35,6 @@ class Database
             $dsn = "mysql:host=".DB_HOST.";port=".DB_PORT.";dbname=".DB_NAME;
             $this->conn = new PDO($dsn, DB_USERNAME, DB_PASSWORD);
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "connected";
         } catch (PDOException $e)
         {
             echo "failed";

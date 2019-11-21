@@ -4,13 +4,8 @@ include_once ("../resources/autoloader.php");
 $userController = new UserController();
 try {
     $user = $userController->sessionLogin();
-    if($user->getName() === "admin") {
-        Helper::redirect('admin');
-    }
-    Helper::redirect("wizard.php");
+    $userController->logout();
+    Helper::redirect('login.php');
 } catch( Exception $e) {
     Helper::redirect('login.php');
 }
-
-
-?>

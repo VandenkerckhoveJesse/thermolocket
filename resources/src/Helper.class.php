@@ -12,4 +12,9 @@ class Helper
         //todo username validation here
         return true;
     }
+
+    public static function redirect($url) {
+        header('Location: '.$url);
+        exit();
+    }
 }

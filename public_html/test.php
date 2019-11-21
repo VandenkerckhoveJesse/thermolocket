@@ -1,6 +1,9 @@
 <?php
 include_once "../resources/config.php";
 include_once "../resources/autoloader.php";
+$uc = new UserController();
+
+echo $uc->sessionLogin()->getName();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,9 +12,6 @@ include_once "../resources/autoloader.php";
     <title>Title</title>
 </head>
 <body>
-<?php
-echo Helper::isUserNameValid("dfkdj");
-?>
 </body>
 </html>
 
