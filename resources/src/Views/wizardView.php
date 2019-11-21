@@ -1,4 +1,4 @@
-    <div class="container">
+<div class="container">
         <div>
             <div class="row">
                 <div class="col-12 col-xl-5">
@@ -63,7 +63,7 @@
                                                 <div class="form-row mt-4">
                                                     <div class="col-12 col-sm-6">
                                                         <input class="multisteps-form__input form-control" type="email"
-                                                            placeholder="Eamil" />
+                                                            placeholder="Email" />
                                                     </div>
                                                     <div class="col-12 col-sm-6 mt-4 mt-sm-0">
                                                         <input class="multisteps-form__input form-control" type="text"
@@ -75,24 +75,23 @@
                                                         <select class="pick-animation__select form-control">
                                                             <option value="" disabled selected>Verwantschap huis
                                                             </option>
-                                                            <option value="Huurder">Huurder</option>
                                                             <option value="Eigenaar">Eigenaar</option>
+                                                            <option value="Verhuurder">Verhuurder</option>
+                                                            <option value="Huurder">Huurder</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-12 col-sm-6 mt-4 mt-sm-0">
                                                         <select class="pick-animation__select form-control">
                                                             <option value="" disabled selected>Bouwjaar woning</option>
-                                                            <option value="1910">1910-1920</option>
-                                                            <option value="1920">1920-1930</option>
-                                                            <option value="1930">1930-1940</option>
-                                                            <option value="1940">1940-1950</option>
-                                                            <option value="1950">1950-1960</option>
-                                                            <option value="1960">1960-1970</option>
+                                                            <option value="<1900"><1900-1950</option>
+                                                            <option value="1950">1950-1970</option>
                                                             <option value="1970">1970-1980</option>
-                                                            <option value="1980">1980-1990</option>
-                                                            <option value="1990">1990-2000</option>
-                                                            <option value="2000">2000-2010</option>
-                                                            <option value="2010">2010-2020</option>
+                                                            <option value="1980">1980-2000</option>
+                                                            <option value="2000">2000-2006</option>
+                                                            <option value="2006">2006-2008</option>
+                                                            <option value="2008">2008-2011</option>
+                                                            <option value="2011">2011-2019</option>
+                                                            <option value=">2019">>2019</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -130,38 +129,26 @@
                                                 </div>
                                                 <div class="form-row mt-4">
                                                     <button class="btn btn-dark" type="button" title="Toevoegen">+
-                                                        Toevegen</button>
+                                                        Toevoegen</button>
                                                 </div>
                                                 <div class="form-row mt-4">
                                                     <div class="col-12 col-sm-6">
                                                         <select class="pick-animation__select form-control">
-                                                            <option value="Huurder">gelijkvloers is verwarmd</option>
-                                                            <option value="Eigenaar">1ste verdieping indirect verwarmd
-                                                            </option>
-                                                            <option value="Huurder">één bepaalde ruimte verwarmd
-                                                            </option>
-                                                            <option value="Huurder">zolder is niet</option>
-                                                            <option value="Huurder">zolder indirect verwarmd</option>
-                                                            <option value="Anders">Anders</option>
-
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                                                        <select class="pick-animation__select form-control">
-                                                            <option value="schitterend">schitterend</option>
-                                                            <option value="mooi-resultaat">mooi-resultaat</option>
-                                                            <option value="goed-op-weg">goed-op-weg</option>
-                                                            <option value="aanpakken">aanpakken</option>
-                                                            <option value="dringend-aanpakken">dringend-aanpakken
-                                                            </option>
+                                                            <option value="#">gelijkvloers is verwarmd</option>
+                                                            <option value="#">gelijkvloers is niet verwarmd</option>
+                                                            <option value="#">1ste verdiep is verwarmd</option>
+                                                            <option value="#">1ste verdiep is indirect verwarmd</option>
+                                                            <option value="#">Ruimte onder hellend dak is verwarmd</option>
+                                                            <option value="#">Ruimte onder hellend dak is niet verwarmd</option>
+                                                            <option value="#">Slechts bepaalde ruimtes worden verwarmd</option>
+                                                            <option value="#">Anders</option>
                                                         </select>
                                                     </div>
                                                 </div>
 
                                             </div>
                                             <div class="button-row d-flex mt-4">
-                                                <button class="btn btn-Light js-btn-prev" type="button"
-                                                    title="Prev">Vorige</button>
+                                            
                                                 <button class="btn btn-dark ml-auto js-btn-next" type="button"
                                                     title="Next">Volgende</button>
                                             </div>
@@ -174,19 +161,31 @@
                                                 <div class="form-row mt-4">
                                                     <p>Kunnen we verwarmingsgerelateerde zaken terugvinden?</p>
                                                     <div class="col-12">
-                                                        <input type="checkbox" name="optie1" value="optie1">
-                                                        Verwarmingslichaam duidelijk waarneembaar.<br>
-                                                        <input type="checkbox" name="optie2" value="optie2"> Afvoer van
-                                                        de ketel is waarneembaar.<br>
-                                                        <input type="checkbox" name="optie3" value="optie3"> Schoorsteen
-                                                        was in werking.
+                                                        <input type="checkbox" id="optie1" name="optie1" value="Verwarmingslichaam duidelijk waarneembaar"> 
+                                                        <label for="optie1">Verwarmingslichaam duidelijk waarneembaar</label>
+                                                        <br>
+                                                        <input type="checkbox" id="optie2" name="optie2" value="fvoer van de ketel is waarneembaar">
+                                                        <label for="optie2">Afvoer van de ketel is waarneembaar</label>
+                                                        <br>
+                                                        <input type="checkbox" id="optie3" name="optie3" value="Schoorsteen was in werking">
+                                                        <label for="optie3">Schoorsteen was in werking</label>
+                                                        <br>
+                                                        <input type="checkbox" id="optie3" name="optie4" value="Leidingen van de verwarming waarneembaar">
+                                                        <label for="optie4">Leidingen van de verwarming waarneembaar</label>
+                                                        <br>
+                                                        <input type="checkbox" id="optie3" name="optie5" value="Afvoer decentrale verwarming waarneembaar">
+                                                        <label for="optie5">Afvoer decentrale verwarming waarneembaar</label>
+                                                        <br>
+                                                        <input type="checkbox" id="optie3" name="optie6" value="Andere zelf te specificeren tekstueel">
+                                                        <label for="optie6">Andere zelf te specificeren tekstueel</label>
+                                                         
                                                     </div>
                                                 </div>
                                                 <div class="button-row d-flex mt-4">
-                                                    <button class="btn btn-Light js-btn-prev" type="button"
-                                                        title="Prev">Vorige</button>
-                                                    <button class="btn btn-dark ml-auto js-btn-next" type="button"
-                                                        title="Next">Volgende</button>
+                                                <button class="btn btn-Light js-btn-prev" type="button"
+                                                    title="Prev">Vorige</button>
+                                                <button class="btn btn-dark ml-auto js-btn-next" type="button"
+                                                    title="Next">Volgende</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -224,22 +223,21 @@
                                                             role="tabpanel" aria-labelledby="nav-home-tab">
                                                             <div class="form-row mt-4">
                                                                 <button class="btn btn-dark" type="button"
-                                                                    title="Toevoegen">+ Toevegen</button>
+                                                                    title="Toevoegen">+ Toevoegen</button>
                                                             </div>
-                                                            <div class="form-row mt-4">
+                                                            <div class="form-row mt-4 ramen">
                                                                 <div class="col-12 col-sm-6">
                                                                     <select
                                                                         class="picky-animation__select form-control">
-                                                                        <option value="Huurder">gelijkvloers is verwarmd
-                                                                        </option>
-                                                                        <option value="Eigenaar">1ste verdieping
-                                                                            indirect verwarmd</option>
-                                                                        <option value="Huurder">één bepaalde ruimte
-                                                                            verwarmd</option>
-                                                                        <option value="Huurder">zolder is niet</option>
-                                                                        <option value="Huurder">zolder indirect verwarmd
-                                                                        </option>
-                                                                        <option value="Anders">Anders</option>
+                                                                        <option value="#">De ramen tonen een sterke geleiding van warmte, de woning bevat nog oude beglazing.</option>
+                                                                        <option value="#">De ramen zijn vernieuwd </option>
+                                                                        <option value="#">De ramen bevatten rolluiken en geven extra bescherming</option>
+                                                                        <option value="#">De afwerking van de rolluikkasten op vlak van isolatie en luchtdichtheid</option>
+                                                                        <option value="#">De afwerking van de dagkanten van de ramen</option>
+                                                                        <option value="#">De luchttoevoerroosters zijn waarneembaar op de foto</option>
+                                                                        <option value="#">Raam stond open tijdens onze gevelscan</option>
+                                                                        <option value="#">Oude ramen hebben sterke infiltraties (geen of versleten dichtingen)</option>
+                                                                        <option value="Anders">Andere zelf te specificeren tekstueel</option>
                                                                     </select>
                                                                 </div>
                                                                 <div class="col-12 col-sm-6 mt-4 mt-sm-0">
@@ -259,22 +257,18 @@
                                                             aria-labelledby="nav-profile-tab">
                                                             <div class="form-row mt-4">
                                                                 <button class="btn btn-dark" type="button"
-                                                                    title="Toevoegen">+ Toevegen</button>
+                                                                    title="Toevoegen">+ Toevoegen</button>
                                                             </div>
-                                                            <div class="form-row mt-4">
-                                                                <div class="col-12 col-sm-6">
+                                                            <div class="form-row mt-4 dakramen">
+                                                                <div class="col-12 col-sm-6 ">
                                                                     <select
                                                                         class="picky-animation__select form-control">
-                                                                        <option value="Huurder">gelijkvloers is verwarmd
+                                                                        <option value="metalen-frame">Het dakraam bestaat uit een metalen frame met enkele beglazing
                                                                         </option>
-                                                                        <option value="Eigenaar">1ste verdieping
-                                                                            indirect verwarmd</option>
+                                                                        <option value="hedendaags">Het dakraam is hedendaags</option>
                                                                         <option value="Huurder">één bepaalde ruimte
                                                                             verwarmd</option>
-                                                                        <option value="Huurder">zolder is niet</option>
-                                                                        <option value="Huurder">zolder indirect verwarmd
-                                                                        </option>
-                                                                        <option value="Anders">Anders</option>
+                                                                        <option value="Anders">Andere zelf te specificeren tekstueel</option>
                                                                     </select>
                                                                 </div>
                                                                 <div class="col-12 col-sm-6 mt-4 mt-sm-0">
@@ -294,22 +288,20 @@
                                                             aria-labelledby="nav-contact-tab">
                                                             <div class="form-row mt-4">
                                                                 <button class="btn btn-dark" type="button"
-                                                                    title="Toevoegen">+ Toevegen</button>
+                                                                    title="Toevoegen">+ Toevoegen</button>
                                                             </div>
-                                                            <div class="form-row mt-4">
+                                                            <div class="form-row mt-4 deuren">
                                                                 <div class="col-12 col-sm-6">
                                                                     <select
                                                                         class="picky-animation__select form-control">
-                                                                        <option value="Huurder">gelijkvloers is verwarmd
+                                                                        <option value="dagkanten">De afwerking van de dagkanten van de deur
                                                                         </option>
-                                                                        <option value="Eigenaar">1ste verdieping
-                                                                            indirect verwarmd</option>
-                                                                        <option value="Huurder">één bepaalde ruimte
-                                                                            verwarmd</option>
-                                                                        <option value="Huurder">zolder is niet</option>
-                                                                        <option value="Huurder">zolder indirect verwarmd
-                                                                        </option>
-                                                                        <option value="Anders">Anders</option>
+                                                                        <option value="glas-sterke-geleiding">De deur bevat glas met een sterke geleiding</option>
+                                                                        <option value="paneel-sterke-geleiding">De deur bevat een paneel met sterke geleiding</option>
+                                                                        <option value="deuren-vernieuwd">De deur(en) zijn vernieuwd</option>
+                                                                        <option value="deuren-verouderd">De deur(en) zijn verouderd</option>
+                                                                        <option value="deuren-infiltraties">Infiltraties via de deur</option>
+                                                                        <option value="Anders">Andere zelf te specificeren tekstueel</option>
                                                                     </select>
                                                                 </div>
                                                                 <div class="col-12 col-sm-6 mt-4 mt-sm-0">
@@ -329,10 +321,10 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="button-row d-flex mt-4 col-12">
-                                                        <button class="btn btn-Light js-btn-prev" type="button"
-                                                            title="Prev">Vorige</button>
-                                                        <button class="btn btn-dark ml-auto js-btn-next" type="button"
-                                                            title="Next">Volgende</button>
+                                                    <button class="btn btn-Light js-btn-prev" type="button"
+                                                    title="Prev">Vorige</button>
+                                                <button class="btn btn-dark ml-auto js-btn-next" type="button"
+                                                    title="Next">Volgende</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -359,19 +351,24 @@
                                             <div class="multisteps-form__content">
                                                 <div class="form-row mt-4">
                                                     <button class="btn btn-dark" type="button" title="Toevoegen">+
-                                                        Toevegen</button>
+                                                        Toevoegen</button>
                                                 </div>
                                                 <div class="form-row mt-4">
                                                     <div class="col-12 col-sm-6">
                                                         <select class="picky-animation__select form-control">
-                                                            <option value="Huurder">gelijkvloers is verwarmd</option>
-                                                            <option value="Eigenaar">1ste verdieping indirect verwarmd
+                                                            <option value="dak-uniformekleur">Het dak heeft een uniforme kleur, dit impliceert wellicht een vorm van isolatie, hoe kouder het dak, hoe donkerder de kleur, hoe groter de isolatiewaarde</option>
+                                                            <option value="dak-niet-verwarmd">De kleur van het dak dient men te interpreteren in functie van de onderliggende temperatuur, ruimte onder het dak is niet verwarmd
                                                             </option>
-                                                            <option value="Huurder">één bepaalde ruimte verwarmd
+                                                            <option value="ruimte-onder-dak-verwarmd">De kleur van het dak dient men te interpreteren in functie van de onderliggende temperatuur, ruimte onder het dak is verwarmd
                                                             </option>
-                                                            <option value="Huurder">zolder is niet</option>
-                                                            <option value="Huurder">zolder indirect verwarmd</option>
-                                                            <option value="Anders">Anders</option>
+                                                            <option value="dakdeel-beter-geisoleerd">Één dakdeel is beter geïsoleerd dan het andere dakdeel</option>
+                                                            <option value="geen-confromiteiten">De dakisolatie bevat niet conformiteiten (vb ontbrekende stukken isolatie, losgekomen isolatie, slecht geplaatste isolatie</option>
+                                                            <option value="aansluiting-dakisolatie">De aansluiting van de dakramen aan de dakisolatie</option>
+                                                            <option value="niet-geisoleerd">Het dak heeft geen uniforme kleur, het dak is waarschijnlijk niet geïsoleerd of de isolatie is slecht geplaatst</option>
+                                                            <option value="warmteuitstraling">Warmteuitstraling (reflectie) van naast gelegen muur op het dakdeel</option>
+                                                            <option value="refelcties-van-metalen">Reflecties van metalen delen zoals lood, zinkwerk, koper, …</option>
+                                                            <option value="reflecties-glazuurde-pannen">Opgelet reflecties door glazuurde pannen, hierdoor lijkt het dak beter geïsoleerd</option>
+                                                            <option value="Anders">Andere zelf te specificeren tekstueel</option>
 
                                                         </select>
                                                     </div>
@@ -388,7 +385,7 @@
                                                 </div>
                                             </div>
                                             <div class="button-row d-flex mt-4">
-                                                <button class="btn btn-Light js-btn-prev" type="button"
+                                            <button class="btn btn-Light js-btn-prev" type="button"
                                                     title="Prev">Vorige</button>
                                                 <button class="btn btn-dark ml-auto js-btn-next" type="button"
                                                     title="Next">Volgende</button>
@@ -399,20 +396,17 @@
                                             <h3 class="multisteps-form__title">Hernieuwbare energie</h3>
                                             <div class="multisteps-form__content">
                                                 <div class="form-row mt-4">
-                                                    <button class="btn btn-dark" type="button" title="Toevoegen">+
-                                                        Toevegen</button>
+                                                    <button class="btn btn-dark" id="energie" type="button" title="Toevoegen">+ Toevoegen</button>
                                                 </div>
-                                                <div class="form-row mt-4">
+                                                <div class="form-row mt-4 energie">
                                                     <div class="col-12 col-sm-6">
                                                         <select class="pick-animation__select form-control">
-                                                            <option value="Huurder">gelijkvloers is verwarmd</option>
-                                                            <option value="Eigenaar">1ste verdieping indirect verwarmd
+                                                            <option value="gratis-zonne-energie">Geen hernieuwbare energie vastgesteld, investeer en geniet van de gratis zonne energie, uw dak leunt zich tot zonnepanelen en zonneboiler</option>
+                                                            <option value="aanwezig-ander-dakdeel">Geen hernieuwbare energie vastgesteld, maar is wel aanwezig op een andere dakdeel                                                      </option>
+                                                            <option value="zonnepanelen">Zonnepanelen zijn waarneembaar op het dak
                                                             </option>
-                                                            <option value="Huurder">één bepaalde ruimte verwarmd
-                                                            </option>
-                                                            <option value="Huurder">zolder is niet</option>
-                                                            <option value="Huurder">zolder indirect verwarmd</option>
-                                                            <option value="Anders">Anders</option>
+                                                            <option value="zonneboiler">Zonneboiler is waarneembaar op het dak</option>
+                                                            <option value="Anders">Andere zelf te specificeren tekstueel</option>
 
                                                         </select>
                                                     </div>
@@ -429,7 +423,7 @@
                                                 </div>
                                             </div>
                                             <div class="button-row d-flex mt-4">
-                                                <button class="btn btn-Light js-btn-prev" type="button"
+                                            <button class="btn btn-Light js-btn-prev" type="button"
                                                     title="Prev">Vorige</button>
                                                 <button class="btn btn-dark ml-auto js-btn-next" type="button"
                                                     title="Next">Volgende</button>
