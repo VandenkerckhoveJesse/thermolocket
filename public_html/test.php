@@ -1,9 +1,10 @@
 <?php
 include_once "../resources/config.php";
 include_once "../resources/autoloader.php";
+Helper::authenticate("admin");
 $uc = new UserController();
-
-echo $uc->sessionLogin()->getName();
+$user = $uc->sessionLogin();
+echo $user->getName();
 ?>
 <!DOCTYPE html>
 <html lang="en">

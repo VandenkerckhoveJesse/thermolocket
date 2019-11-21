@@ -3,7 +3,7 @@
 spl_autoload_register('myAutoLoader');
 
 function myAutoLoader($class_name) {
-    $path = "../resources/src";
+    $path = $_SERVER["DOCUMENT_ROOT"]."/resources/src";
     $extension = '.class.php';
     $class_directories = getAllDirectories($path);
     $parts = explode('\\', $class_name);
