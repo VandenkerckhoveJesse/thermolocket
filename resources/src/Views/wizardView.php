@@ -141,7 +141,7 @@
                                                             <option value="#">Ruimte onder hellend dak is verwarmd</option>
                                                             <option value="#">Ruimte onder hellend dak is niet verwarmd</option>
                                                             <option value="#">Slechts bepaalde ruimtes worden verwarmd</option>
-                                                            <option value="#">Anders</option>
+                                                            <option value="#">Andere zelf te specificeren tekstueel</option>
                                                         </select>
                                                     </div>
                                                 </div>
