@@ -16,6 +16,8 @@
 
           <form action="#">
             <input class="mb-4" type="text" id="search-user" placeholder="Zoek een gebruiker">
+            <a href="create-user.php" class="button">Maak een nieuwe gebruiker</a>
+
           </form>
 
           <table class="table users-list">
@@ -30,10 +32,10 @@
             <tbody>
             <?php foreach($users as $user): ?>
               <tr>
-                <th class="user-list-user-id" scope="row"><?echo $user->getId();?></th>
-                <td class="user-list-username"><?echo $user->getName();?></td>
-                <td class="user-list-last-login"><?echo $user->getLastLogin();?></td>
-                <td><a href="edit-user.php?id=<?echo $user->getId();?>" class="button">Beheren</a></td>
+                <th class="user-list-user-id" scope="row"><?php echo $user->getId();?></th>
+                <td class="user-list-username"><?php echo $user->getName();?></td>
+                <td class="user-list-last-login"><?php echo $user->getLastLogin();?></td>
+                <td><a href="edit-user.php?id=<?php echo $user->getId();?>" class="button">Beheren</a></td>
               </tr>
             <?php endforeach; ?>
             </tbody>
