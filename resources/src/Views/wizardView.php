@@ -45,35 +45,35 @@
                             </div>
                             <div class="row">
                                 <div class="col-12 col-lg-10 m-auto">
-                                    <form class="multisteps-form__form">
+                                    <form class="multisteps-form__form" method="POST" action="">
                                         <div class="multisteps-form__panel shadow p-4 rounded bg-white js-active gegevens"
                                             data-animation="scaleIn">
                                             <h3 class="multisteps-form__title">Basisgegevens</h3>
                                             <div class="multisteps-form__content">
                                                 <div class="form-row mt-4">
                                                     <div class="col-12 col-sm-6">
-                                                        <input class="multisteps-form__input form-control" type="text"
-                                                            placeholder="Voornaam" />
+                                                        <input name="gegevens[voornaam]" class="multisteps-form__input form-control" type="text"
+                                                            placeholder="Voornaam"/>
                                                     </div>
                                                     <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                                                        <input class="multisteps-form__input form-control" type="text"
-                                                            placeholder="Famillienaam" />
+                                                        <input name="gegevens[familienaam]" class="multisteps-form__input form-control" type="text"
+                                                            placeholder="Famillienaam"/>
                                                     </div>
                                                 </div>
                                                 <div class="form-row mt-4">
                                                     <div class="col-12 col-sm-6">
                                                         <input class="multisteps-form__input form-control" type="email"
-                                                            placeholder="Email" />
+                                                            placeholder="Email" name="gegevens[email]"/>
                                                     </div>
                                                     <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                                                        <input class="multisteps-form__input form-control" type="text"
-                                                            placeholder="Telefoon" />
+                                                        <input name="gegevens[telefoon]" class="multisteps-form__input form-control" type="text"
+                                                            placeholder="Telefoon"/>
                                                     </div>
                                                 </div>
                                                 <div class="form-row mt-4">
                                                     <div class="col-12 col-sm-6">
-                                                        <select class="pick-animation__select form-control">
-                                                            <option value="" disabled selected>Verwantschap huis
+                                                        <select name="gegevens[verwantschap]" class="pick-animation__select form-control">
+                                                            <option value="" disabled selected>Verwantschap woning
                                                             </option>
                                                             <option value="Eigenaar">Eigenaar</option>
                                                             <option value="Verhuurder">Verhuurder</option>
@@ -81,7 +81,7 @@
                                                         </select>
                                                     </div>
                                                     <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                                                        <select class="pick-animation__select form-control">
+                                                        <select name="gegevens[bouwjaar]" class="pick-animation__select form-control">
                                                             <option value="" disabled selected>Bouwjaar woning</option>
                                                             <option value="<1900"><1900-1950</option>
                                                             <option value="1950">1950-1970</option>
@@ -97,33 +97,33 @@
                                                 </div>
                                                 <div class="form-row mt-4">
                                                     <div class="col-12 col-sm-6">
-                                                        <input class="multisteps-form__input form-control" type="text"
-                                                            placeholder="Straat" />
+                                                        <input name="gegevens[straat]" class="multisteps-form__input form-control" type="text"
+                                                            placeholder="Straat"/>
                                                     </div>
                                                     <div class="col-12 col-sm-2 mt-2 mt-sm-0">
-                                                        <input class="multisteps-form__input form-control" type="text"
-                                                            placeholder="Nr" />
+                                                        <input name="gegevens[nummer]" class="multisteps-form__input form-control" type="text"
+                                                            placeholder="Nr"/>
                                                     </div>
                                                     <div class="col-12 col-sm-2 mt-2 mt-sm-0">
-                                                        <input class="multisteps-form__input form-control" type="text"
-                                                            placeholder="Bus" />
+                                                        <input name="gegevens[bus]" class="multisteps-form__input form-control" type="text"
+                                                            placeholder="Bus"/>
                                                     </div>
                                                 </div>
                                                 <div class="form-row mt-4">
                                                     <div class="col-12 col-sm-6">
-                                                        <input class="multisteps-form__input form-control" type="text"
-                                                            placeholder="Gemeente" />
+                                                        <input name="gegevens[gemeente]" class="multisteps-form__input form-control" type="text"
+                                                            placeholder="Gemeente"/>
                                                     </div>
                                                     <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                                                        <input class="multisteps-form__input form-control" type="text"
-                                                            placeholder="Postcode" />
+                                                        <input name="gegevens[postcode]" class="multisteps-form__input form-control" type="text"
+                                                            placeholder="Postcode"/>
                                                     </div>
                                                 </div>
                                                 <div class="form-row mt-4">
                                                     <p>Was de woning verwarmd:</p>
-                                                    <div class="col-12 col-sm-6">
-                                                        <input type="radio" name="verwarming" value="ja"> Ja
-                                                        <input type="radio" name="verwarming" value="nee"> Nee
+                                                    <div id="verwarmd" class="col-12 col-sm-6">
+                                                        <input type="radio" name="gegevens[verwarmd]" id="verwarmd-true" value="true"><label for="verwarmd-true">Ja</label>
+                                                        <input type="radio" name="gegevens[verwarmd]" id="verwarmd-false" value="false"><label for="verwarmd-false">Nee</label>
                                                     </div>
 
                                                 </div>
@@ -133,15 +133,15 @@
                                                 </div>
                                                 <div class="form-row mt-4">
                                                     <div class="col-12 col-sm-6">
-                                                        <select class="pick-animation__select form-control">
-                                                            <option value="#">gelijkvloers is verwarmd</option>
-                                                            <option value="#">gelijkvloers is niet verwarmd</option>
-                                                            <option value="#">1ste verdiep is verwarmd</option>
-                                                            <option value="#">1ste verdiep is indirect verwarmd</option>
-                                                            <option value="#">Ruimte onder hellend dak is verwarmd</option>
-                                                            <option value="#">Ruimte onder hellend dak is niet verwarmd</option>
-                                                            <option value="#">Slechts bepaalde ruimtes worden verwarmd</option>
-                                                            <option value="#">Andere zelf te specificeren tekstueel</option>
+                                                        <select  name="gegevens[plaats-verwarming][]" class="pick-animation__select form-control">
+                                                            <option value="gelijkvloers is verwarmd">gelijkvloers is verwarmd</option>
+                                                            <option value="gelijkvloers is niet verwarmd">gelijkvloers is niet verwarmd</option>
+                                                            <option value="1ste verdiep is verwarmd">1ste verdiep is verwarmd</option>
+                                                            <option value="1ste verdiep is indirect verwarmd">1ste verdiep is indirect verwarmd</option>
+                                                            <option value="Ruimte onder hellend dak is verwarmd">Ruimte onder hellend dak is verwarmd</option>
+                                                            <option value="Ruimte onder hellend dak is niet verwarmd">Ruimte onder hellend dak is niet verwarmd</option>
+                                                            <option value="Slechts bepaalde ruimtes worden verwarmd">Slechts bepaalde ruimtes worden verwarmd</option>
+                                                            <option value="Andere zelf te specificeren tekstueel">Andere zelf te specificeren tekstueel</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -411,7 +411,7 @@
                                                         </select>
                                                     </div>
                                                     <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                                                        <select class="pick-animation__select form-control">
+                                                        <select name="energie-status" class="pick-animation__select form-control">
                                                             <option value="schitterend">schitterend</option>
                                                             <option value="mooi-resultaat">mooi-resultaat</option>
                                                             <option value="goed-op-weg">goed-op-weg</option>
@@ -422,11 +422,12 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="button-row d-flex mt-4">
+                                            <div class="button-row d-flex mt-5">
                                             <button class="btn btn-Light js-btn-prev" type="button"
                                                     title="Prev">Vorige</button>
-                                                <button class="btn btn-dark ml-auto js-btn-next" type="button"
-                                                    title="Next">Volgende</button>
+                                                <div class="ml-auto">
+                                                <input class="btn btn-dark" type="submit" value="opslaan">
+                                                <button disabled class="btn btn-dark save-form-button ml-2" type="button">Genereer PDF</button></div>
                                             </div>
                                         </div>
 

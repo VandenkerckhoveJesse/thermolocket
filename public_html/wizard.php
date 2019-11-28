@@ -7,6 +7,12 @@ $pageTitle="Thermoloket";
 $cssFiles=["wizard.css"];
 $jsFiles=["wizard.js"];
 
+if (isset($_POST["gegevens"]["voornaam"])){
+    print_r($_POST);
+}
+
+
+
 include_once("../resources/src/Views/general/htmlStartView.php");
 include_once("../resources/src/Views/wizardView.php");
 include_once("../resources/src/Views/general/htmlEndView.php");
