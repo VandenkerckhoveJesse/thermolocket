@@ -170,13 +170,13 @@
                                                         <input type="checkbox" id="optie3" name="optie3" value="Schoorsteen was in werking">
                                                         <label for="optie3">Schoorsteen was in werking</label>
                                                         <br>
-                                                        <input type="checkbox" id="optie3" name="optie4" value="Leidingen van de verwarming waarneembaar">
+                                                        <input type="checkbox" id="optie4" name="optie4" value="Leidingen van de verwarming waarneembaar">
                                                         <label for="optie4">Leidingen van de verwarming waarneembaar</label>
                                                         <br>
-                                                        <input type="checkbox" id="optie3" name="optie5" value="Afvoer decentrale verwarming waarneembaar">
+                                                        <input type="checkbox" id="optie5" name="optie5" value="Afvoer decentrale verwarming waarneembaar">
                                                         <label for="optie5">Afvoer decentrale verwarming waarneembaar</label>
                                                         <br>
-                                                        <input type="checkbox" id="optie3" name="optie6" value="Andere zelf te specificeren tekstueel">
+                                                        <input type="checkbox" id="optie6" name="optie6" value="Andere zelf te specificeren tekstueel">
                                                         <label for="optie6">Andere zelf te specificeren tekstueel</label>
                                                          
                                                     </div>
