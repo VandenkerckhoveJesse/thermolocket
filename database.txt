@@ -1,0 +1,130 @@
+create table adressen
+(
+    id int null
+);
+
+create table afbeeldingen
+(
+    id int null
+);
+
+create table afbeeldingen_woningen
+(
+    id int null
+);
+
+create table dak_eigenschappen
+(
+    id int null
+);
+
+create table dak_eigenschappen_woningen
+(
+    id int null
+);
+
+create table dossiers
+(
+    id int null
+);
+
+create table energiebron_eigenschappen
+(
+    id int null
+);
+
+create table energiebron_eigenschappen_woningen
+(
+    id int null
+);
+
+create table gebruikers
+(
+    id            int auto_increment,
+    naam          varchar(30)          not null,
+    wachtwoord    varchar(60)          not null,
+    laatste_login int                  null,
+    email         varchar(50)          null,
+    ingeschakeld  tinyint(1) default 0 not null,
+    constraint gebruikers_id_uindex
+        unique (id),
+    constraint gebruikers_naam_uindex
+        unique (naam)
+);
+
+alter table gebruikers
+    add primary key (id);
+
+create table gevel_eigenschappen
+(
+    id int null
+);
+
+create table gevel_eigenschappen_gevels
+(
+    id int null
+);
+
+create table gevels
+(
+    id int null
+);
+
+create table klanten
+(
+    id           int          null,
+    voornaam     varchar(50)  null,
+    famillienaam varchar(60)  null,
+    email        varchar(120) null,
+    telefoon     varchar(30)  null
+);
+
+create table opening_eigenschappen
+(
+    id int null
+);
+
+create table opening_eigenschappen_woningen
+(
+    id int null
+);
+
+create table opening_types
+(
+    id int null
+);
+
+create table sessies
+(
+    id            varchar(255)                        not null,
+    gebruikers_id int                                 not null,
+    login_tijd    timestamp default CURRENT_TIMESTAMP not null,
+    constraint sessies_id_uindex
+        unique (id),
+    constraint gebruikers_id
+        foreign key (gebruikers_id) references gebruikers (id)
+);
+
+alter table sessies
+    add primary key (id);
+
+create table verwarming_locatie_woningen
+(
+    id int null
+);
+
+create table verwarming_locaties
+(
+    id int null
+);
+
+create table waarnemingen
+(
+    id int null
+);
+
+create table woningen
+(
+    id int null
+);
+
