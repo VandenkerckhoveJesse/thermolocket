@@ -1,3 +1,5 @@
+use thermoloket
+
 create table gebruikers
 (
     id         		int auto_increment,
