@@ -1,7 +1,7 @@
 <div class="container">
         <div>
             <div class="row">
-                <div class="col-12 col-xl-5">
+                <div class="col-12 col-xl-6">
                     <div class="house-image"></div>
                     <div class="form-row mt-4">
                         <div class="col-sm-4">
@@ -22,11 +22,11 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-xl-7">
+                <div class="col-12 col-xl-6">
                     <div class="container overflow-hidden">
                         <div class="multisteps-form">
                             <div class="row progression-bar">
-                                <div class="col-12 col-lg-8 ml-auto mr-auto mb-4">
+                                <div class="col-9 ml-auto mr-auto mb-4">
                                     <div class="multisteps-form__progress">
                                         <button class="multisteps-form__progress-btn js-active" type="button"
                                             title="Gegevens">Gegevens</button>
@@ -44,9 +44,9 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-12 col-lg-10 m-auto">
+                                <div class="col-11 m-auto">
                                     <form class="multisteps-form__form" method="POST" action="">
-                                        <div class="multisteps-form__panel shadow p-4 rounded bg-white js-active gegevens"
+                                        <div class="multisteps-form__panel shadow pb-4 px-4 rounded bg-white js-active gegevens"
                                             data-animation="scaleIn">
                                             <h3 class="multisteps-form__title">Basisgegevens</h3>
                                             <div class="multisteps-form__content">

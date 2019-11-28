@@ -31,8 +31,6 @@ img {
   border-radius: 20px;
   vertical-align: middle;
   border-style: none;
-  width: 200px;
-  height: 140px;
 }
 
 .house-image img {
@@ -67,15 +65,14 @@ div.form-row.mt-4 {
 }
 
 .progression-bar {
-  padding-top: 30px;
+  padding-top: 45px;
 }
 
 .house-image > img {
   border-radius: 20px;
   vertical-align: middle;
   border-style: none;
-  width: 600px;
-  height: 550px;
+  height: auto;
   margin-top: 36px;
 }
 
@@ -183,6 +180,13 @@ div.form-row.mt-4 {
   background-color: currentColor;
 }
 
+.multisteps-form {
+  margin-top: 36px;
+  min-height: 550px;
+  background-color: white;
+  border-radius: 25px;
+}
+
 .multisteps-form__form {
   position: relative;
 }
@@ -204,6 +208,7 @@ div.form-row.mt-4 {
 }
 
 .multisteps-form__panel[data-animation="scaleIn"] {
+  box-shadow: none !important;
   transform: scale(0.9);
 }
 
