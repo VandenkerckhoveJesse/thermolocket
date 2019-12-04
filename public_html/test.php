@@ -1,10 +1,10 @@
 <?php
-include_once "../resources/config.php";
-include_once "../resources/autoloader.php";
-Helper::authenticate("admin");
-$uc = new UserController();
-$user = $uc->sessionLogin();
-echo $user->getName();
+include_once ("../resources/config.php");
+include_once ("../resources/autoloader.php");
+$adres = Adres::getById(5);
+$adres->setNummer(85);
+$adres->delete();
+var_dump(Adres::getAll());
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,16 +1,24 @@
 <?php
 class User
 {
-    const ALIASES = "id, naam as name, wachtwoord as password, laatste_login as last_login, email, ingeschakeld as enabled";
-    const INSERTUSER = 'INSERT INTO gebruikers (naam, wachtwoord, email, ingeschakeld)
-                    VALUES (:name , :password, :email, :enabled)';
-    const SELECTUSERBYID = 'SELECT '.self::ALIASES.' FROM gebruikers WHERE (id = :id)';
-    const SELECTUSERBYNAME = 'SELECT '.self::ALIASES.' FROM gebruikers WHERE (naam = :name)';
-    const SELECTUSERS = 'SELECT '.self::ALIASES.' FROM gebruikers';
-    const UPDATEUSER = 'UPDATE gebruikers SET naam = :name, wachtwoord = :password, email = :email, ingeschakeld = :enabled WHERE id = :id';
-    const UPDATEUSERWITHOUTPASSWORD = 'UPDATE gebruikers SET naam = :name, email = :email, ingeschakeld = :enabled WHERE id = :id';
-    const DELETEUSER = 'DELETE FROM gebruikers WHERE id = :id';
+    const ALIASES = [
+        "users" => ":gebruikers",
+        "id" => ":id",
+        "name" => ":naam",
+        "password" => ":wachtwoord",
+        "last_login" => ":laatste_login",
+        "email" => ":email",
+        "enabled" => ":ingeschakeld"
+    ];
 
+    const INSERTUSER = 'INSERT INTO gebruikers (naam, wachtwoord, email, ingeschakeld)
+                    VALUES (:naam , :wachtwoord, :email, :ingeschakeld)';
+    const SELECTUSERBYID = 'SELECT * FROM gebruikers WHERE (id = :id)';
+    const SELECTUSERBYNAME = 'SELECT * FROM gebruikers WHERE (naam = :naam)';
+    const SELECTUSERS = 'SELECT * FROM gebruikers';
+    const UPDATEUSER = 'UPDATE gebruikers SET naam = :naam, wachtwoord = :wachtwoord, email = :email, ingeschakeld = :ingeschakeld WHERE id = :id';
+    const UPDATEUSERWITHOUTPASSWORD = 'UPDATE gebruikers SET naam = :naam, email = :email, ingeschakeld = :ingeschakeld WHERE id = :id';
+    const DELETEUSER = 'DELETE FROM gebruikers WHERE id = :id';
 
     private $id;
     private $name;
@@ -19,13 +27,9 @@ class User
     private $email;
     private $enabled;
 
-
     public function authenticate($password) {
         return $this->enabled && password_verify($password, $this->password);
     }
-
-
-
 
     /*
      * Database functions
@@ -46,7 +50,7 @@ class User
         $enabled = $enabled ? 1 : 0;
         $query = self::INSERTUSER;
         $hash = password_hash($password, PASSWORD_DEFAULT);
-        $values = array(':name' => $name, ":password" => $hash, ":email" => $email, ":enabled" => $enabled);
+        $values = array(self::ALIASES["name"] => $name, self::ALIASES["password"] => $hash, self::ALIASES["email"] => $email, self::ALIASES["enabled"] => $enabled);
         try{
             $res = $conn->prepare($query);
             $res->execute($values);
@@ -67,7 +71,7 @@ class User
 
     public static function getById($id) {
         $query = self::SELECTUSERBYID;
-        $values = array(":id" => $id);
+        $values = array(self::ALIASES["id"] => $id);
 
         try{
             $res = Database::getInstance()->conn->prepare($query);
@@ -82,7 +86,7 @@ class User
 
     public static function getByName($name) {
         $query = self::SELECTUSERBYNAME;
-        $values = array(":name" => $name);
+        $values = array(self::ALIASES["name"] => $name);
 
         try{
             $res = Database::getInstance()->conn->prepare($query);

@@ -43,4 +43,38 @@ class Database
         }
     }
 
+    public function query($query, $values = array()) {
+        try {
+            $res = Database::getInstance()->conn->prepare($query);
+            $res->execute($values);
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+            throw new Exception('Query error');
+        }
+    }
+
+
+    public function queryClass($query, $className, $values = array()) {
+        try {
+            $res = Database::getInstance()->conn->prepare($query);
+            $res->setFetchMode(PDO::FETCH_CLASS, $className);
+            $res->execute($values);
+        } catch(PDOException $e) {
+            throw new Exception("Query error");
+        }
+        $object = $res->fetch();
+        return $object;
+    }
+
+    public function queryClasses($query, $className, $values = array()) {
+        //todo make this more versitale with $values
+        try {
+            $stmt = Database::getInstance()->conn->query($query);
+            $objects = $stmt->fetchAll(PDO::FETCH_CLASS, $className);
+            return $objects;
+        } catch (PDOException $e) {
+            throw new Exception("Query error");
+        }
+    }
+
 }
