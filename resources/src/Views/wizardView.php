@@ -128,12 +128,13 @@
 
                                                 </div>
                                                 <div class="form-row mt-4">
-                                                    <button class="btn btn-dark" type="button" title="Toevoegen">+
+                                                    <button data-list-name="verwarming" class="btn btn-dark add-item" type="button" title="Toevoegen">+
                                                         Toevoegen</button>
                                                 </div>
-                                                <div class="form-row mt-4">
-                                                    <div class="col-12 col-sm-6">
-                                                        <select  name="gegevens[plaats-verwarming][]" class="pick-animation__select form-control">
+                                                <div class="form-row mt-4 verwarming">
+                                                    <div class="col-12 col-sm-6 addable-list-verwarming">
+                                                        <div class="list-item">
+                                                        <select  name="gegevens[verwarming][eigenschap][]" class="pick-animation__select form-control">
                                                             <option value="gelijkvloers is verwarmd">gelijkvloers is verwarmd</option>
                                                             <option value="gelijkvloers is niet verwarmd">gelijkvloers is niet verwarmd</option>
                                                             <option value="1ste verdiep is verwarmd">1ste verdiep is verwarmd</option>
@@ -143,6 +144,7 @@
                                                             <option value="Slechts bepaalde ruimtes worden verwarmd">Slechts bepaalde ruimtes worden verwarmd</option>
                                                             <option value="Andere zelf te specificeren tekstueel">Andere zelf te specificeren tekstueel</option>
                                                         </select>
+                                                        </div>
                                                     </div>
                                                 </div>
 
@@ -161,28 +163,28 @@
                                                 <div class="form-row mt-4">
                                                     <p>Kunnen we verwarmingsgerelateerde zaken terugvinden?</p>
                                                     <div class="col-12">
-                                                        <input type="checkbox" id="optie1" name="optie1" value="Verwarmingslichaam duidelijk waarneembaar"> 
+                                                        <input type="checkbox" id="optie1" name="gevel[eigenschappen][]" value="Verwarmingslichaam duidelijk waarneembaar"> 
                                                         <label for="optie1">Verwarmingslichaam duidelijk waarneembaar</label>
                                                         <br>
-                                                        <input type="checkbox" id="optie2" name="optie2" value="fvoer van de ketel is waarneembaar">
+                                                        <input type="checkbox" id="optie2" name="gevel[eigenschappen][]" value="fvoer van de ketel is waarneembaar">
                                                         <label for="optie2">Afvoer van de ketel is waarneembaar</label>
                                                         <br>
-                                                        <input type="checkbox" id="optie3" name="optie3" value="Schoorsteen was in werking">
+                                                        <input type="checkbox" id="optie3" name="gevel[eigenschappen][]" value="Schoorsteen was in werking">
                                                         <label for="optie3">Schoorsteen was in werking</label>
                                                         <br>
-                                                        <input type="checkbox" id="optie4" name="optie4" value="Leidingen van de verwarming waarneembaar">
+                                                        <input type="checkbox" id="optie4" name="gevel[eigenschappen][]" value="Leidingen van de verwarming waarneembaar">
                                                         <label for="optie4">Leidingen van de verwarming waarneembaar</label>
                                                         <br>
-                                                        <input type="checkbox" id="optie5" name="optie5" value="Afvoer decentrale verwarming waarneembaar">
+                                                        <input type="checkbox" id="optie5" name="gevel[eigenschappen][]" value="Afvoer decentrale verwarming waarneembaar">
                                                         <label for="optie5">Afvoer decentrale verwarming waarneembaar</label>
                                                         <br>
-                                                        <input type="checkbox" id="optie6" name="optie6" value="Andere zelf te specificeren tekstueel">
+                                                        <input type="checkbox" id="optie6" name="gevel[eigenschappen][]" value="Andere zelf te specificeren tekstueel">
                                                         <label for="optie6">Andere zelf te specificeren tekstueel</label>
                                                          
                                                     </div>
                                                 </div>
                                                 <div class="button-row d-flex mt-4">
-                                                <button class="btn btn-Light js-btn-prev" type="button"
+                                                <button class="btn btn-Light btn-outline-secondary js-btn-prev" type="button"
                                                     title="Prev">Vorige</button>
                                                 <button class="btn btn-dark ml-auto js-btn-next" type="button"
                                                     title="Next">Volgende</button>
@@ -192,56 +194,59 @@
 
                                         <div class="multisteps-form__panel shadow p-4 rounded bg-white openingen"
                                             data-animation="scaleIn">
-                                            <h3 class="multisteps-form__title">Openingen</h3>
+                                            <h3 class="multisteps-form__title mb-4">Openingen</h3>
                                             <div class="multisteps-form__content">
                                                 <div class="row">
                                                     <div>
-                                                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                                            <a class="nav-item nav-link active" id="nav-home-tab"
-                                                                data-toggle="tab" href="#nav-home" role="tab"
-                                                                aria-controls="nav-home" aria-selected="true">Ramen</a>
-                                                            <a class="nav-item nav-link" id="nav-profile-tab"
-                                                                data-toggle="tab" href="#nav-profile" role="tab"
-                                                                aria-controls="nav-profile"
+                                                        <div class="nav nav-tabs mb-3" id="nav-tab" role="tablist">
+                                                            <a class="nav-item nav-link active" id="nav-ramen-tab"
+                                                                data-toggle="tab" href="#nav-ramen" role="tab"
+                                                                aria-controls="nav-ramen" aria-selected="true">Ramen</a>
+                                                            <a class="nav-item nav-link" id="nav-dakramen-tab"
+                                                                data-toggle="tab" href="#nav-dakramen" role="tab"
+                                                                aria-controls="nav-dakramen"
                                                                 aria-selected="false">Dakramen</a>
-                                                            <a class="nav-item nav-link" id="nav-contact-tab"
-                                                                data-toggle="tab" href="#nav-contact" role="tab"
-                                                                aria-controls="nav-contact"
+                                                            <a class="nav-item nav-link" id="nav-deuren-tab"
+                                                                data-toggle="tab" href="#nav-deuren" role="tab"
+                                                                aria-controls="nav-deuren"
                                                                 aria-selected="false">Deuren</a>
-                                                            <a class="nav-item nav-link" id="nav-contact-tab"
-                                                                data-toggle="tab" href="#nav-contact" role="tab"
-                                                                aria-controls="nav-contact"
+                                                            <a class="nav-item nav-link" id="nav-poorten-tab"
+                                                                data-toggle="tab" href="#nav-poorten" role="tab"
+                                                                aria-controls="nav-poorten-tab"
                                                                 aria-selected="false">Poorten</a>
-                                                            <a class="nav-item nav-link" id="nav-contact-tab"
-                                                                data-toggle="tab" href="#nav-contact" role="tab"
-                                                                aria-controls="nav-contact"
-                                                                aria-selected="false">Anders</a>
+                                                            <a class="nav-item nav-link" id="nav-brievenbus-tab"
+                                                                data-toggle="tab" href="#nav-brievenbus" role="tab"
+                                                                aria-controls="nav-brievenbus"
+                                                                aria-selected="false">Brievenbus</a>
                                                         </div>
                                                     </div>
                                                     <div class="tab-content" id="nav-tabContent">
-                                                        <div class="tab-pane fade show active" id="nav-home"
-                                                            role="tabpanel" aria-labelledby="nav-home-tab">
+
+                                                        <div class="tab-pane fade show active" id="nav-ramen"
+                                                            role="tabpanel" aria-labelledby="nav-ramen-tab">
                                                             <div class="form-row mt-4">
-                                                                <button class="btn btn-dark" type="button"
-                                                                    title="Toevoegen">+ Toevoegen</button>
+                                                                 <button data-list-name="ramen" class="btn btn-dark add-item" type="button" title="Toevoegen">+
+                                                        Toevoegen</button>
                                                             </div>
-                                                            <div class="form-row mt-4 ramen">
-                                                                <div class="col-12 col-sm-6">
+                                                            <div class="form-row mt-4 addable-list-ramen fixed-height-scrollable">
+                                                               <div class="list-item">
+                                                                <div class="col-12 mb-3">
                                                                     <select
+                                                                        name="openingen[ramen][eigenschappen][]"
                                                                         class="picky-animation__select form-control">
-                                                                        <option value="#">De ramen tonen een sterke geleiding van warmte, de woning bevat nog oude beglazing.</option>
-                                                                        <option value="#">De ramen zijn vernieuwd </option>
-                                                                        <option value="#">De ramen bevatten rolluiken en geven extra bescherming</option>
-                                                                        <option value="#">De afwerking van de rolluikkasten op vlak van isolatie en luchtdichtheid</option>
-                                                                        <option value="#">De afwerking van de dagkanten van de ramen</option>
-                                                                        <option value="#">De luchttoevoerroosters zijn waarneembaar op de foto</option>
-                                                                        <option value="#">Raam stond open tijdens onze gevelscan</option>
-                                                                        <option value="#">Oude ramen hebben sterke infiltraties (geen of versleten dichtingen)</option>
-                                                                        <option value="Anders">Andere zelf te specificeren tekstueel</option>
+                                                                        <option value="sterke-geleiding">De ramen tonen een sterke geleiding van warmte, de woning bevat nog oude beglazing.</option>
+                                                                        <option value="vernieuwd">De ramen zijn vernieuwd</option>
+                                                                        <option value="rolluiken-extra-bescherming">De ramen bevatten rolluiken en geven extra bescherming</option>
+                                                                        <option value="afwerking-rolluikkasten">De afwerking van de rolluikkasten op vlak van isolatie en luchtdichtheid</option>
+                                                                        <option value="afwerking-dagkanten">De afwerking van de dagkanten van de ramen</option>
+                                                                        <option value="luchttoevoerroosters">De luchttoevoerroosters zijn waarneembaar op de foto</option>
+                                                                        <option value="raam-open">Raam stond open tijdens onze gevelscan</option>
+                                                                        <option value="sterke-infiltraties">Oude ramen hebben sterke infiltraties (geen of versleten dichtingen)</option>
+                                                                        <option value="custom">Andere zelf te specificeren tekstueel</option>
                                                                     </select>
                                                                 </div>
-                                                                <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                                                                    <select class="pick-animation__select form-control">
+                                                                <div class="col-12 mb-4">
+                                                                    <select name="openingen[ramen][waarnemingen][]" class="pick-animation__select form-control">
                                                                         <option value="schitterend">schitterend</option>
                                                                         <option value="mooi-resultaat">mooi-resultaat
                                                                         </option>
@@ -251,28 +256,31 @@
                                                                             dringend-aanpakken</option>
                                                                     </select>
                                                                 </div>
+                                                               </div>
                                                             </div>
                                                         </div>
-                                                        <div class="tab-pane fade" id="nav-profile" role="tabpanel"
-                                                            aria-labelledby="nav-profile-tab">
+
+                                                        <div class="tab-pane fade" id="nav-dakramen" role="tabpanel"
+                                                            aria-labelledby="nav-dakramen-tab">
                                                             <div class="form-row mt-4">
-                                                                <button class="btn btn-dark" type="button"
-                                                                    title="Toevoegen">+ Toevoegen</button>
+                                                                 <button data-list-name="dakramen" class="btn btn-dark add-item" type="button" title="Toevoegen">+
+                                                        Toevoegen</button>
                                                             </div>
-                                                            <div class="form-row mt-4 dakramen">
-                                                                <div class="col-12 col-sm-6 ">
-                                                                    <select
+                                                            <div class="form-row mt-4 addable-list-dakramen fixed-height-scrollable">
+                                                                <div class="list-item">
+                                                                    <div class="col-12 mb-3">
+                                                                    <select name="openingen[dakramen][eigenschappen][]"
                                                                         class="picky-animation__select form-control">
                                                                         <option value="metalen-frame">Het dakraam bestaat uit een metalen frame met enkele beglazing
                                                                         </option>
                                                                         <option value="hedendaags">Het dakraam is hedendaags</option>
-                                                                        <option value="Huurder">één bepaalde ruimte
+                                                                        <option value="bepaalde-ruimte-verwarmd">één bepaalde ruimte
                                                                             verwarmd</option>
-                                                                        <option value="Anders">Andere zelf te specificeren tekstueel</option>
+                                                                        <option value="anders">Andere zelf te specificeren tekstueel</option>
                                                                     </select>
                                                                 </div>
-                                                                <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                                                                    <select class="pick-animation__select form-control">
+                                                                <div class="col-12 mb-4">
+                                                                    <select name="openingen[dakramen][waarnemingen][]" class="pick-animation__select form-control">
                                                                         <option value="schitterend">schitterend</option>
                                                                         <option value="mooi-resultaat">mooi-resultaat
                                                                         </option>
@@ -282,17 +290,21 @@
                                                                             dringend-aanpakken</option>
                                                                     </select>
                                                                 </div>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                        <div class="tab-pane fade" id="nav-contact" role="tabpanel"
-                                                            aria-labelledby="nav-contact-tab">
+
+                                                        <div class="tab-pane fade" id="nav-deuren" role="tabpanel"
+                                                            aria-labelledby="nav-deuren-tab">
                                                             <div class="form-row mt-4">
-                                                                <button class="btn btn-dark" type="button"
-                                                                    title="Toevoegen">+ Toevoegen</button>
+                                                                <button data-list-name="deuren" class="btn btn-dark add-item" type="button" title="Toevoegen">+
+                                                        Toevoegen</button>
                                                             </div>
-                                                            <div class="form-row mt-4 deuren">
-                                                                <div class="col-12 col-sm-6">
+                                                            <div class="form-row mt-4 addable-list-deuren fixed-height-scrollable">
+                                                                <div class="list-item">
+                                                                    <div class="col-12 mb-3">
                                                                     <select
+                                                                        name="openingen[deuren][eigenschappen][]"
                                                                         class="picky-animation__select form-control">
                                                                         <option value="dagkanten">De afwerking van de dagkanten van de deur
                                                                         </option>
@@ -301,11 +313,44 @@
                                                                         <option value="deuren-vernieuwd">De deur(en) zijn vernieuwd</option>
                                                                         <option value="deuren-verouderd">De deur(en) zijn verouderd</option>
                                                                         <option value="deuren-infiltraties">Infiltraties via de deur</option>
-                                                                        <option value="Anders">Andere zelf te specificeren tekstueel</option>
+                                                                        <option value="anders">Andere zelf te specificeren tekstueel</option>
                                                                     </select>
                                                                 </div>
-                                                                <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                                                                    <select class="pick-animation__select form-control">
+                                                                <div class="col-12 mb-4">
+                                                                    <select name="openingen[deuren][waarnemingen][]" class="pick-animation__select form-control">
+                                                                        <option value="schitterend">schitterend</option>
+                                                                        <option value="mooi-resultaat">mooi-resultaat
+                                                                        </option>
+                                                                        <option value="goed-op-weg">goed-op-weg</option>
+                                                                        <option value="aanpakken">aanpakken</option>
+                                                                        <option value="dringend-aanpakken">
+                                                                            dringend-aanpakken</option>
+                                                                    </select>
+                                                                </div>
+                                                                </div>
+                                                            </div>
+
+                                                            </div>
+
+                                                             <div class="tab-pane fade" id="nav-poorten" role="tabpanel"
+                                                            aria-labelledby="nav-porten-tab">
+                                                            <div class="form-row mt-4">
+                                                               <button data-list-name="poorten" class="btn btn-dark add-item" type="button" title="Toevoegen">+
+                                                        Toevoegen</button>
+                                                            </div>
+                                                            
+                                                                <div class="form-row mt-4  addable-list-poorten fixed-height-scrollable">
+                                                                    <div class="list-item">
+                                                                <div class="col-12 mb-3">
+                                                                    <select
+                                                                        name="openingen[poorten][eigenschappen][]"
+                                                                        class="picky-animation__select form-control">
+
+                                                                        </select>
+                                                                      
+                                                                </div>
+                                                                <div class="col-12 mb-4">
+                                                                    <select name="openingen[poorten][waarnemingen][]" class="pick-animation__select form-control">
                                                                         <option value="schitterend">schitterend</option>
                                                                         <option value="mooi-resultaat">mooi-resultaat
                                                                         </option>
@@ -316,12 +361,35 @@
                                                                     </select>
                                                                 </div>
                                                             </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="tab-pane fade" id="nav-brievenbus" role="tabpanel"
+                                                            aria-labelledby="nav-brievenbus-tab">
+                                                            
+                                                            <div class="form-row mt-4 deuren">
+                                                                
+                                                                <div class="col-12 col-sm-6 mt-4 mb-5 mt-sm-0">
+                                                                    <select name="openingen[brievenbus][waarnemingen][]" class="pick-animation__select form-control">
+                                                                        <option value="schitterend">schitterend</option>
+                                                                        <option value="mooi-resultaat">mooi-resultaat
+                                                                        </option>
+                                                                        <option value="goed-op-weg">goed-op-weg</option>
+                                                                        <option value="aanpakken">aanpakken</option>
+                                                                        <option value="dringend-aanpakken">
+                                                                            dringend-aanpakken</option>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        
+
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="button-row d-flex mt-4 col-12">
-                                                    <button class="btn btn-Light js-btn-prev" type="button"
+                                                    <button class="btn btn-Light btn-outline-secondary js-btn-prev" type="button"
                                                     title="Prev">Vorige</button>
                                                 <button class="btn btn-dark ml-auto js-btn-next" type="button"
                                                     title="Next">Volgende</button>
@@ -337,12 +405,12 @@
                                                 <div class="form-row mt-4">
 
                                                 </div>
-                                                <div class="button-row d-flex mt-4">
-                                                    <button class="btn btn-primary js-btn-prev" type="button"
-                                                        title="Prev">Prev</button>
-                                                    <button class="btn btn-success ml-auto" type="button"
-                                                        title="Send">Send</button>
-                                                </div>
+                                                <div class="button-row d-flex mt-4 col-12">
+                                                    <button class="btn btn-Light btn-outline-secondary js-btn-prev" type="button"
+                                                    title="Prev">Vorige</button>
+                                                <button class="btn btn-dark ml-auto js-btn-next" type="button"
+                                                    title="Next">Volgende</button>
+                                                    </div>
                                             </div>
                                         </div>
                                         <div class="multisteps-form__panel shadow p-4 rounded bg-white dak"
@@ -350,12 +418,13 @@
                                             <h3 class="multisteps-form__title">Dak</h3>
                                             <div class="multisteps-form__content">
                                                 <div class="form-row mt-4">
-                                                    <button class="btn btn-dark" type="button" title="Toevoegen">+
+                                                     <button data-list-name="daken" class="btn btn-dark add-item" type="button" title="Toevoegen">+
                                                         Toevoegen</button>
                                                 </div>
-                                                <div class="form-row mt-4">
-                                                    <div class="col-12 col-sm-6">
-                                                        <select class="picky-animation__select form-control">
+                                                <div class="form-row mt-4 addable-list-daken fixed-height-scrollable">
+                                                    <div class="list-item">
+                                                        <div class="col-12 mb-3">
+                                                        <select name="daken[eigenschappen][]" class="picky-animation__select form-control">
                                                             <option value="dak-uniformekleur">Het dak heeft een uniforme kleur, dit impliceert wellicht een vorm van isolatie, hoe kouder het dak, hoe donkerder de kleur, hoe groter de isolatiewaarde</option>
                                                             <option value="dak-niet-verwarmd">De kleur van het dak dient men te interpreteren in functie van de onderliggende temperatuur, ruimte onder het dak is niet verwarmd
                                                             </option>
@@ -372,8 +441,8 @@
 
                                                         </select>
                                                     </div>
-                                                    <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                                                        <select class="pick-animation__select form-control">
+                                                    <div class="col-12 mb-4">
+                                                        <select name="daken[waarnemingen][]" class="pick-animation__select form-control">
                                                             <option value="schitterend">schitterend</option>
                                                             <option value="mooi-resultaat">mooi-resultaat</option>
                                                             <option value="goed-op-weg">goed-op-weg</option>
@@ -382,10 +451,11 @@
                                                             </option>
                                                         </select>
                                                     </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="button-row d-flex mt-4">
-                                            <button class="btn btn-Light js-btn-prev" type="button"
+                                            <button class="btn btn-Light js-btn-prev btn-outline-secondary" type="button"
                                                     title="Prev">Vorige</button>
                                                 <button class="btn btn-dark ml-auto js-btn-next" type="button"
                                                     title="Next">Volgende</button>
@@ -396,11 +466,13 @@
                                             <h3 class="multisteps-form__title">Hernieuwbare energie</h3>
                                             <div class="multisteps-form__content">
                                                 <div class="form-row mt-4">
-                                                    <button class="btn btn-dark" id="energie" type="button" title="Toevoegen">+ Toevoegen</button>
+                                                    <button data-list-name="energie" class="btn btn-dark add-item" type="button" title="Toevoegen">+
+                                                        Toevoegen</button>
                                                 </div>
-                                                <div class="form-row mt-4 energie">
-                                                    <div class="col-12 col-sm-6">
-                                                        <select class="pick-animation__select form-control">
+                                                <div class="form-row mt-4 addable-list-energie fixed-height-scrollable">
+                                                    <div class="list-item">
+                                                        <div class="col-12 mb-3">
+                                                        <select name="energiebronnen[eigenschappen]" class="pick-animation__select form-control">
                                                             <option value="gratis-zonne-energie">Geen hernieuwbare energie vastgesteld, investeer en geniet van de gratis zonne energie, uw dak leunt zich tot zonnepanelen en zonneboiler</option>
                                                             <option value="aanwezig-ander-dakdeel">Geen hernieuwbare energie vastgesteld, maar is wel aanwezig op een andere dakdeel                                                      </option>
                                                             <option value="zonnepanelen">Zonnepanelen zijn waarneembaar op het dak
@@ -410,8 +482,8 @@
 
                                                         </select>
                                                     </div>
-                                                    <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                                                        <select name="energie-status" class="pick-animation__select form-control">
+                                                    <div class="col-12 mb-4">
+                                                        <select name="energiebronnen[waarnemingen]" name="energie-status" class="pick-animation__select form-control">
                                                             <option value="schitterend">schitterend</option>
                                                             <option value="mooi-resultaat">mooi-resultaat</option>
                                                             <option value="goed-op-weg">goed-op-weg</option>
@@ -420,10 +492,11 @@
                                                             </option>
                                                         </select>
                                                     </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <div class="button-row d-flex mt-5">
-                                            <button class="btn btn-Light js-btn-prev" type="button"
+                                            <button class="btn btn-Light js-btn-prev btn-outline-secondary" type="button"
                                                     title="Prev">Vorige</button>
                                                 <div class="ml-auto">
                                                 <input class="btn btn-dark" type="submit" value="opslaan">

@@ -10,6 +10,8 @@ function init() {
   document.querySelector(".prev-image").addEventListener("click", prevImage);
   document.querySelector(".add-image").addEventListener("click", addImage);
   document.querySelector("ul").addEventListener("click", removeImage);
+  let addItemButtons = document.querySelectorAll(".add-item");
+  addItemButtons.forEach(box => box.addEventListener("click", addItem));
 }
 
 const DOMstrings = {
@@ -23,6 +25,17 @@ const DOMstrings = {
   stepPrevBtnClass: "js-btn-prev",
   stepNextBtnClass: "js-btn-next"
 };
+
+function addItem(e) {
+  let listClassName = `.addable-list-${e.currentTarget.dataset.listName}`;
+  let list = document.querySelector(listClassName);
+  let listItem = list.querySelector(".list-item");
+  list.appendChild(listItem.cloneNode(true));
+}
+
+function isHidden(element) {
+  return element.offsetParent === null;
+}
 
 const removeClasses = (elemSet, className) => {
   elemSet.forEach(elem => {
