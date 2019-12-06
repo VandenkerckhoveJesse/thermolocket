@@ -15,6 +15,8 @@ function init() {
   });
   let addItemButtons = document.querySelectorAll(".add-item");
   addItemButtons.forEach(box => box.addEventListener("click", addItem));
+
+  addWaarnemingBoxEventListeners();
 }
 
 const DOMstrings = {
@@ -29,8 +31,28 @@ const DOMstrings = {
   stepNextBtnClass: "js-btn-next"
 };
 
+function addWaarnemingBoxEventListeners() {
+  document.querySelectorAll(".waarneming-box").forEach(box => {
+    box.addEventListener("change", changeBoxColor);
+  });
+}
+
+function changeBoxColor(e, target) {
+  let selectionBox = typeof target === "undefined" ? e.currentTarget : target;
+  let waarneming = selectionBox.value;
+  //finding selected option
+  let selectedOption = [...selectionBox.querySelectorAll("option")].filter(
+    option => option.value === waarneming
+  )[0];
+  //getting correct color from background-color propery of selected option
+  let color = getComputedStyle(selectedOption).getPropertyValue(
+    "background-color"
+  );
+
+  selectionBox.style.backgroundColor = color;
+}
+
 function checkCustomInput(e) {
-  console.log("test");
   let selectInputField = e.currentTarget;
   let listItem = selectInputField.closest(".list-item");
   if (selectInputField.value === "custom") {
@@ -45,14 +67,20 @@ function addItem(e) {
   let list = document.querySelector(listClassName);
   let listItem = list.querySelector(".list-item");
   let newListItem = listItem.cloneNode(true);
+
   //adding check for when custom input is selected
   newListItem
     .querySelector(".has-custom-input")
     .addEventListener("change", checkCustomInput);
+
   //hiding custom input field
   hideChildElement(newListItem, ".custom-input");
   newListItem.querySelector(".custom-input").value = "";
   list.appendChild(newListItem);
+
+  //set waarneming-box color
+  changeBoxColor(null, newListItem.querySelector(".waarneming-box"));
+  addWaarnemingBoxEventListeners();
 }
 
 function hideChildElement(parent, childQuery) {

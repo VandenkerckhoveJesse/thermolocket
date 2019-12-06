@@ -47,7 +47,7 @@
                                 <div class="col-11 m-auto">
                                     <form class="multisteps-form__form" method="POST" action="">
                                         <div class="multisteps-form__panel shadow pb-4 px-4 rounded bg-white js-active gegevens"
-                                            data-animation="scaleIn">
+                                            >
                                             <h3 class="multisteps-form__title">Basisgegevens</h3>
                                             <div class="multisteps-form__content">
                                                 <div class="form-row mt-4">
@@ -132,7 +132,7 @@
                                                         Toevoegen</button>
                                                 </div>
                                                 <div class="form-row mt-4 verwarming">
-                                                    <div class="col-12 col-sm-6 addable-list-verwarming">
+                                                    <div class="col-12 addable-list-verwarming">
                                                         <div class="list-item">
                                                         <select  name="gegevens[verwarming][eigenschappen][]" class="pick-animation__select form-control has-custom-input">
                                                             <option value="gelijkvloers-verwarmd">gelijkvloers is verwarmd</option>
@@ -159,7 +159,7 @@
                                         </div>
 
                                         <div class="multisteps-form__panel shadow p-4 rounded bg-white gevel"
-                                            data-animation="scaleIn">
+                                            >
                                             <h3 class="multisteps-form__title">Gevel</h3>
                                             <div class="multisteps-form__content">
                                                 <div class="form-row mt-4">
@@ -195,7 +195,7 @@
                                         </div>
 
                                         <div class="multisteps-form__panel shadow p-4 rounded bg-white openingen"
-                                            data-animation="scaleIn">
+                                            >
                                             <h3 class="multisteps-form__title mb-4">Openingen</h3>
                                             <div class="multisteps-form__content">
                                                 <div class="row">
@@ -248,7 +248,7 @@
                                                                     </select>
                                                                 </div>
                                                                 <div class="col-12 mb-3">
-                                                                    <select name="openingen[ramen][waarnemingen][]" class="pick-animation__select form-control">
+                                                                    <select name="openingen[ramen][waarnemingen][]" class="pick-animation__select form-control waarneming-box">
                                                                         <option value="schitterend">schitterend</option>
                                                                         <option value="mooi-resultaat">mooi-resultaat
                                                                         </option>
@@ -286,7 +286,7 @@
                                                                     </select>
                                                                 </div>
                                                                 <div class="col-12 mb-3">
-                                                                    <select name="openingen[dakramen][waarnemingen][]" class="pick-animation__select form-control">
+                                                                    <select name="openingen[dakramen][waarnemingen][]" class="pick-animation__select form-control waarneming-box">
                                                                         <option value="schitterend">schitterend</option>
                                                                         <option value="mooi-resultaat">mooi-resultaat
                                                                         </option>
@@ -327,7 +327,7 @@
                                                                     </select>
                                                                 </div>
                                                                 <div class="col-12 mb-3">
-                                                                    <select name="openingen[deuren][waarnemingen][]" class="pick-animation__select form-control">
+                                                                    <select name="openingen[deuren][waarnemingen][]" class="pick-animation__select form-control waarneming-box">
                                                                         <option value="schitterend">schitterend</option>
                                                                         <option value="mooi-resultaat">mooi-resultaat
                                                                         </option>
@@ -369,7 +369,7 @@
                                                                       
                                                                 </div>
                                                                 <div class="col-12 mb-3">
-                                                                    <select name="openingen[poorten][waarnemingen][]" class="pick-animation__select form-control">
+                                                                    <select name="openingen[poorten][waarnemingen][]" class="pick-animation__select form-control waarneming-box">
                                                                         <option value="schitterend">schitterend</option>
                                                                         <option value="mooi-resultaat">mooi-resultaat
                                                                         </option>
@@ -396,7 +396,7 @@
                                                             <div class="form-row mt-4 deuren">
                                                                 
                                                                 <div class="col-12 col-sm-6 mt-4 mb-3 mt-sm-0">
-                                                                    <select name="openingen[brievenbus][waarnemingen][]" class="pick-animation__select form-control">
+                                                                    <select name="openingen[brievenbus][waarnemingen][]" class="pick-animation__select form-control waarneming-box">
                                                                         <option value="schitterend">schitterend</option>
                                                                         <option value="mooi-resultaat">mooi-resultaat
                                                                         </option>
@@ -425,7 +425,7 @@
                                         </div>
 
                                         <div class="multisteps-form__panel shadow p-4 rounded bg-white muur"
-                                            data-animation="scaleIn">
+                                            >
                                             <h3 class="multisteps-form__title">Muur</h3>
                                             <div class="multisteps-form__content">
                                                 <div class="form-row mt-4">
@@ -440,7 +440,7 @@
                                             </div>
                                         </div>
                                         <div class="multisteps-form__panel shadow p-4 rounded bg-white dak"
-                                            data-animation="scaleIn">
+                                            >
                                             <h3 class="multisteps-form__title">Dak</h3>
                                             <div class="multisteps-form__content">
                                                 <div class="form-row mt-4">
@@ -468,7 +468,7 @@
                                                         </select>
                                                     </div>
                                                     <div class="col-12 mb-3">
-                                                        <select name="daken[waarnemingen][]" class="pick-animation__select form-control">
+                                                        <select name="daken[waarnemingen][]" class="pick-animation__select form-control waarneming-box">
                                                             <option value="schitterend">schitterend</option>
                                                             <option value="mooi-resultaat">mooi-resultaat</option>
                                                             <option value="goed-op-weg">goed-op-weg</option>
@@ -494,7 +494,7 @@
                                             </div>
                                         </div>
                                         <div class="multisteps-form__panel shadow p-4 rounded bg-white energie"
-                                            data-animation="scaleIn">
+                                            >
                                             <h3 class="multisteps-form__title">Hernieuwbare energie</h3>
                                             <div class="multisteps-form__content">
                                                 <div class="form-row mt-4">
@@ -515,7 +515,7 @@
                                                         </select>
                                                     </div>
                                                     <div class="col-12 mb-3">
-                                                        <select name="energiebronnen[waarnemingen][]" name="energie-status" class="pick-animation__select form-control">
+                                                        <select name="energiebronnen[waarnemingen][]" name="energie-status" class="pick-animation__select form-control waarneming-box">
                                                             <option value="schitterend">schitterend</option>
                                                             <option value="mooi-resultaat">mooi-resultaat</option>
                                                             <option value="goed-op-weg">goed-op-weg</option>

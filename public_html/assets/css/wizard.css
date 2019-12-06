@@ -20,6 +20,10 @@ p {
   text-align: center;
 }
 
+.shadow {
+  box-shadow: none !important;
+}
+
 .row {
   margin-left: 0 !important;
   margin-right: 0 !important;
@@ -104,6 +108,30 @@ div.form-row.mt-4 {
 
 .container {
   max-width: 1613px;
+}
+
+.waarneming-box {
+  background-color: green;
+}
+
+.waarneming-box option:first-child {
+  background-color: green;
+}
+
+.waarneming-box option:nth-child(2) {
+  background-color: rgb(106, 163, 106);
+}
+
+.waarneming-box option:nth-child(3) {
+  background-color: yellow;
+}
+
+.waarneming-box option:nth-child(4) {
+  background-color: orange;
+}
+
+.waarneming-box option:nth-child(5) {
+  background-color: red;
 }
 
 .col {
