@@ -134,16 +134,18 @@
                                                 <div class="form-row mt-4 verwarming">
                                                     <div class="col-12 col-sm-6 addable-list-verwarming">
                                                         <div class="list-item">
-                                                        <select  name="gegevens[verwarming][eigenschap][]" class="pick-animation__select form-control">
-                                                            <option value="gelijkvloers is verwarmd">gelijkvloers is verwarmd</option>
-                                                            <option value="gelijkvloers is niet verwarmd">gelijkvloers is niet verwarmd</option>
-                                                            <option value="1ste verdiep is verwarmd">1ste verdiep is verwarmd</option>
-                                                            <option value="1ste verdiep is indirect verwarmd">1ste verdiep is indirect verwarmd</option>
-                                                            <option value="Ruimte onder hellend dak is verwarmd">Ruimte onder hellend dak is verwarmd</option>
-                                                            <option value="Ruimte onder hellend dak is niet verwarmd">Ruimte onder hellend dak is niet verwarmd</option>
-                                                            <option value="Slechts bepaalde ruimtes worden verwarmd">Slechts bepaalde ruimtes worden verwarmd</option>
-                                                            <option value="Andere zelf te specificeren tekstueel">Andere zelf te specificeren tekstueel</option>
+                                                        <select  name="gegevens[verwarming][eigenschappen][]" class="pick-animation__select form-control has-custom-input">
+                                                            <option value="gelijkvloers-verwarmd">gelijkvloers is verwarmd</option>
+                                                            <option value="gelijkvloers-niet-verwarmd">gelijkvloers is niet verwarmd</option>
+                                                            <option value="1ste-verdiep-verwarmd">1ste verdiep is verwarmd</option>
+                                                            <option value="1ste-verdiep-verwarmd">1ste verdiep is indirect verwarmd</option>
+                                                            <option value="hellend-verwarmd">Ruimte onder hellend dak is verwarmd</option>
+                                                            <option value="hellend-dak-niet-verwarmd">Ruimte onder hellend dak is niet verwarmd</option>
+                                                            <option value="bepaalde-ruimtes-verwarmd">Slechts bepaalde ruimtes worden verwarmd</option>
+                                                            <option value="custom">Anders</option>
                                                         </select>
+                                                        <input type="text" class="d-none w-100 my-3 custom-input" name="gegevens[verwarming][eigenschappen-custom][]">
+                                                       
                                                         </div>
                                                     </div>
                                                 </div>
@@ -178,8 +180,8 @@
                                                         <input type="checkbox" id="optie5" name="gevel[eigenschappen][]" value="Afvoer decentrale verwarming waarneembaar">
                                                         <label for="optie5">Afvoer decentrale verwarming waarneembaar</label>
                                                         <br>
-                                                        <input type="checkbox" id="optie6" name="gevel[eigenschappen][]" value="Andere zelf te specificeren tekstueel">
-                                                        <label for="optie6">Andere zelf te specificeren tekstueel</label>
+
+                                                        <input type="text" class=" w-100 my-3 custom-input" name="gevel[eigenschappen][]" placeholder="Geef zelf een eigenschap op (optioneel)">
                                                          
                                                     </div>
                                                 </div>
@@ -233,7 +235,7 @@
                                                                 <div class="col-12 mb-3">
                                                                     <select
                                                                         name="openingen[ramen][eigenschappen][]"
-                                                                        class="picky-animation__select form-control">
+                                                                        class="picky-animation__select form-control has-custom-input">
                                                                         <option value="sterke-geleiding">De ramen tonen een sterke geleiding van warmte, de woning bevat nog oude beglazing.</option>
                                                                         <option value="vernieuwd">De ramen zijn vernieuwd</option>
                                                                         <option value="rolluiken-extra-bescherming">De ramen bevatten rolluiken en geven extra bescherming</option>
@@ -242,10 +244,10 @@
                                                                         <option value="luchttoevoerroosters">De luchttoevoerroosters zijn waarneembaar op de foto</option>
                                                                         <option value="raam-open">Raam stond open tijdens onze gevelscan</option>
                                                                         <option value="sterke-infiltraties">Oude ramen hebben sterke infiltraties (geen of versleten dichtingen)</option>
-                                                                        <option value="custom">Andere zelf te specificeren tekstueel</option>
+                                                                        <option value="custom">Anders</option>
                                                                     </select>
                                                                 </div>
-                                                                <div class="col-12 mb-4">
+                                                                <div class="col-12 mb-3">
                                                                     <select name="openingen[ramen][waarnemingen][]" class="pick-animation__select form-control">
                                                                         <option value="schitterend">schitterend</option>
                                                                         <option value="mooi-resultaat">mooi-resultaat
@@ -256,6 +258,10 @@
                                                                             dringend-aanpakken</option>
                                                                     </select>
                                                                 </div>
+
+                                                                <div class="col-12 mb-4">
+                                                                   <input type="text" class="d-none w-100 my-3 custom-input" name="openingen[ramen][eigenschappen-custom][]">
+                                                                   </div>
                                                                </div>
                                                             </div>
                                                         </div>
@@ -270,16 +276,16 @@
                                                                 <div class="list-item">
                                                                     <div class="col-12 mb-3">
                                                                     <select name="openingen[dakramen][eigenschappen][]"
-                                                                        class="picky-animation__select form-control">
+                                                                        class="picky-animation__select form-control has-custom-input">
                                                                         <option value="metalen-frame">Het dakraam bestaat uit een metalen frame met enkele beglazing
                                                                         </option>
                                                                         <option value="hedendaags">Het dakraam is hedendaags</option>
                                                                         <option value="bepaalde-ruimte-verwarmd">één bepaalde ruimte
                                                                             verwarmd</option>
-                                                                        <option value="anders">Andere zelf te specificeren tekstueel</option>
+                                                                        <option value="custom">Anders</option>
                                                                     </select>
                                                                 </div>
-                                                                <div class="col-12 mb-4">
+                                                                <div class="col-12 mb-3">
                                                                     <select name="openingen[dakramen][waarnemingen][]" class="pick-animation__select form-control">
                                                                         <option value="schitterend">schitterend</option>
                                                                         <option value="mooi-resultaat">mooi-resultaat
@@ -290,6 +296,10 @@
                                                                             dringend-aanpakken</option>
                                                                     </select>
                                                                 </div>
+
+                                                                <div class="col-12 mb-4">
+                                                                   <input type="text" class="d-none w-100 my-3 custom-input" name="openingen[dakramen][eigenschappen-custom][]">
+                                                                   </div>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -305,7 +315,7 @@
                                                                     <div class="col-12 mb-3">
                                                                     <select
                                                                         name="openingen[deuren][eigenschappen][]"
-                                                                        class="picky-animation__select form-control">
+                                                                        class="picky-animation__select form-control has-custom-input">
                                                                         <option value="dagkanten">De afwerking van de dagkanten van de deur
                                                                         </option>
                                                                         <option value="glas-sterke-geleiding">De deur bevat glas met een sterke geleiding</option>
@@ -313,10 +323,10 @@
                                                                         <option value="deuren-vernieuwd">De deur(en) zijn vernieuwd</option>
                                                                         <option value="deuren-verouderd">De deur(en) zijn verouderd</option>
                                                                         <option value="deuren-infiltraties">Infiltraties via de deur</option>
-                                                                        <option value="anders">Andere zelf te specificeren tekstueel</option>
+                                                                        <option value="custom">Anders</option>
                                                                     </select>
                                                                 </div>
-                                                                <div class="col-12 mb-4">
+                                                                <div class="col-12 mb-3">
                                                                     <select name="openingen[deuren][waarnemingen][]" class="pick-animation__select form-control">
                                                                         <option value="schitterend">schitterend</option>
                                                                         <option value="mooi-resultaat">mooi-resultaat
@@ -327,6 +337,15 @@
                                                                             dringend-aanpakken</option>
                                                                     </select>
                                                                 </div>
+
+                                                                
+                                                                <div class="col-12 mb-4">
+                                                                   <input type="text" class="d-none w-100 my-3 custom-input" name="openingen[deuren][eigenschappen-custom][]">
+                                                                   </div>
+                                                            
+
+
+
                                                                 </div>
                                                             </div>
 
@@ -344,12 +363,12 @@
                                                                 <div class="col-12 mb-3">
                                                                     <select
                                                                         name="openingen[poorten][eigenschappen][]"
-                                                                        class="picky-animation__select form-control">
+                                                                        class="picky-animation__select form-control has-custom-input">
 
                                                                         </select>
                                                                       
                                                                 </div>
-                                                                <div class="col-12 mb-4">
+                                                                <div class="col-12 mb-3">
                                                                     <select name="openingen[poorten][waarnemingen][]" class="pick-animation__select form-control">
                                                                         <option value="schitterend">schitterend</option>
                                                                         <option value="mooi-resultaat">mooi-resultaat
@@ -360,6 +379,12 @@
                                                                             dringend-aanpakken</option>
                                                                     </select>
                                                                 </div>
+
+                                                                <div class="col-12 mb-4">
+                                                                   <input type="text" class="d-none w-100 my-3 custom-input" name="openingen[poorten][eigenschappen-custom][]">
+                                                                   </div>
+
+                                                                
                                                             </div>
                                                             </div>
                                                         </div>
@@ -370,7 +395,7 @@
                                                             
                                                             <div class="form-row mt-4 deuren">
                                                                 
-                                                                <div class="col-12 col-sm-6 mt-4 mb-5 mt-sm-0">
+                                                                <div class="col-12 col-sm-6 mt-4 mb-3 mt-sm-0">
                                                                     <select name="openingen[brievenbus][waarnemingen][]" class="pick-animation__select form-control">
                                                                         <option value="schitterend">schitterend</option>
                                                                         <option value="mooi-resultaat">mooi-resultaat
@@ -379,6 +404,7 @@
                                                                         <option value="aanpakken">aanpakken</option>
                                                                         <option value="dringend-aanpakken">
                                                                             dringend-aanpakken</option>
+                             
                                                                     </select>
                                                                 </div>
                                                             </div>
@@ -424,7 +450,7 @@
                                                 <div class="form-row mt-4 addable-list-daken fixed-height-scrollable">
                                                     <div class="list-item">
                                                         <div class="col-12 mb-3">
-                                                        <select name="daken[eigenschappen][]" class="picky-animation__select form-control">
+                                                        <select name="daken[eigenschappen][]" class="picky-animation__select form-control has-custom-input">
                                                             <option value="dak-uniformekleur">Het dak heeft een uniforme kleur, dit impliceert wellicht een vorm van isolatie, hoe kouder het dak, hoe donkerder de kleur, hoe groter de isolatiewaarde</option>
                                                             <option value="dak-niet-verwarmd">De kleur van het dak dient men te interpreteren in functie van de onderliggende temperatuur, ruimte onder het dak is niet verwarmd
                                                             </option>
@@ -437,11 +463,11 @@
                                                             <option value="warmteuitstraling">Warmteuitstraling (reflectie) van naast gelegen muur op het dakdeel</option>
                                                             <option value="refelcties-van-metalen">Reflecties van metalen delen zoals lood, zinkwerk, koper, …</option>
                                                             <option value="reflecties-glazuurde-pannen">Opgelet reflecties door glazuurde pannen, hierdoor lijkt het dak beter geïsoleerd</option>
-                                                            <option value="Anders">Andere zelf te specificeren tekstueel</option>
+                                                            <option value="custom">Anders</option>
 
                                                         </select>
                                                     </div>
-                                                    <div class="col-12 mb-4">
+                                                    <div class="col-12 mb-3">
                                                         <select name="daken[waarnemingen][]" class="pick-animation__select form-control">
                                                             <option value="schitterend">schitterend</option>
                                                             <option value="mooi-resultaat">mooi-resultaat</option>
@@ -451,6 +477,12 @@
                                                             </option>
                                                         </select>
                                                     </div>
+
+                                                      <div class="col-12 mb-4">
+                                                                   <input type="text" class="d-none w-100 my-3 custom-input" name="daken[eigenschappen-custom][]">
+                                                                   </div>
+
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -472,18 +504,18 @@
                                                 <div class="form-row mt-4 addable-list-energie fixed-height-scrollable">
                                                     <div class="list-item">
                                                         <div class="col-12 mb-3">
-                                                        <select name="energiebronnen[eigenschappen]" class="pick-animation__select form-control">
+                                                        <select name="energiebronnen[eigenschappen][]" class="pick-animation__select form-control has-custom-input">
                                                             <option value="gratis-zonne-energie">Geen hernieuwbare energie vastgesteld, investeer en geniet van de gratis zonne energie, uw dak leunt zich tot zonnepanelen en zonneboiler</option>
                                                             <option value="aanwezig-ander-dakdeel">Geen hernieuwbare energie vastgesteld, maar is wel aanwezig op een andere dakdeel                                                      </option>
                                                             <option value="zonnepanelen">Zonnepanelen zijn waarneembaar op het dak
                                                             </option>
                                                             <option value="zonneboiler">Zonneboiler is waarneembaar op het dak</option>
-                                                            <option value="Anders">Andere zelf te specificeren tekstueel</option>
+                                                            <option value="custom">Anders</option>
 
                                                         </select>
                                                     </div>
-                                                    <div class="col-12 mb-4">
-                                                        <select name="energiebronnen[waarnemingen]" name="energie-status" class="pick-animation__select form-control">
+                                                    <div class="col-12 mb-3">
+                                                        <select name="energiebronnen[waarnemingen][]" name="energie-status" class="pick-animation__select form-control">
                                                             <option value="schitterend">schitterend</option>
                                                             <option value="mooi-resultaat">mooi-resultaat</option>
                                                             <option value="goed-op-weg">goed-op-weg</option>
@@ -492,6 +524,11 @@
                                                             </option>
                                                         </select>
                                                     </div>
+
+                                                     <div class="col-12 mb-4">
+                                                                   <input type="text" class="d-none w-100 my-3 custom-input" name="energiebronnen[eigenschappen-custom][]">
+                                                                   </div>
+
                                                     </div>
                                                 </div>
                                             </div>

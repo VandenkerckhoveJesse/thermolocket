@@ -1,7 +1,7 @@
 <?php
 include_once("../resources/config.php");
 include_once("../resources/autoloader.php");
-Helper::authenticate("user");
+//Helper::authenticate("user");
 
 $pageTitle="Thermoloket";
 $cssFiles=["wizard.css"];

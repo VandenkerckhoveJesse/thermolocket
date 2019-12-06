@@ -10,6 +10,9 @@ function init() {
   document.querySelector(".prev-image").addEventListener("click", prevImage);
   document.querySelector(".add-image").addEventListener("click", addImage);
   document.querySelector("ul").addEventListener("click", removeImage);
+  document.querySelectorAll(".has-custom-input").forEach(select => {
+    select.addEventListener("change", checkCustomInput);
+  });
   let addItemButtons = document.querySelectorAll(".add-item");
   addItemButtons.forEach(box => box.addEventListener("click", addItem));
 }
@@ -26,15 +29,39 @@ const DOMstrings = {
   stepNextBtnClass: "js-btn-next"
 };
 
+function checkCustomInput(e) {
+  console.log("test");
+  let selectInputField = e.currentTarget;
+  let listItem = selectInputField.closest(".list-item");
+  if (selectInputField.value === "custom") {
+    showChildElement(listItem, ".custom-input");
+  } else {
+    hideChildElement(listItem, ".custom-input");
+  }
+}
+
 function addItem(e) {
   let listClassName = `.addable-list-${e.currentTarget.dataset.listName}`;
   let list = document.querySelector(listClassName);
   let listItem = list.querySelector(".list-item");
-  list.appendChild(listItem.cloneNode(true));
+  let newListItem = listItem.cloneNode(true);
+  //adding check for when custom input is selected
+  newListItem
+    .querySelector(".has-custom-input")
+    .addEventListener("change", checkCustomInput);
+  //hiding custom input field
+  hideChildElement(newListItem, ".custom-input");
+  newListItem.querySelector(".custom-input").value = "";
+  list.appendChild(newListItem);
 }
 
-function isHidden(element) {
-  return element.offsetParent === null;
+function hideChildElement(parent, childQuery) {
+  parent.querySelector(childQuery).classList.remove("d-block");
+  parent.querySelector(childQuery).classList.add("d-none");
+}
+
+function showChildElement(parent, childQuery) {
+  parent.querySelector(childQuery).classList.add("d-block");
 }
 
 const removeClasses = (elemSet, className) => {
