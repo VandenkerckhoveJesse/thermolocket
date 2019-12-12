@@ -1,13 +1,13 @@
 <?php
 
 
-class Eigenschap
+class Eigenschap implements Model
 {
     private $id;
     private $categorie_id;
     private $beschrijving;
 
-       public static function create($categorie_id,$beschrijving)
+    public static function create($categorie_id,$beschrijving)
     {
       $eigenschap = new Eigenschap();
       $eigenschap->setCategorie_id($categorie_id);
@@ -51,7 +51,7 @@ class Eigenschap
 
     public function add()
     {
-        $query = 'INSERT INTO eigenschappen(categorie_id,beschrijving) values(categorie_id,beschrijving)';
+        $query = 'INSERT INTO eigenschappen(categorie_id,beschrijving) values(:categorie_id,:beschrijving)';
        $values = array(":categorie_id" => $this->categorie_id, ":beschrijving" => $this->beschrijving);
         
         try {
@@ -63,7 +63,7 @@ class Eigenschap
 
     public function delete()
     {
-        $query = "DELETE FROM dossiers WHERE id = :id";
+        $query = "DELETE FROM eigenschappen WHERE id = :id";
         $values = array(':id' => $this->id);
         try {
             Database::getInstance()->query($query, $values);

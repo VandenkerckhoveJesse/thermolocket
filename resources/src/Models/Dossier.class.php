@@ -1,7 +1,7 @@
 <?php
 
 
-class Dossier
+class Dossier implements Model
 {
     private $id;
     private $klant_id;
