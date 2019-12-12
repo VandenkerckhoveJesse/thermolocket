@@ -55,7 +55,7 @@ class Klant implements Model
 
     public function add()
     {
-        $query = 'INSERT INTO klanten(voornaam,familienaam,email,telefoon values(:voornaam,:familienaam,:email,:telefoon)';
+        $query = 'INSERT INTO klanten(voornaam,familienaam,email,telefoon) values(:voornaam,:familienaam,:email,:telefoon)';
         $values = array(":voornaam" => $this->voornaam,":familienaam" => $this->familienaam,":email" => $this->email,":telefoon" => $this->telefoon);
         
         try {
