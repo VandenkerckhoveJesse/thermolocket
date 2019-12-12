@@ -24,7 +24,7 @@ class Klant implements Model
     {
         $query = "SELECT * FROM klanten";
         try {
-            return Database::getInstance()->queryClasses($query, "InputType");
+            return Database::getInstance()->queryClasses($query, "Klant");
         } catch (Exception $e) {
             throw $e;
         }
