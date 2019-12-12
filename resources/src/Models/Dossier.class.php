@@ -55,10 +55,10 @@ class Dossier
         }
     }
 
-     public function add()
+    public function add()
     {
-        $query = 'INSERT INTO dossiers(klant_id,woning_id,gebruiker_id,datum,verwantschap) values(:klant_id, :woning_id,:gebruiker_id,:datum,:verwantschap WHERE id = :id';
-        $values = array(":id" => $this->id, ":klant_id" => $this->klant_id, ":woning_id" => $this->woning_id, ":gebruiker_id" => $this->gebruiker_id, ":datum" => $this->datum,":verwantschap"=>$this->verwantschap);
+        $query = 'INSERT INTO dossiers(klant_id,woning_id,gebruiker_id,datum,verwantschap) values(:klant_id, :woning_id,:gebruiker_id,:datum,:verwantschap)';
+        $values = array(":klant_id" => $this->klant_id, ":woning_id" => $this->woning_id, ":gebruiker_id" => $this->gebruiker_id, ":datum" => $this->datum,":verwantschap"=>$this->verwantschap);
         
         try {
             Database::getInstance()->query($query, $values);
