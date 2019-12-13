@@ -45,7 +45,7 @@ class Adres implements Model
     public function save()
     {
         $query = 'UPDATE adressen SET gemeente_id = :gemeente_id, straat = :straat, nummer = :nummer, bus = :bus WHERE id = :id';
-        $values = array(":id" => $this->id, ":gemeente_id" => $this->gemeente_id, ":straat" => $this->straat, ":nummer" => $this->nummer, "bus" => $this->bus);
+        $values = array(":id" => $this->id, ":gemeente_id" => $this->gemeente_id, ":straat" => $this->straat, ":nummer" => $this->nummer, ":bus" => $this->bus);
 
         try {
             Database::getInstance()->query($query, $values);
