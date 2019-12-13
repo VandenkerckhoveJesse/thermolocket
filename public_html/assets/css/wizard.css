@@ -20,12 +20,16 @@ p {
   text-align: center;
 }
 
+.shadow {
+  box-shadow: none !important;
+}
+
 .row {
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
 
-main > .row {
+main>.row {
   margin-top: 30px;
 }
 
@@ -38,7 +42,7 @@ div.col-5 {
 }
 
 .fixed-height-scrollable {
-  height: 250px;
+  height: 350px;
   overflow-y: auto;
 }
 
@@ -106,9 +110,34 @@ div.form-row.mt-4 {
   max-width: 1613px;
 }
 
+.waarneming-box {
+  background-color: green;
+}
+
+.waarneming-box option:first-child {
+  background-color: green;
+}
+
+.waarneming-box option:nth-child(2) {
+  background-color: rgb(106, 163, 106);
+}
+
+.waarneming-box option:nth-child(3) {
+  background-color: yellow;
+}
+
+.waarneming-box option:nth-child(4) {
+  background-color: orange;
+}
+
+.waarneming-box option:nth-child(5) {
+  background-color: red;
+}
+
 .col {
   border: black;
 }
+
 .col-12 {
   text-align: left;
 }
@@ -117,7 +146,7 @@ div.form-row.mt-4 {
   padding-top: 45px;
 }
 
-.house-image > img {
+.house-image>img {
   border-radius: 20px;
   vertical-align: middle;
   border-style: none;
@@ -189,9 +218,7 @@ div.form-row.mt-4 {
   height: 50px;
   content: "";
   transform: translateX(-50%);
-  transition: all 0.15s linear 0s,
-    transform 0.15s cubic-bezier(0.05, 1.09, 0.16, 1.4) 0s,
-    -webkit-transform 0.15s cubic-bezier(0.05, 1.09, 0.16, 1.4) 0s;
+  transition: all 0.15s linear 0s, transform 0.15s cubic-bezier(0.05, 1.09, 0.16, 1.4) 0s, -webkit-transform 0.15s cubic-bezier(0.05, 1.09, 0.16, 1.4) 0s;
   border: 2px solid currentColor;
   border-radius: 50%;
   background-color: #fff;

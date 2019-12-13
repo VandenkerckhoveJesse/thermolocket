@@ -12,7 +12,7 @@ class Adres implements Model
 
     public static function create($gemeente_id, $straat , $nummer, $bus = null)
     {
-        $adres = new  Adres();
+        $adres = new Adres();
         $adres->setGemeenteId($gemeente_id);
         $adres->setStraat($straat);
         $adres->setNummer($nummer);
