@@ -78,107 +78,103 @@ class Dossier implements Model
         }
     }
 
-
-
     /**
-     * Get the value of verwantschap
-     */ 
-    public function getVerwantschap()
+     * @return mixed
+     */
+    public function getId()
     {
-        return $this->verwantschap;
+        return $this->id;
     }
 
     /**
-     * Get the value of datum
-     */ 
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getKlantId()
+    {
+        return $this->klant_id;
+    }
+
+    /**
+     * @param mixed $klant_id
+     */
+    public function setKlantId($klant_id)
+    {
+        $this->klant_id = $klant_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getWoningId()
+    {
+        return $this->woning_id;
+    }
+
+    /**
+     * @param mixed $woning_id
+     */
+    public function setWoningId($woning_id)
+    {
+        $this->woning_id = $woning_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGebruikerId()
+    {
+        return $this->gebruiker_id;
+    }
+
+    /**
+     * @param mixed $gebruiker_id
+     */
+    public function setGebruikerId($gebruiker_id)
+    {
+        $this->gebruiker_id = $gebruiker_id;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getDatum()
     {
         return $this->datum;
     }
 
     /**
-     * Get the value of gebruiker_id
-     */ 
-    public function getGebruiker_id()
-    {
-        return $this->gebruiker_id;
-    }
-
-    /**
-     * Get the value of woning_id
-     */ 
-    public function getWoning_id()
-    {
-        return $this->woning_id;
-    }
-
-    /**
-     * Get the value of klant_id
-     */ 
-    public function getKlant_id()
-    {
-        return $this->klant_id;
-    }
-
-    /**
-     * Set the value of verwantschap
-     *
-     * @return  self
-     */ 
-    public function setVerwantschap($verwantschap)
-    {
-        $this->verwantschap = $verwantschap;
-
-        return $this;
-    }
-
-    /**
-     * Set the value of datum
-     *
-     * @return  self
-     */ 
+     * @param mixed $datum
+     */
     public function setDatum($datum)
     {
         $this->datum = $datum;
-
-        return $this;
     }
 
     /**
-     * Set the value of woning_id
-     *
-     * @return  self
-     */ 
-    public function setWoning_id($woning_id)
+     * @return mixed
+     */
+    public function getVerwantschap()
     {
-        $this->woning_id = $woning_id;
-
-        return $this;
+        return $this->verwantschap;
     }
 
     /**
-     * Set the value of klant_id
-     *
-     * @return  self
-     */ 
-    public function setKlant_id($klant_id)
+     * @param mixed $verwantschap
+     */
+    public function setVerwantschap($verwantschap)
     {
-        $this->klant_id = $klant_id;
-
-        return $this;
+        $this->verwantschap = $verwantschap;
     }
 
-    /**
-     * Set the value of gebruiker_id
-     *
-     * @return  self
-     */ 
-    public function setGebruiker_id($gebruiker_id)
-    {
-        $this->gebruiker_id = $gebruiker_id;
 
-        return $this;
-    }
 }
 
 

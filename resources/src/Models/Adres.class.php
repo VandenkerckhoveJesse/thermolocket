@@ -10,15 +10,7 @@ class Adres implements Model
     private $bus;
 
 
-    public static function create($gemeente_id, $straat , $nummer, $bus = null)
-    {
-        $adres = new Adres();
-        $adres->setGemeenteId($gemeente_id);
-        $adres->setStraat($straat);
-        $adres->setNummer($nummer);
-        $adres->setBus($bus);
-        return $adres;
-    }
+
 
     public static function getAll()
     {

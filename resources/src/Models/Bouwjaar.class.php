@@ -1,17 +1,18 @@
 <?php
 
 
-class Woning implements Model
+class Bouwjaar implements Model
 {
+
     private $id;
-    private $adres_id;
-    private $bouwjaar;
+    private $top;
+    private $bottom;
 
     public static function getAll()
     {
-        $query = "SELECT * FROM woningen";
+        $query = "SELECT * FROM bouwjaren";
         try {
-            return Database::getInstance()->queryClasses($query, "Woning");
+            return Database::getInstance()->queryClasses($query, "Bouwjaar");
         } catch (Exception $e) {
             throw $e;
         }
@@ -19,19 +20,21 @@ class Woning implements Model
 
     public static function getById($id)
     {
-        $query = "SELECT * FROM woningen WHERE (id = :id)";
+        $query = "SELECT * FROM bouwjaren WHERE (id = :id)";
         $values = array(":id" => $id);
         try {
-            return Database::getInstance()->queryClass($query, "Woning", $values);
+            return Database::getInstance()->queryClass($query, "Bouwjaar", $values);
         } catch (Exception $e) {
             throw $e;
         }
+
     }
 
     public function save()
     {
-        $query = 'UPDATE woningen SET adres_id = :adres_id, bouwjaar = :bouwjaar WHERE id = :id';
-        $values = array(":id" => $this->id, ":adres_id" => $this->adres_id, ":bouwjaar" => $this->bouwjaar);
+        $query = 'UPDATE bouwjaren SET top = :top, bottom = :bottom WHERE id = :id';
+        $values = array(":id" => $this->id, ":top" => $this->top, ":bottom" => $this->bottom);
+
         try {
             Database::getInstance()->query($query, $values);
         } catch (Exception $e) {
@@ -41,9 +44,9 @@ class Woning implements Model
 
     public function add()
     {
-        $query = 'INSERT INTO woningen (adres_id, bouwjaar)
-                    VALUES (:adres_id , :bouwjaar)';
-        $values = array(":adres_id" => $this->adres_id, ":bouwjaar" => $this->bouwjaar);
+        $query = 'INSERT INTO bouwjaren (top, bottom)
+                    VALUES (:top , :bottom)';
+        $values = array(":top" => $this->top, ":bottom" => $this->bottom);
         try {
             Database::getInstance()->query($query, $values);
         } catch (Exception $e) {
@@ -53,7 +56,7 @@ class Woning implements Model
 
     public function delete()
     {
-        $query = "DELETE FROM woningen WHERE id = :id";
+        $query = "DELETE FROM bouwjaren WHERE id = :id";
         $values = array(':id' => $this->id);
         try {
             Database::getInstance()->query($query, $values);
@@ -81,33 +84,33 @@ class Woning implements Model
     /**
      * @return mixed
      */
-    public function getAdresId()
+    public function getTop()
     {
-        return $this->adres_id;
+        return $this->top;
     }
 
     /**
-     * @param mixed $adres_id
+     * @param mixed $top
      */
-    public function setAdresId($adres_id)
+    public function setTop($top)
     {
-        $this->adres_id = $adres_id;
+        $this->top = $top;
     }
 
     /**
      * @return mixed
      */
-    public function getBouwjaar()
+    public function getBottom()
     {
-        return $this->bouwjaar;
+        return $this->bottom;
     }
 
     /**
-     * @param mixed $bouwjaar
+     * @param mixed $bottom
      */
-    public function setBouwjaar($bouwjaar)
+    public function setBottom($bottom)
     {
-        $this->bouwjaar = $bouwjaar;
+        $this->bottom = $bottom;
     }
 
 
