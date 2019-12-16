@@ -9,15 +9,6 @@ class Afbeelding implements Model
     private $richting;
     private $nummer;
 
-    public static function create($id, $woning_id, $folder, $richting, $nummer) {
-        $afbeelding = new Afbeelding();
-        $afbeelding->setId($id);
-        $afbeelding->setWoningId($woning_id);
-        $afbeelding->setFolder($folder);
-        $afbeelding->setRichting($richting);
-        $afbeelding->setNummer($nummer);
-        return $afbeelding;
-    }
 
     public static function getAll()
     {
