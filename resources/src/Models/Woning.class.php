@@ -5,7 +5,7 @@ class Woning implements Model
 {
     private $id;
     private $adres_id;
-    private $bouwjaar;
+    private $bouwjaar_id;
 
     public static function getAll()
     {
@@ -30,8 +30,8 @@ class Woning implements Model
 
     public function save()
     {
-        $query = 'UPDATE woningen SET adres_id = :adres_id, bouwjaar = :bouwjaar WHERE id = :id';
-        $values = array(":id" => $this->id, ":adres_id" => $this->adres_id, ":bouwjaar" => $this->bouwjaar);
+        $query = 'UPDATE woningen SET adres_id = :adres_id, bouwjaar_id = :bouwjaar_id WHERE id = :id';
+        $values = array(":id" => $this->id, ":adres_id" => $this->adres_id, ":bouwjaar_id" => $this->bouwjaar_id);
         try {
             Database::getInstance()->query($query, $values);
         } catch (Exception $e) {
@@ -41,9 +41,9 @@ class Woning implements Model
 
     public function add()
     {
-        $query = 'INSERT INTO woningen (adres_id, bouwjaar)
-                    VALUES (:adres_id , :bouwjaar)';
-        $values = array(":adres_id" => $this->adres_id, ":bouwjaar" => $this->bouwjaar);
+        $query = 'INSERT INTO woningen (adres_id, bouwjaar_id)
+                    VALUES (:adres_id , :bouwjaar_id)';
+        $values = array(":adres_id" => $this->adres_id, ":bouwjaar_id" => $this->bouwjaar_id);
         try {
             Database::getInstance()->query($query, $values);
         } catch (Exception $e) {
@@ -97,17 +97,17 @@ class Woning implements Model
     /**
      * @return mixed
      */
-    public function getBouwjaar()
+    public function getBouwjaarId()
     {
-        return $this->bouwjaar;
+        return $this->bouwjaar_id;
     }
 
     /**
      * @param mixed $bouwjaar
      */
-    public function setBouwjaar($bouwjaar)
+    public function setBouwjaarId($bouwjaar_id)
     {
-        $this->bouwjaar = $bouwjaar;
+        $this->bouwjaar_id = $bouwjaar_id;
     }
 
 
