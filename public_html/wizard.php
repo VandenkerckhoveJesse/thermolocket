@@ -5,7 +5,7 @@ include_once("../resources/autoloader.php");
 
 $pageTitle="Thermoloket";
 $cssFiles=["wizard.css"];
-$jsFiles=["wizard.js"];
+$jsFiles=["wizard.js","algolia-autocomplete.js"];
 
 if (isset($_POST["gegevens"]["voornaam"])){
     print_r($_POST);

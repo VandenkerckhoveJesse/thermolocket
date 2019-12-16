@@ -97,7 +97,7 @@
                                                 </div>
                                                 <div class="form-row mt-4">
                                                     <div class="col-12 col-sm-6">
-                                                        <input name="gegevens[straat]" class="multisteps-form__input form-control" type="text"
+                                                        <input id="address-input" name="gegevens[straat]" class="multisteps-form__input form-control" type="text" 
                                                             placeholder="Straat"/>
                                                     </div>
                                                     <div class="col-12 col-sm-2 mt-2 mt-sm-0">
@@ -111,11 +111,11 @@
                                                 </div>
                                                 <div class="form-row mt-4">
                                                     <div class="col-12 col-sm-6">
-                                                        <input name="gegevens[gemeente]" class="multisteps-form__input form-control" type="text"
+                                                        <input id="city-input" name="gegevens[gemeente]" class="multisteps-form__input form-control" type="text"
                                                             placeholder="Gemeente"/>
                                                     </div>
                                                     <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                                                        <input name="gegevens[postcode]" class="multisteps-form__input form-control" type="text"
+                                                        <input id="postcode-input" name="gegevens[postcode]" class="multisteps-form__input form-control" type="text"
                                                             placeholder="Postcode"/>
                                                     </div>
                                                 </div>
