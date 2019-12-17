@@ -18,7 +18,7 @@
                         </div>
                     </div>
                     <div class="form-row mt-4">
-                        <ul class="list-inline"></ul>
+                        <ul class="list-inline house-image-list"></ul>
                     </div>
                 </div>
 
@@ -618,12 +618,13 @@
                                                     </div>
                                                 </div>
                                             </div>
+
+                                            <div class="d-none house-images-input-container"></div>
                                             <div class="button-row d-flex mt-5">
                                             <button class="btn btn-Light js-btn-prev btn-outline-secondary" type="button"
                                                     title="Prev">Vorige</button>
                                                 <div class="ml-auto">
-                                                <input class="btn btn-dark" type="submit" value="opslaan">
-                                                <button disabled class="btn btn-dark save-form-button ml-2" type="button">Genereer PDF</button></div>
+                                                <button class="btn btn-dark submit-form">Opslaan</button>
                                             </div>
                                         </div>
 

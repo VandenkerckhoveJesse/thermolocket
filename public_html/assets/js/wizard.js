@@ -10,6 +10,7 @@ function init() {
   document.querySelector(".prev-image").addEventListener("click", prevImage);
   document.querySelector(".add-image").addEventListener("click", addImage);
   document.querySelector("ul").addEventListener("click", removeImage);
+  document.querySelector(".submit-form").addEventListener("click", submitForm);
   document.querySelectorAll(".has-custom-input").forEach(select => {
     select.addEventListener("change", checkCustomInput);
   });
@@ -39,11 +40,36 @@ function addWaarnemingBoxEventListeners() {
 }
 
 function addRemoveButtonEventListeners() {
-  console.log("adding event listeners");
   let buttons = document.querySelectorAll(".remove-item");
   buttons.forEach(button => {
     button.addEventListener("click", removeItem);
   });
+}
+
+function submitForm(e) {
+  e.preventDefault();
+  let form = document.querySelector(".multisteps-form__form");
+  addHouseImagesToForm(form);
+  form.submit();
+}
+
+function addHouseImagesToForm(form) {
+  let secondaryHouseImages = document.querySelectorAll(
+    ".house-image-list li img"
+  );
+  let imagesContainer = form.querySelector(".house-images-input-container");
+
+  secondaryHouseImages.forEach(image => {
+    imagesContainer.appendChild(createHiddenInputField(image.src, "images[]"));
+  });
+}
+
+function createHiddenInputField(value, name) {
+  let input = document.createElement("input");
+  input.type = "hidden";
+  input.name = name;
+  input.value = value;
+  return input;
 }
 
 function changeBoxColor(e, target) {
@@ -113,7 +139,6 @@ function enableRemoveButton(listItem) {
 function removeItem(e) {
   let button = e.currentTarget;
   let listItem = findParent(button, "list-item");
-  console.log(listItem);
   listItem.parentNode.removeChild(listItem);
 }
 
@@ -308,7 +333,6 @@ function addImage() {
   localStorage.setItem("mySavedImages", imageNumber);
   let chosenImage = localStorage.getItem("mySavedImages");
   let lenghtUl = document.querySelector("ul").getElementsByTagName("li").length;
-  console.log(lenghtUl);
   if (lenghtUl <= 2) {
     document.querySelector("ul").innerHTML +=
       "<li class='list-inline-item col-4 pr-2 pb-2'><img src='images/" +
