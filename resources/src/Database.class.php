@@ -69,8 +69,10 @@ class Database
     public function queryClasses($query, $className, $values = array()) {
         //todo make this more versitale with $values
         try {
-            $stmt = Database::getInstance()->conn->query($query);
-            $objects = $stmt->fetchAll(PDO::FETCH_CLASS, $className);
+            $res = Database::getInstance()->conn->prepare($query);
+            $res->setFetchMode(PDO::FETCH_CLASS, $className);
+            $res->execute($values);
+            $objects = $res->fetchAll();
             return $objects;
         } catch (PDOException $e) {
             throw new Exception("Query error");

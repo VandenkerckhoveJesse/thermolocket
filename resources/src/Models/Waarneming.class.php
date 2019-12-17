@@ -4,17 +4,9 @@
 class Waarneming implements Model
 {
     private $id;
-    private $titel;
-    private $kleur;
-
-    public static function create($titel,$kleur)
-    {
-        $waarneming = new Waarneming();
-        $waarneming->titel=$titel;
-        $waarneming->kleur=$kleur;
-        return $waarneming;
-    }
-
+    private $eigenschap_id;
+    private $woning_id;
+    private $waarneming_id;
 
     public static function getAll()
     {
@@ -39,8 +31,8 @@ class Waarneming implements Model
 
      public function save()
     {   
-        $query = 'UPDATE waarnemingen SET titel= :titel , kleur=:kleur WHERE id = :id';
-        $values = array(":id"=>$this->id,":titel" => $this->titel,":kleur" => $this->kleur);
+        $query = 'UPDATE waarnemingen SET eigenschap_id= :eigenschap_id , woning_id=:woning_id, waarneming_id=:waarneming_id WHERE id = :id';
+        $values = array(":id"=>$this->id,":eigenschap_id" => $this->eigenschap_id,":woning_id" => $this->woning_id, ":waarneming_id" => $this->waarneming_id);
 
         try {
             Database::getInstance()->query($query, $values);
@@ -51,8 +43,8 @@ class Waarneming implements Model
 
     public function add()
     {
-        $query = 'INSERT INTO waarnemingen(titel,kleur) values(:titel,:kleur)';
-        $values = array(":titel" => $this->titel,":kleur" => $this->kleur);
+        $query = 'INSERT INTO waarnemingen(eigenschap_id,woning_id,waarneming_id) values(:eigenschap_id,:woning_id,:waarneming_id)';
+        $values = array(":eigenschap_id" => $this->eigenschap_id,":woning_id" => $this->woning_id, ":waarneming_id" => $this->waarneming_id);
         
         try {
             Database::getInstance()->query($query, $values);
@@ -72,47 +64,74 @@ class Waarneming implements Model
         }
     }
 
-
-
-
-
     /**
-     * Set the value of titel
-     *
-     * @return  self
-     */ 
-    public function setTitel($titel)
+     * @return mixed
+     */
+    public function getId()
     {
-        $this->titel = $titel;
-
-        return $this;
+        return $this->id;
     }
 
     /**
-     * Set the value of kleur
-     *
-     * @return  self
-     */ 
-    public function setKleur($kleur)
+     * @param mixed $id
+     */
+    public function setId($id)
     {
-        $this->kleur = $kleur;
-
-        return $this;
+        $this->id = $id;
     }
 
     /**
-     * Get the value of kleur
-     */ 
-    public function getKleur()
+     * @return mixed
+     */
+    public function getEigenschapId()
     {
-        return $this->kleur;
+        return $this->eigenschap_id;
     }
 
     /**
-     * Get the value of titel
-     */ 
-    public function getTitel()
+     * @param mixed $eigenschap_id
+     */
+    public function setEigenschapId($eigenschap_id)
     {
-        return $this->titel;
+        $this->eigenschap_id = $eigenschap_id;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getWoningId()
+    {
+        return $this->woning_id;
+    }
+
+    /**
+     * @param mixed $woning_id
+     */
+    public function setWoningId($woning_id)
+    {
+        $this->woning_id = $woning_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getWaarnemingId()
+    {
+        return $this->waarneming_id;
+    }
+
+    /**
+     * @param mixed $waarneming_id
+     */
+    public function setWaarnemingId($waarneming_id)
+    {
+        $this->waarneming_id = $waarneming_id;
+    }
+
+
+
+
+
+
+
 }

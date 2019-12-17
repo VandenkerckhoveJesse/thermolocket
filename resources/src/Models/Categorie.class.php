@@ -9,6 +9,15 @@ class Categorie implements Model
     private $gewicht;
     private $geactiveerd;
 
+    public function getEigenschappen() {
+        $query = "SELECT * FROM eigenschappen WHERE (categorie_id = :categorie_id)";
+        $values = array(":categorie_id" => $this->id);
+        try {
+            return Database::getInstance()->queryClasses($query, "Eigenschap", $values);
+        } catch (Exception $e) {
+            throw $e;
+        }
+    }
 
     public static function getAll()
     {
@@ -25,7 +34,7 @@ class Categorie implements Model
         $query = "SELECT * FROM categorieen WHERE (id = :id)";
         $values = array(":id" => $id);
         try {
-            return Database::getInstance()->queryClass($query, "Adres", $values);
+            return Database::getInstance()->queryClass($query, "Categorie", $values);
         } catch (Exception $e) {
             throw $e;
         }
