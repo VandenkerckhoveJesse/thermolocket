@@ -83,6 +83,10 @@ img {
   border-style: none;
 }
 
+.house-image {
+  min-height: 350px;
+}
+
 .house-image img {
   width: 100% !important;
 }
@@ -117,23 +121,27 @@ div.form-row.mt-4 {
 }
 
 .waarneming-box option:first-child {
-  background-color: green;
+  background-color: #0f8000;
 }
 
 .waarneming-box option:nth-child(2) {
-  background-color: rgb(106, 163, 106);
+  background-color: #9bbb58;
 }
 
 .waarneming-box option:nth-child(3) {
-  background-color: yellow;
+  background-color: #fffc06;
 }
 
 .waarneming-box option:nth-child(4) {
-  background-color: orange;
+  background-color: #f89645;
 }
 
 .waarneming-box option:nth-child(5) {
-  background-color: red;
+  background-color: #ff2503;
+}
+
+.waarneming-box option:nth-child(6) {
+  background-color: white;
 }
 
 .col {
@@ -153,7 +161,20 @@ div.form-row.mt-4 {
   vertical-align: middle;
   border-style: none;
   height: auto;
+}
+
+.select-image-form {
   margin-top: 36px;
+  margin-bottom: 20px;
+}
+
+.select-image-form p {
+  text-align: left;
+}
+.select-image-form input,
+.select-image-form select {
+  width: auto;
+  display: inline-block;
 }
 
 .header {
@@ -262,6 +283,7 @@ div.form-row.mt-4 {
 
 .multisteps-form {
   margin-top: 36px;
+  margin-bottom: 36px;
   min-height: 550px;
   background-color: white;
   border-radius: 25px;

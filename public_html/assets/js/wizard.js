@@ -1,10 +1,19 @@
-let imageNumber = 23047;
-
-("use strict");
+"use strict";
+const imageBaseURL = "images";
+const imageExtension = ".jpg";
+let imageNumber = "";
+let imageDirection = "left";
 
 document.addEventListener("DOMContentLoaded", init);
 
+let imageNumberInput, imageDirectionInput;
+
 function init() {
+  imageNumberInput = document.querySelector(".image-number");
+  imageDirectionInput = document.querySelector(".image-direction");
+  imageNumberInput.addEventListener("keyup", showImage);
+  imageNumberInput.value = "023047";
+  imageDirectionInput.addEventListener("change", showImage);
   showImage();
   document.querySelector(".next-image").addEventListener("click", nextImage);
   document.querySelector(".prev-image").addEventListener("click", prevImage);
@@ -282,46 +291,35 @@ animationSelect.addEventListener("change", () => {
 });
 
 function showImage() {
-  document.querySelector(".house-image").innerHTML +=
-    "<img src='images/" +
-    "0" +
-    imageNumber +
-    ".jpg" +
-    "' alt='" +
-    imageNumber +
-    "' title='" +
-    imageNumber +
-    "'>";
+  imageDirection = imageDirectionInput.value;
+  imageNumber = parseInt(imageNumberInput.value);
+  loadImage();
+}
+
+function loadImage() {
+  let imageTag = generateHouseImageTag();
+  document.querySelector(".house-image").innerHTML = imageTag;
+}
+
+function generateHouseImageTag() {
+  let number = imageNumber.toString();
+  //adding leading zeroes
+  while (number.length < 6) {
+    number = "0" + number;
+  }
+
+  return `<img src="${imageBaseURL}/${imageDirection}/${number +
+    imageExtension}" alt="${number}" title="${number}"/>`;
 }
 
 function nextImage() {
-  removeElement(".house-image img");
   imageNumber++;
-  document.querySelector(".house-image").innerHTML +=
-    "<img src='images/" +
-    "0" +
-    imageNumber +
-    ".jpg" +
-    "' alt='" +
-    imageNumber +
-    "' title='" +
-    imageNumber +
-    "'>";
+  loadImage();
 }
 
 function prevImage() {
-  removeElement(".house-image img");
   imageNumber--;
-  document.querySelector(".house-image").innerHTML +=
-    "<img src='images/" +
-    "0" +
-    imageNumber +
-    ".jpg" +
-    "' alt='" +
-    imageNumber +
-    "' title='" +
-    imageNumber +
-    "'>";
+  loadImage();
 }
 
 function removeElement(elementId) {
@@ -335,15 +333,9 @@ function addImage() {
   let lenghtUl = document.querySelector("ul").getElementsByTagName("li").length;
   if (lenghtUl <= 2) {
     document.querySelector("ul").innerHTML +=
-      "<li class='list-inline-item col-4 pr-2 pb-2'><img src='images/" +
-      "0" +
-      chosenImage +
-      ".jpg" +
-      "' alt='" +
-      chosenImage +
-      "' title='" +
-      chosenImage +
-      "'>";
+      "<li class='list-inline-item col-4 pr-2 pb-2'>" +
+      generateHouseImageTag() +
+      "</li>";
   }
 }
 

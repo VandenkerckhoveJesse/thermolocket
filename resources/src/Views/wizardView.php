@@ -2,6 +2,14 @@
         <div>
             <div class="row">
                 <div class="col-12 col-xl-5">
+                    <form class="select-image-form" action="#">
+                        <p>Selecteer een afbeelding:</p>
+                       <select class="form-control image-direction mr-1">
+                            <option value="left">Left</option>
+                            <option value="right">Right</option>
+                        </select>
+                        <input type="text" class="image-number form-control" placeholder="afbeeldingsnummer">
+                    </form>
                     <div class="house-image"></div>
                     <div class="form-row mt-4">
                         <div class="col-sm-4">
