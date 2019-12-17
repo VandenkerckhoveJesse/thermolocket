@@ -17,6 +17,7 @@ function init() {
   addItemButtons.forEach(box => box.addEventListener("click", addItem));
 
   addWaarnemingBoxEventListeners();
+  addRemoveButtonEventListeners();
 }
 
 const DOMstrings = {
@@ -37,19 +38,30 @@ function addWaarnemingBoxEventListeners() {
   });
 }
 
-function changeBoxColor(e, target) {
-  let selectionBox = typeof target === "undefined" ? e.currentTarget : target;
-  let waarneming = selectionBox.value;
-  //finding selected option
-  let selectedOption = [...selectionBox.querySelectorAll("option")].filter(
-    option => option.value === waarneming
-  )[0];
-  //getting correct color from background-color propery of selected option
-  let color = getComputedStyle(selectedOption).getPropertyValue(
-    "background-color"
-  );
+function addRemoveButtonEventListeners() {
+  console.log("adding event listeners");
+  let buttons = document.querySelectorAll(".remove-item");
+  buttons.forEach(button => {
+    button.addEventListener("click", removeItem);
+  });
+}
 
-  selectionBox.style.backgroundColor = color;
+function changeBoxColor(e, target) {
+  //if no target is specified, set the selection-box to the one the user clicked on
+  let selectionBox = typeof target === "undefined" ? e.currentTarget : target;
+  if (selectionBox) {
+    let waarneming = selectionBox.value;
+    //finding selected option
+    let selectedOption = [...selectionBox.querySelectorAll("option")].filter(
+      option => option.value === waarneming
+    )[0];
+    //getting correct color from background-color propery of selected option
+    let color = getComputedStyle(selectedOption).getPropertyValue(
+      "background-color"
+    );
+
+    selectionBox.style.backgroundColor = color;
+  }
 }
 
 function checkCustomInput(e) {
@@ -73,14 +85,36 @@ function addItem(e) {
     .querySelector(".has-custom-input")
     .addEventListener("change", checkCustomInput);
 
-  //hiding custom input field
+  //hiding custom input field and removing value
   hideChildElement(newListItem, ".custom-input");
   newListItem.querySelector(".custom-input").value = "";
+
+  //adding new item
   list.appendChild(newListItem);
 
   //set waarneming-box color
   changeBoxColor(null, newListItem.querySelector(".waarneming-box"));
+
+  //enable button to remove item
+  enableRemoveButton(newListItem);
+
+  //adding event listeners on children
   addWaarnemingBoxEventListeners();
+  addRemoveButtonEventListeners();
+}
+
+function enableRemoveButton(listItem) {
+  let removeButton = listItem.querySelector(".remove-item");
+  if (removeButton) {
+    removeButton.disabled = false;
+  }
+}
+
+function removeItem(e) {
+  let button = e.currentTarget;
+  let listItem = findParent(button, "list-item");
+  console.log(listItem);
+  listItem.parentNode.removeChild(listItem);
 }
 
 function hideChildElement(parent, childQuery) {

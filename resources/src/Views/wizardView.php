@@ -128,12 +128,12 @@
 
                                                 </div>
                                                 <div class="form-row mt-4">
-                                                    <button data-list-name="verwarming" class="btn btn-dark add-item" type="button" title="Toevoegen">+
-                                                        Toevoegen</button>
+                                                    <button data-list-name="verwarming" class="btn btn-dark add-item" type="button" title="Toevoegen">+ Nieuw item toevoegen</button>
                                                 </div>
-                                                <div class="form-row mt-4 verwarming">
+                                                <div class="form-row verwarming">
                                                     <div class="col-12 addable-list-verwarming">
                                                         <div class="list-item">
+                                                      <div class="d-flex">
                                                         <select  name="gegevens[verwarming][eigenschappen][]" class="pick-animation__select form-control has-custom-input">
                                                             <option value="gelijkvloers-verwarmd">gelijkvloers is verwarmd</option>
                                                             <option value="gelijkvloers-niet-verwarmd">gelijkvloers is niet verwarmd</option>
@@ -144,7 +144,9 @@
                                                             <option value="bepaalde-ruimtes-verwarmd">Slechts bepaalde ruimtes worden verwarmd</option>
                                                             <option value="custom">Andere zelf te specificeren tekstueel</option>
                                                         </select>
-                                                        <input type="text" class="d-none w-100 my-3 custom-input" name="gegevens[verwarming][eigenschappen-custom][]">
+                                                        <button type="button" disabled class="btn btn-danger ml-2 remove-item"><i class="fas fa-trash-alt"></i></button>
+                                                        </div>
+                                                        <input type="text" class="d-none w-100 my-2 custom-input" name="gegevens[verwarming][eigenschappen-custom][]">
                                                        
                                                         </div>
                                                     </div>
@@ -181,7 +183,7 @@
                                                         <label for="optie5">Afvoer decentrale verwarming waarneembaar</label>
                                                         <br>
 
-                                                        <input type="text" class=" w-100 my-3 custom-input" name="gevel[eigenschappen][]" placeholder="Geef zelf een eigenschap op (optioneel)">
+                                                        <input type="text" class=" w-100 my-2 custom-input" name="gevel[eigenschappen][]" placeholder="Geef zelf een eigenschap op (optioneel)">
                                                          
                                                     </div>
                                                 </div>
@@ -227,12 +229,12 @@
                                                         <div class="tab-pane fade show active" id="nav-ramen"
                                                             role="tabpanel" aria-labelledby="nav-ramen-tab">
                                                             <div class="form-row mt-4">
-                                                                 <button data-list-name="ramen" class="btn btn-dark add-item" type="button" title="Toevoegen">+
-                                                        Toevoegen</button>
+                                                                 <button data-list-name="ramen" class="btn btn-dark add-item" type="button" title="Toevoegen">+ Nieuw item toevoegen</button>
                                                             </div>
-                                                            <div class="form-row mt-4 addable-list-ramen fixed-height-scrollable">
+                                                            <div class="form-row addable-list-ramen fixed-height-scrollable">
                                                                <div class="list-item">
-                                                                <div class="col-12 mb-3">
+                                                                <div class="col-12 mb-2">
+                                                                   <div class="d-flex">
                                                                     <select
                                                                         name="openingen[ramen][eigenschappen][]"
                                                                         class="picky-animation__select form-control has-custom-input">
@@ -246,8 +248,10 @@
                                                                         <option value="sterke-infiltraties">Oude ramen hebben sterke infiltraties (geen of versleten dichtingen)</option>
                                                                         <option value="custom">Andere zelf te specificeren tekstueel</option>
                                                                     </select>
+                                                                     <button type="button" disabled class="btn btn-danger ml-2 remove-item"><i class="fas fa-trash-alt"></i></button>
+                                                                   </div>
                                                                 </div>
-                                                                <div class="col-12 mb-3">
+                                                                <div class="col-12 mb-2">
                                                                     <select name="openingen[ramen][waarnemingen][]" class="pick-animation__select form-control waarneming-box">
                                                                         <option value="schitterend">schitterend</option>
                                                                         <option value="mooi-resultaat">mooi-resultaat
@@ -260,7 +264,7 @@
                                                                 </div>
 
                                                                 <div class="col-12 mb-4">
-                                                                   <input type="text" class="d-none w-100 my-3 custom-input" name="openingen[ramen][eigenschappen-custom][]">
+                                                                   <input type="text" class="d-none w-100 my-2 custom-input" name="openingen[ramen][eigenschappen-custom][]">
                                                                    </div>
                                                                </div>
                                                             </div>
@@ -269,12 +273,12 @@
                                                         <div class="tab-pane fade" id="nav-dakramen" role="tabpanel"
                                                             aria-labelledby="nav-dakramen-tab">
                                                             <div class="form-row mt-4">
-                                                                 <button data-list-name="dakramen" class="btn btn-dark add-item" type="button" title="Toevoegen">+
-                                                        Toevoegen</button>
+                                                                 <button data-list-name="dakramen" class="btn btn-dark add-item" type="button" title="Toevoegen">+ Nieuw item toevoegen</button>
                                                             </div>
-                                                            <div class="form-row mt-4 addable-list-dakramen fixed-height-scrollable">
+                                                            <div class="form-row addable-list-dakramen fixed-height-scrollable">
                                                                 <div class="list-item">
-                                                                    <div class="col-12 mb-3">
+                                                                    <div class="col-12 mb-2">
+                                                                   <div class="d-flex">
                                                                     <select name="openingen[dakramen][eigenschappen][]"
                                                                         class="picky-animation__select form-control has-custom-input">
                                                                         <option value="metalen-frame">Het dakraam bestaat uit een metalen frame met enkele beglazing
@@ -284,8 +288,10 @@
                                                                             verwarmd</option>
                                                                             <option value="custom">Andere zelf te specificeren tekstueel</option>
                                                                     </select>
+                                                                    <button type="button" disabled class="btn btn-danger ml-2 remove-item"><i class="fas fa-trash-alt"></i></button>
+                                                                   </div>
                                                                 </div>
-                                                                <div class="col-12 mb-3">
+                                                                <div class="col-12 mb-2">
                                                                     <select name="openingen[dakramen][waarnemingen][]" class="pick-animation__select form-control waarneming-box">
                                                                         <option value="schitterend">schitterend</option>
                                                                         <option value="mooi-resultaat">mooi-resultaat
@@ -298,7 +304,7 @@
                                                                 </div>
 
                                                                 <div class="col-12 mb-4">
-                                                                   <input type="text" class="d-none w-100 my-3 custom-input" name="openingen[dakramen][eigenschappen-custom][]">
+                                                                   <input type="text" class="d-none w-100 my-2 custom-input" name="openingen[dakramen][eigenschappen-custom][]">
                                                                    </div>
                                                                 </div>
                                                             </div>
@@ -307,12 +313,12 @@
                                                         <div class="tab-pane fade" id="nav-deuren" role="tabpanel"
                                                             aria-labelledby="nav-deuren-tab">
                                                             <div class="form-row mt-4">
-                                                                <button data-list-name="deuren" class="btn btn-dark add-item" type="button" title="Toevoegen">+
-                                                        Toevoegen</button>
+                                                                <button data-list-name="deuren" class="btn btn-dark add-item" type="button" title="Toevoegen">+ Nieuw item toevoegen</button>
                                                             </div>
-                                                            <div class="form-row mt-4 addable-list-deuren fixed-height-scrollable">
+                                                            <div class="form-row addable-list-deuren fixed-height-scrollable">
                                                                 <div class="list-item">
-                                                                    <div class="col-12 mb-3">
+                                                                    <div class="col-12 mb-2">
+                                                                   <div class="d-flex">
                                                                     <select
                                                                         name="openingen[deuren][eigenschappen][]"
                                                                         class="picky-animation__select form-control has-custom-input">
@@ -325,8 +331,11 @@
                                                                         <option value="deuren-infiltraties">Infiltraties via de deur</option>
                                                                         <option value="custom">Andere zelf te specificeren tekstueel</option>
                                                                     </select>
+                                                                     <button type="button" disabled class="btn btn-danger ml-2 remove-item"><i class="fas fa-trash-alt"></i></button>
+                                                                     </div>
+                                                                    
                                                                 </div>
-                                                                <div class="col-12 mb-3">
+                                                                <div class="col-12 mb-2">
                                                                     <select name="openingen[deuren][waarnemingen][]" class="pick-animation__select form-control waarneming-box">
                                                                         <option value="schitterend">schitterend</option>
                                                                         <option value="mooi-resultaat">mooi-resultaat
@@ -340,7 +349,7 @@
 
                                                                 
                                                                 <div class="col-12 mb-4">
-                                                                   <input type="text" class="d-none w-100 my-3 custom-input" name="openingen[deuren][eigenschappen-custom][]">
+                                                                   <input type="text" class="d-none w-100 my-2 custom-input" name="openingen[deuren][eigenschappen-custom][]">
                                                                    </div>
                                                             
 
@@ -356,13 +365,13 @@
                                                              <div class="tab-pane fade" id="nav-poorten" role="tabpanel"
                                                             aria-labelledby="nav-porten-tab">
                                                             <div class="form-row mt-4">
-                                                               <button data-list-name="poorten" class="btn btn-dark add-item" type="button" title="Toevoegen">+
-                                                        Toevoegen</button>
+                                                               <button data-list-name="poorten" class="btn btn-dark add-item" type="button" title="Toevoegen">+ Nieuw item toevoegen</button>
                                                             </div>
                                                             
-                                                                <div class="form-row mt-4  addable-list-poorten fixed-height-scrollable">
+                                                                <div class="form-row addable-list-poorten fixed-height-scrollable">
                                                                     <div class="list-item">
-                                                                <div class="col-12 mb-3">
+                                                                <div class="col-12 mb-2">
+                                                                    <div class="d-flex">
                                                                     <select
                                                                         name="openingen[poorten][eigenschappen][]"
                                                                         class="picky-animation__select form-control has-custom-input">
@@ -376,9 +385,10 @@
                                                                         <option value="poort-vernieuwd">De poort is vernieuwd</option>
                                                                         <option value="custom">Andere zelf te specificeren tekstueel</option>
                                                                         </select>
+                                                                          <button type="button" disabled class="btn btn-danger ml-2 remove-item"><i class="fas fa-trash-alt"></i></button></div>
                                                                       
                                                                 </div>
-                                                                <div class="col-12 mb-3">
+                                                                <div class="col-12 mb-2">
                                                                     <select name="openingen[poorten][waarnemingen][]" class="pick-animation__select form-control waarneming-box">
                                                                         <option value="schitterend">schitterend</option>
                                                                         <option value="mooi-resultaat">mooi-resultaat
@@ -391,7 +401,7 @@
                                                                 </div>
 
                                                                 <div class="col-12 mb-4">
-                                                                   <input type="text" class="d-none w-100 my-3 custom-input" name="openingen[poorten][eigenschappen-custom][]">
+                                                                   <input type="text" class="d-none w-100 my-2 custom-input" name="openingen[poorten][eigenschappen-custom][]">
                                                                    </div>
 
                                                                 
@@ -404,13 +414,13 @@
                                                             aria-labelledby="nav-brievenbus-tab">
                                                             
                                                             <div class="form-row mt-4">
-                                                               <button data-list-name="brievenbus" class="btn btn-dark add-item" type="button" title="Toevoegen">+
-                                                        Toevoegen</button>
+                                                               <button data-list-name="brievenbus" class="btn btn-dark add-item" type="button" title="Toevoegen">+ Nieuw item toevoegen</button>
                                                             </div>
                                                             
-                                                                <div class="form-row mt-4  addable-list-brievenbus fixed-height-scrollable">
+                                                                <div class="form-row addable-list-brievenbus fixed-height-scrollable">
                                                                     <div class="list-item">
-                                                                <div class="col-12 mb-3">
+                                                                <div class="col-12 mb-2">
+                                                                  <div class="d-flex">
                                                                     <select
                                                                          name="openingen[brievenbus][eigenschappen][]"
                                                                         class="picky-animation__select form-control has-custom-input">
@@ -420,9 +430,10 @@
                                                                         <option value="brievenbus-ingewerkt-muur">Brievenbus ingewerkt in de muur</option>
                                                                         <option value="custom">Andere zelf te specificeren tekstueel</option>
                                                                         </select>
+                                                                        <button type="button" disabled class="btn btn-danger ml-2 remove-item"><i class="fas fa-trash-alt"></i></button></div>
                                                                       
                                                                 </div>
-                                                                <div class="col-12 mb-3">
+                                                                <div class="col-12 mb-2">
                                                                     <select name="openingen[brievenbus][waarnemingen][]" class="pick-animation__select form-control waarneming-box">
                                                                         <option value="schitterend">schitterend</option>
                                                                         <option value="mooi-resultaat">mooi-resultaat
@@ -435,7 +446,7 @@
                                                                 </div>
 
                                                                 <div class="col-12 mb-4">
-                                                                   <input type="text" class="d-none w-100 my-3 custom-input" name="openingen[poorten][eigenschappen-custom][]">
+                                                                   <input type="text" class="d-none w-100 my-2 custom-input" name="openingen[poorten][eigenschappen-custom][]">
                                                                    </div>
 
                                                                 
@@ -460,12 +471,12 @@
                                             <h3 class="multisteps-form__title">Muur</h3>
                                             <div class="multisteps-form__content">
                                                 <div class="form-row mt-4">
-                                                <button data-list-name="muren" class="btn btn-dark add-item" type="button" title="Toevoegen">+
-                                                        Toevoegen</button>
+                                                <button data-list-name="muren" class="btn btn-dark add-item" type="button" title="Toevoegen">+ Nieuw item toevoegen</button>
                                                 </div>
-                                                <div class="form-row mt-4 addable-list-muren fixed-height-scrollable">
+                                                <div class="form-row mt-2 addable-list-muren fixed-height-scrollable">
                                                     <div class="list-item">
-                                                        <div class="col-12 mb-3">
+                                                        <div class="col-12 mb-2">
+                                                       <div class="d-flex">
                                                         <select name="muren[eigenschappen][]" class="picky-animation__select form-control has-custom-input">
                                                             <option value="muren-onvoldoende-geïsoleerd">De muren hebben geen uniforme kleur, de muur is niet of onvoldoende geïsoleerd</option>
                                                             <option value="muren-geïsoleerd">De muren hebben een uniforme kleur en zijn geïsoleerd</option>
@@ -481,8 +492,9 @@
                                                             <option value="custom">Andere zelf te specificeren tekstueel</option>
 
                                                         </select>
+                                                          <button type="button" disabled class="btn btn-danger ml-2 remove-item"><i class="fas fa-trash-alt"></i></button></div>
                                                     </div>
-                                                    <div class="col-12 mb-3">
+                                                    <div class="col-12 mb-2">
                                                         <select name="muren[waarnemingen][]" class="pick-animation__select form-control waarneming-box">
                                                             <option value="schitterend">schitterend</option>
                                                             <option value="mooi-resultaat">mooi-resultaat</option>
@@ -494,12 +506,23 @@
                                                     </div>
 
                                                       <div class="col-12 mb-4">
-                                                                   <input type="text" class="d-none w-100 my-3 custom-input" name="muren[eigenschappen-custom][]">
+                                                                   <input type="text" class="d-none w-100 my-2 custom-input" name="muren[eigenschappen-custom][]">
                                                                    </div>
 
 
                                                     </div>
                                                 </div>
+
+                                                <div class="row">
+                                                    <div class="button-row d-flex mt-4 col-12">
+                                                    <button class="btn btn-Light btn-outline-secondary js-btn-prev" type="button"
+                                                    title="Prev">Vorige</button>
+                                                <button class="btn btn-dark ml-auto js-btn-next" type="button"
+                                                    title="Next">Volgende</button>
+                                                    </div>
+                                                </div>
+
+
                                             </div>
                                             </div>
                                         <div class="multisteps-form__panel shadow p-4 rounded bg-white dak"
@@ -507,12 +530,12 @@
                                             <h3 class="multisteps-form__title">Dak</h3>
                                             <div class="multisteps-form__content">
                                                 <div class="form-row mt-4">
-                                                     <button data-list-name="daken" class="btn btn-dark add-item" type="button" title="Toevoegen">+
-                                                        Toevoegen</button>
+                                                     <button data-list-name="daken" class="btn btn-dark add-item" type="button" title="Toevoegen">+ Nieuw item toevoegen</button>
                                                 </div>
-                                                <div class="form-row mt-4 addable-list-daken fixed-height-scrollable">
+                                                <div class="form-row mt-2 addable-list-daken fixed-height-scrollable">
                                                     <div class="list-item">
-                                                        <div class="col-12 mb-3">
+                                                        <div class="col-12 mb-2">
+                                                      <div class="d-flex">
                                                         <select name="daken[eigenschappen][]" class="picky-animation__select form-control has-custom-input">
                                                             <option value="dak-uniformekleur">Het dak heeft een uniforme kleur, dit impliceert wellicht een vorm van isolatie, hoe kouder het dak, hoe donkerder de kleur, hoe groter de isolatiewaarde</option>
                                                             <option value="dak-niet-verwarmd">De kleur van het dak dient men te interpreteren in functie van de onderliggende temperatuur, ruimte onder het dak is niet verwarmd
@@ -527,10 +550,10 @@
                                                             <option value="refelcties-van-metalen">Reflecties van metalen delen zoals lood, zinkwerk, koper, …</option>
                                                             <option value="reflecties-glazuurde-pannen">Opgelet reflecties door glazuurde pannen, hierdoor lijkt het dak beter geïsoleerd</option>
                                                             <option value="custom">Andere zelf te specificeren tekstueel</option>
-
                                                         </select>
+                                                         <button type="button" disabled class="btn btn-danger ml-2 remove-item"><i class="fas fa-trash-alt"></i></button></div>
                                                     </div>
-                                                    <div class="col-12 mb-3">
+                                                    <div class="col-12 mb-2">
                                                         <select name="daken[waarnemingen][]" class="pick-animation__select form-control waarneming-box">
                                                             <option value="schitterend">schitterend</option>
                                                             <option value="mooi-resultaat">mooi-resultaat</option>
@@ -542,7 +565,7 @@
                                                     </div>
 
                                                       <div class="col-12 mb-4">
-                                                                   <input type="text" class="d-none w-100 my-3 custom-input" name="daken[eigenschappen-custom][]">
+                                                                   <input type="text" class="d-none w-100 my-2 custom-input" name="daken[eigenschappen-custom][]">
                                                                    </div>
 
 
@@ -561,12 +584,12 @@
                                             <h3 class="multisteps-form__title">Hernieuwbare energie</h3>
                                             <div class="multisteps-form__content">
                                                 <div class="form-row mt-4">
-                                                    <button data-list-name="energie" class="btn btn-dark add-item" type="button" title="Toevoegen">+
-                                                        Toevoegen</button>
+                                                    <button data-list-name="energie" class="btn btn-dark add-item" type="button" title="Toevoegen">+ Nieuw item toevoegen</button>
                                                 </div>
-                                                <div class="form-row mt-4 addable-list-energie fixed-height-scrollable">
+                                                <div class="form-row mt-2 addable-list-energie fixed-height-scrollable">
                                                     <div class="list-item">
-                                                        <div class="col-12 mb-3">
+                                                        <div class="col-12 mb-2">
+                                                     <div class="d-flex">
                                                         <select name="energiebronnen[eigenschappen][]" class="pick-animation__select form-control has-custom-input">
                                                             <option value="gratis-zonne-energie">Geen hernieuwbare energie vastgesteld, investeer en geniet van de gratis zonne energie, uw dak leunt zich tot zonnepanelen en zonneboiler</option>
                                                             <option value="aanwezig-ander-dakdeel">Geen hernieuwbare energie vastgesteld, maar is wel aanwezig op een andere dakdeel                                                      </option>
@@ -574,10 +597,10 @@
                                                             </option>
                                                             <option value="zonneboiler">Zonneboiler is waarneembaar op het dak</option>
                                                             <option value="custom">Andere zelf te specificeren tekstueel</option>
-
                                                         </select>
+                                                         <button type="button" disabled class="btn btn-danger ml-2 remove-item"><i class="fas fa-trash-alt"></i></button></div>
                                                     </div>
-                                                    <div class="col-12 mb-3">
+                                                    <div class="col-12 mb-2">
                                                         <select name="energiebronnen[waarnemingen][]" name="energie-status" class="pick-animation__select form-control waarneming-box">
                                                             <option value="schitterend">schitterend</option>
                                                             <option value="mooi-resultaat">mooi-resultaat</option>
@@ -589,7 +612,7 @@
                                                     </div>
 
                                                      <div class="col-12 mb-4">
-                                                                   <input type="text" class="d-none w-100 my-3 custom-input" name="energiebronnen[eigenschappen-custom][]">
+                                                                   <input type="text" class="d-none w-100 my-2 custom-input" name="energiebronnen[eigenschappen-custom][]">
                                                                    </div>
 
                                                     </div>
