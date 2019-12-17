@@ -4,9 +4,11 @@
         <div class="form-row mt-4">
             <p>Kunnen we verwarmingsgerelateerde zaken terugvinden?</p>
             <div class="col-12">
-                <?php foreach($categorie->getEigenschappen() as $eigenschap) : ?>
-                <input type="checkbox" id="<?php echo $eigenschap->getId() ?>" name="<?php echo $eigenschap->getId() ?>" value="true">
-                <label for="<?php echo $eigenschap->getId() ?>"><?php echo $eigenschap->getBeschrijving() ?></label>
+                <?php foreach($categorie->getEigenschappen() as $eigenschap) :
+                    $id = $eigenschap->getId()
+                    ?>
+                <input type="checkbox" id="<?php echo $id ?>" name="<?php echo $id ?>" value="true">
+                <label for="<?php echo $id ?>"><?php echo $eigenschap->getBeschrijving() ?></label>
                 <br>
                 <?php endforeach;?>
 

@@ -2,7 +2,7 @@
 include_once ("../resources/config.php");
 include_once ("../resources/autoloader.php");
 //$model = ModelFactory::createWoning(3, 1);
-var_dump($categorie = Categorie::getById(1));
+var_dump(Categorie::getById(3)->getSubcategorieen());
 ?>
 <!DOCTYPE html>
 <html lang="en">

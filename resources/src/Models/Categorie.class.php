@@ -19,6 +19,17 @@ class Categorie implements Model
         }
     }
 
+    public function getSubcategorieen() {
+        $query = "SELECT * FROM categorieen WHERE id IN 
+                (SELECT subcategorie_id FROM is_subcategorie_van WHERE (categorie_id = :categorie_id))";
+        $values = array(":categorie_id" => $this->id);
+        try {
+            return Database::getInstance()->queryClasses($query, "Categorie", $values);
+        } catch (Exception $e) {
+            throw $e;
+        }
+    }
+
     public static function getAll()
     {
         $query = "SELECT * FROM categorieen";

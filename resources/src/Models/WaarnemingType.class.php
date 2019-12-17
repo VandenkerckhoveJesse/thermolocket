@@ -66,36 +66,40 @@ class WaarnemingType implements Model
         }
     }
 
-
-
-
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
-     * Set the value of titel
-     *
-     * @return  self
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTitel()
+    {
+        return $this->titel;
+    }
+
+    /**
+     * @param mixed $titel
      */
     public function setTitel($titel)
     {
         $this->titel = $titel;
-
-        return $this;
     }
 
     /**
-     * Set the value of kleur
-     *
-     * @return  self
-     */
-    public function setKleur($kleur)
-    {
-        $this->kleur = $kleur;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of kleur
+     * @return mixed
      */
     public function getKleur()
     {
@@ -103,10 +107,16 @@ class WaarnemingType implements Model
     }
 
     /**
-     * Get the value of titel
+     * @param mixed $kleur
      */
-    public function getTitel()
+    public function setKleur($kleur)
     {
-        return $this->titel;
+        $this->kleur = $kleur;
     }
+
+
+
+
+
+
 }
