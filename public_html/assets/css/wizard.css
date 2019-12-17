@@ -55,7 +55,7 @@ div.col-5 {
 }
 
 .addable-list-verwarming {
-  height: 250px;
+  height: 200px;
   overflow: auto;
 }
 
@@ -269,6 +269,61 @@ div.form-row.mt-4 {
 
 .multisteps-form__progress-btn:first-child:after {
   display: none;
+}
+
+.multisteps-form__progress-btn:before {
+  background-size: 22px !important;
+  background-repeat: no-repeat !important;
+  background-position: 12px 12px !important;
+}
+
+
+.multisteps-form__progress-btn.js-active:before {
+  background-color:white;
+}
+
+.gegevens-nav.js-active:before {
+  background-image: url("../media/gegevens-icon-active.svg");
+}
+
+.gevel-nav:before {
+  background-image: url("../media/gevel-icon.svg") ;
+}
+
+.gevel-nav.js-active:before {
+  background-image: url("../media/gevel-icon-active.svg");
+}
+
+.openingen-nav:before {
+  background-image: url("../media/openingen-icon.svg");
+}
+
+.openingen-nav.js-active:before {
+  background-image: url("../media/openingen-icon-active.svg");
+}
+
+.muren-nav:before {
+  background-image: url("../media/muren-icon.svg");
+}
+
+.muren-nav.js-active:before {
+  background-image: url("../media/muren-icon-active.svg");
+}
+
+.dak-nav:before {
+  background-image: url("../media/dak-icon.svg");
+}
+
+.dak-nav.js-active:before {
+  background-image: url("../media/dak-icon-active.svg");
+}
+
+.energiebronnen-nav:before {
+  background-image: url("../media/energiebronnen-icon.svg");
+}
+
+.energiebronnen-nav.js-active:before {
+  background-image: url("../media/energiebronnen-icon-active.svg");
 }
 
 .multisteps-form__progress-btn.js-active {

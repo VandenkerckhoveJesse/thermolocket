@@ -36,17 +36,17 @@
                             <div class="row progression-bar">
                                 <div class="col-9 ml-auto mr-auto mb-4">
                                     <div class="multisteps-form__progress">
-                                        <button class="multisteps-form__progress-btn js-active" type="button"
+                                        <button class="multisteps-form__progress-btn js-active gegevens-nav" type="button"
                                             title="Gegevens">Gegevens</button>
-                                        <button class="multisteps-form__progress-btn" type="button"
+                                        <button class="multisteps-form__progress-btn gevel-nav" type="button"
                                             title="Gevel">Gevel</button>
-                                        <button class="multisteps-form__progress-btn" type="button"
+                                        <button class="multisteps-form__progress-btn openingen-nav" type="button"
                                             title="Openingen">Openingen</button>
-                                        <button class="multisteps-form__progress-btn" type="button"
+                                        <button class="multisteps-form__progress-btn muren-nav" type="button"
                                             title="Muren">Muren</button>
-                                        <button class="multisteps-form__progress-btn" type="button"
+                                        <button class="multisteps-form__progress-btn dak-nav" type="button"
                                             title="Dark">Dak</button>
-                                        <button class="multisteps-form__progress-btn" type="button"
+                                        <button class="multisteps-form__progress-btn energiebronnen-nav" type="button"
                                             title="Energiebronnen">Energiebronnen</button>
                                     </div>
                                 </div>
