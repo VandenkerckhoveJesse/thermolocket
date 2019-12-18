@@ -9,11 +9,15 @@ require "../fpd/fpdi/autoload.php";
 
 class myPDF extends FPDF{
 function header(){
-$this->Image("../ftp/fotos/header.JPG");
+    $gemeente = $_POST['gegevens']['gemeente'];
+    
+    $this->SetX(20);
+    $this->Image("../ftp/fotos/" . $gemeente . ".JPG");
 }
 function footer(){
-$this->SetY(-30);
-$this->Image("../ftp/fotos/Footer.JPG");
+    $this->SetY(-30);
+    $this->Image("../ftp/fotos/Footer.JPG");
+
 }
 function getContactInformation(){
     $this->SetFont('Arial','B', 18);
@@ -158,6 +162,12 @@ function dakramen(){
         $this->MultiCell(190,10, "Waarneming: " . $waarneming);
         $this->Ln(10);
     }
+    if (isset($dakramen['eigenschappen-custom'])){
+        foreach($dakramen['eigenschappen-custom'] as $item){
+            $this->MultiCell(190,10, $item);
+
+        }
+    }
     }
 }
 
@@ -176,6 +186,12 @@ function deuren(){
         $this->MultiCell(190,10, "Waarneming: " . $waarneming);
         $this->Ln(10);
     }
+    if (isset($deuren['eigenschappen-custom'])){
+        foreach($deuren['eigenschappen-custom'] as $item){
+            $this->MultiCell(190,10, $item);
+
+        }
+    }
 }
 }
 function poorten(){
@@ -193,13 +209,18 @@ function poorten(){
         $this->MultiCell(190,10, "Waarneming: " . $waarneming);
         $this->Ln(10);
     }
-}
-}
-/*
-function brievenbus(){
+    if (isset($poorten['eigenschappen-custom'])){
+        foreach($poorten['eigenschappen-custom'] as $item){
+            $this->MultiCell(190,10, $item);
 
+        }
+    }
+}
+}
+
+function brievenbus(){
     $values = $_POST['openingen'];
-    $brievenbus = $values['brievenbus']['eigenschappen'];
+    $brievenbus = $values['brievenbus'];
     if(sizeof($brievenbus) > 1){
     $eigenschappen = $brievenbus['eigenschappen'];
     $waarnemingen = $brievenbus['waarnemingen'];
@@ -212,24 +233,25 @@ function brievenbus(){
         $this->MultiCell(190,10, "Waarneming: " . $waarneming);
         $this->Ln(10);
     }
+    if (isset($brievenbus['eigenschappen-custom'])){
+        foreach($brievenbus['eigenschappen-custom'] as $item){
+            $this->MultiCell(190,10, $item);
+
+        }
+    }
 }
 }
-*/
+
 
 
 
 function getOpeningen(){
     $this->getRamen();
-    
     $this->dakramen();
-    
     $this->deuren();
     $this->poorten();
-    /*
     $this->brievenbus();
-    */
-  
-    
+
 }
 
 
@@ -249,6 +271,12 @@ function getMuren(){
        foreach(array_combine($eigenschappen,$waarnemingen) as $eigenschap => $waarneming){
         $this->MultiCell(190,10, $eigenschap);
         $this->MultiCell(190,10, "Waarneming: " . $waarneming);
+    }
+    if (isset($values['eigenschappen-custom'])){
+        foreach($values['eigenschappen-custom'] as $item){
+            $this->MultiCell(190,10, $item);
+
+        }
     }
     $this->Addpage();
 }
@@ -270,7 +298,13 @@ function getDak(){
     foreach(array_combine($eigenschappen,$waarnemingen) as $eigenschap => $waarneming){
         $this->MultiCell(190,10, $eigenschap);
         $this->MultiCell(190,10, "Waarneming: " . $waarneming);
-    }   
+    }
+    if (isset($values['eigenschappen-custom'])){
+        foreach($values['eigenschappen-custom'] as $item){
+            $this->MultiCell(190,10, $item);
+
+        }
+    }
     $this->Addpage(); 
 }
 }
@@ -278,7 +312,6 @@ function getDak(){
 function getEnergiebronnen(){
     $values =$_POST['energiebronnen'];
     if(sizeof($values) > 1){
-    $values = $_POST['energiebronnen'];
     $eigenschappen = $values['eigenschappen'];
     $waarnemingen = $values['waarnemingen'];
     $this->SetFont('Arial','B', 18);
@@ -290,14 +323,29 @@ function getEnergiebronnen(){
     foreach(array_combine($eigenschappen,$waarnemingen) as $eigenschap => $waarneming){
         $this->MultiCell(190,10, $eigenschap);
         $this->MultiCell(190,10, "Waarneming: " . $waarneming);
-    }   
+    }
+    if (isset($values['eigenschappen-custom'])){
+        foreach($values['eigenschappen-custom'] as $item){
+            $this->MultiCell(190,10, $item);
+
+        }
+    }
     
 }
 }
+
+function getImages(){
+    $values = $_POST['images'];
+    if(array_key_exists(0, $values)){
+    $y = 50;
+    foreach($values as $item){
+        $this->Image($item, 20, $y, 80);
+        $y += 70;
+
+    } 
+    }
 }
-
-
-
+}
 
 $pdf = new mypDF();
 $pdf->AliasNbPages();
@@ -308,6 +356,7 @@ $pdf->getOpeningen();
 $pdf->getMuren();
 $pdf->getDak();
 $pdf->getEnergiebronnen();
+$pdf->getImages();
 $pdf->Output();
 
 
