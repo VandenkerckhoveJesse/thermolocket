@@ -12,7 +12,7 @@ $pdf = new Fpdi();
 $pdf->AddPage();
 $pdf->SetFont('Arial');
 
-$strCity = "diksmuide";
+$strCity = "jabbeke";
 
 $strPdfTemplate = "../ftp/pdf/blanco.pdf";
 

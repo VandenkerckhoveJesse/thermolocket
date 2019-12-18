@@ -59,11 +59,7 @@ function submitForm(e) {
   e.preventDefault();
   let form = document.querySelector(".multisteps-form__form");
   addHouseImagesToForm(form);
-  if (formIsValid()) {
-    form.submit();
-  } else {
-    alert("Gelieve alle gegevens in te vullen");
-  }
+  form.submit();
 }
 
 function formIdValid() {
@@ -125,7 +121,7 @@ function changeBoxColor(e, target) {
 function checkCustomInput(e) {
   let selectInputField = e.currentTarget;
   let listItem = selectInputField.closest(".list-item");
-  if (selectInputField.value === "custom") {
+  if (selectInputField.value === "zelf gespecificeerd") {
     showChildElement(listItem, ".custom-input");
   } else {
     hideChildElement(listItem, ".custom-input");
