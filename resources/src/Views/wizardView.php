@@ -144,6 +144,7 @@
                                                       <div class="d-flex">
                                                         <select  name="gegevens[verwarming][eigenschappen][]" class="pick-animation__select form-control has-custom-input">
                                                             <option value="" disabled selected>Waar was er verwarming op dat moment</option>
+<<<<<<< HEAD
                                                             <option value="gelijkvloers is verwarmd.">gelijkvloers is verwarmd</option>
                                                             <option value="gelijkvloers is niet verwarmd.">gelijkvloers is niet verwarmd</option>
                                                             <option value="1ste verdiep is verwarmd.">1ste verdiep is verwarmd</option>
@@ -151,6 +152,15 @@
                                                             <option value="Ruimte onder hellend dak is verwarmd.">Ruimte onder hellend dak is verwarmd</option>
                                                             <option value="Ruimte onder hellend dak is niet verwarmd.">Ruimte onder hellend dak is niet verwarmd</option>
                                                             <option value="Slechts bepaalde ruimtes worden verwarmd.">Slechts bepaalde ruimtes worden verwarmd</option>
+=======
+                                                            <option value="gelijkvloers-verwarmd">gelijkvloers is verwarmd</option>
+                                                            <option value="gelijkvloers-niet-verwarmd">gelijkvloers is niet verwarmd</option>
+                                                            <option value="1ste-verdiep-verwarmd">1ste verdiep is verwarmd</option>
+                                                            <option value="1ste-verdiep-verwarmd">1ste verdiep is indirect verwarmd</option>
+                                                            <option value="hellend-verwarmd">Ruimte onder hellend dak is verwarmd</option>
+                                                            <option value="hellend-dak-niet-verwarmd">Ruimte onder hellend dak is niet verwarmd</option>
+                                                            <option value="bepaalde-ruimtes-verwarmd">Slechts bepaalde ruimtes worden verwarmd</option>
+>>>>>>> application
                                                             <option value="zelf gespecificeerd">Andere zelf te specificeren tekstueel</option>
                                                         </select>
                                                         <button type="button" disabled class="btn btn-danger ml-2 remove-item"><i class="fas fa-trash-alt"></i></button>
