@@ -151,7 +151,7 @@
                                                             <option value="hellend-verwarmd">Ruimte onder hellend dak is verwarmd</option>
                                                             <option value="hellend-dak-niet-verwarmd">Ruimte onder hellend dak is niet verwarmd</option>
                                                             <option value="bepaalde-ruimtes-verwarmd">Slechts bepaalde ruimtes worden verwarmd</option>
-                                                            <option value="gegevens[verwarming][eigenschappen-custom][]">Andere zelf te specificeren tekstueel</option>
+                                                            <option value="zelf gespecificeerd">Andere zelf te specificeren tekstueel</option>
                                                         </select>
                                                         <button type="button" disabled class="btn btn-danger ml-2 remove-item"><i class="fas fa-trash-alt"></i></button>
                                                         </div>
