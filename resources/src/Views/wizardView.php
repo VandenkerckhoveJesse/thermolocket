@@ -113,7 +113,7 @@
                                                             placeholder="Nr"/>
                                                     </div>
                                                     <div class="col-12 col-sm-2 mt-2 mt-sm-0">
-                                                        <input name="gegevens[bus]" required class="multisteps-form__input form-control" type="text"
+                                                        <input name="gegevens[bus]" class="multisteps-form__input form-control" type="text"
                                                             placeholder="Bus"/>
                                                     </div>
                                                 </div>
@@ -130,8 +130,8 @@
                                                 <div class="form-row mt-4">
                                                     <p>Was de woning verwarmd:</p>
                                                     <div id="verwarmd" class="col-12 col-sm-6">
-                                                        <input type="radio"  name="gegevens[verwarmd]" id="verwarmd-true" value="woning is verwarmd"><label for="verwarmd-true">Ja</label>
-                                                        <input type="radio"  name="gegevens[verwarmd]" id="verwarmd-false" value="woning is niet verwarmd"><label for="verwarmd-false">Nee</label>
+                                                        <input type="radio" name="gegevens[verwarmd]" id="verwarmd-true" value="woning is verwarmd" required><label for="verwarmd-true">Ja</label>
+                                                        <input type="radio" name="gegevens[verwarmd]" id="verwarmd-false" value="woning is niet verwarmd" required><label for="verwarmd-false">Nee</label>
                                                     </div>
 
                                                 </div>

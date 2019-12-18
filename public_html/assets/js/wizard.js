@@ -59,15 +59,62 @@ function submitForm(e) {
   e.preventDefault();
   let form = document.querySelector(".multisteps-form__form");
   addHouseImagesToForm(form);
-  form.submit();
+
+  let requiredInputFields = getRequiredInputFields(form);
+
+  if (checkInputsValid(requiredInputFields)) {
+    form.submit();
+  } else {
+    alert(getValidationString(requiredInputFields));
+  }
 }
 
-function formIdValid() {
-  let form = document.querySelector(".multisteps-form__form");
-  let inputFields = form.querySelectorAll("input");
-  console.log(inputFields);
+function getRequiredInputFields(form) {
+  return [...form.querySelectorAll("input")]
+    .concat([...form.querySelectorAll("select")])
+    .filter(input => input.hasAttribute("required"));
+}
 
-  return false;
+function checkInputsValid(inputFields) {
+  let valid = true;
+  inputFields.forEach(input => {
+    if (!isValidInputField(input)) {
+      valid = false;
+    }
+  });
+  return valid;
+}
+
+function isValidInputField(input) {
+  if (input.type === "radio") {
+    let radioButtonSelected = false;
+    let radios = document.querySelectorAll("input[name='" + input.name + "']");
+    radios.forEach(radio => {
+      if (radio.checked) {
+        radioButtonSelected = true;
+      }
+    });
+    if (!radioButtonSelected) {
+      return false;
+    }
+  } else {
+    if (input.value === "") {
+      return false;
+    }
+  }
+  return true;
+}
+
+function getValidationString(inputFields) {
+  let validationString = "Gelieve volgende gegevens in te vullen:\n";
+  inputFields.forEach(inputField => {
+    if (!isValidInputField(inputField)) {
+      validationString +=
+        inputField.name.replace("[", " -> ").replace("]", "") + "\n";
+    }
+  });
+
+  return validationString;
 }
 
 function addHouseImagesToForm(form) {
