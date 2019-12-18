@@ -59,7 +59,19 @@ function submitForm(e) {
   e.preventDefault();
   let form = document.querySelector(".multisteps-form__form");
   addHouseImagesToForm(form);
-  //form.submit();
+  if (formIsValid()) {
+    form.submit();
+  } else {
+    alert("Gelieve alle gegevens in te vullen");
+  }
+}
+
+function formIdValid() {
+  let form = document.querySelector(".multisteps-form__form");
+  let inputFields = form.querySelectorAll("input");
+  console.log(inputFields);
+
+  return false;
 }
 
 function addHouseImagesToForm(form) {
@@ -73,7 +85,7 @@ function addHouseImagesToForm(form) {
   let primaryHouseImage = document.querySelector(".house-image img");
   let primaryHouseImageInputField = createHiddenInputField(
     primaryHouseImage.src,
-    "primary-image"
+    "images[]"
   );
   hiddenImagesContainer.appendChild(primaryHouseImageInputField);
 

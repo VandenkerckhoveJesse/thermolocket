@@ -61,26 +61,26 @@
                                                 <div class="form-row mt-4">
                                                     <div class="col-12 col-sm-6">
                                                         <input name="gegevens[voornaam]" class="multisteps-form__input form-control" type="text"
-                                                            placeholder="Voornaam"/>
+                                                            placeholder="Voornaam" required/>
                                                     </div>
                                                     <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                                                        <input name="gegevens[familienaam]" class="multisteps-form__input form-control" type="text"
+                                                        <input name="gegevens[familienaam]" required class="multisteps-form__input form-control" type="text"
                                                             placeholder="Famillienaam"/>
                                                     </div>
                                                 </div>
                                                 <div class="form-row mt-4">
                                                     <div class="col-12 col-sm-6">
-                                                        <input class="multisteps-form__input form-control" type="email"
+                                                        <input class="multisteps-form__input form-control" required type="email"
                                                             placeholder="Email" name="gegevens[email]"/>
                                                     </div>
                                                     <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                                                        <input name="gegevens[telefoon]" class="multisteps-form__input form-control" type="text"
+                                                        <input name="gegevens[telefoon]" required class="multisteps-form__input form-control" type="text"
                                                             placeholder="Telefoon"/>
                                                     </div>
                                                 </div>
                                                 <div class="form-row mt-4">
                                                     <div class="col-12 col-sm-6">
-                                                        <select name="gegevens[verwantschap]" class="pick-animation__select form-control">
+                                                        <select name="gegevens[verwantschap]" required class="pick-animation__select form-control">
                                                             <option value="" disabled selected>Verwantschap woning
                                                             </option>
                                                             <option value="Eigenaar">Eigenaar</option>
@@ -89,7 +89,7 @@
                                                         </select>
                                                     </div>
                                                     <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                                                        <select name="gegevens[bouwjaar]" class="pick-animation__select form-control">
+                                                        <select name="gegevens[bouwjaar]" required class="pick-animation__select form-control">
                                                             <option value="" disabled selected>Bouwjaar woning</option>
                                                             <option value="<1900"><1900-1950</option>
                                                             <option value="1950">1950-1970</option>
@@ -105,25 +105,25 @@
                                                 </div>
                                                 <div class="form-row mt-4">
                                                     <div class="col-12 col-sm-6">
-                                                        <input id="address-input" name="gegevens[straat]" class="multisteps-form__input form-control" type="text" 
+                                                        <input id="address-input" required name="gegevens[straat]" class="multisteps-form__input form-control" type="text" 
                                                             placeholder="Straat"/>
                                                     </div>
                                                     <div class="col-12 col-sm-2 mt-2 mt-sm-0">
-                                                        <input name="gegevens[nummer]" class="multisteps-form__input form-control" type="text"
+                                                        <input name="gegevens[nummer]" required class="multisteps-form__input form-control" type="text"
                                                             placeholder="Nr"/>
                                                     </div>
                                                     <div class="col-12 col-sm-2 mt-2 mt-sm-0">
-                                                        <input name="gegevens[bus]" class="multisteps-form__input form-control" type="text"
+                                                        <input name="gegevens[bus]" required class="multisteps-form__input form-control" type="text"
                                                             placeholder="Bus"/>
                                                     </div>
                                                 </div>
                                                 <div class="form-row mt-4">
                                                     <div class="col-12 col-sm-6">
-                                                        <input id="city-input" name="gegevens[gemeente]" class="multisteps-form__input form-control" type="text"
+                                                        <input id="city-input" required name="gegevens[gemeente]" class="multisteps-form__input form-control" type="text"
                                                             placeholder="Gemeente"/>
                                                     </div>
                                                     <div class="col-12 col-sm-6 mt-4 mt-sm-0">
-                                                        <input id="postcode-input" name="gegevens[postcode]" class="multisteps-form__input form-control" type="text"
+                                                        <input id="postcode-input" required name="gegevens[postcode]" class="multisteps-form__input form-control" type="text"
                                                             placeholder="Postcode"/>
                                                     </div>
                                                 </div>
