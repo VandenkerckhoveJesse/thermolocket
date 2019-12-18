@@ -144,14 +144,14 @@
                                                       <div class="d-flex">
                                                         <select  name="gegevens[verwarming][eigenschappen][]" class="pick-animation__select form-control has-custom-input">
                                                             <option value="" disabled selected>Waar was er verwarming op dat moment</option>
-                                                            <option value="gelijkvloers-verwarmd">gelijkvloers is verwarmd</option>
-                                                            <option value="gelijkvloers-niet-verwarmd">gelijkvloers is niet verwarmd</option>
-                                                            <option value="1ste-verdiep-verwarmd">1ste verdiep is verwarmd</option>
-                                                            <option value="1ste-verdiep-verwarmd">1ste verdiep is indirect verwarmd</option>
-                                                            <option value="hellend-verwarmd">Ruimte onder hellend dak is verwarmd</option>
-                                                            <option value="hellend-dak-niet-verwarmd">Ruimte onder hellend dak is niet verwarmd</option>
-                                                            <option value="bepaalde-ruimtes-verwarmd">Slechts bepaalde ruimtes worden verwarmd</option>
-                                                            <option value="gegevens[verwarming][eigenschappen-custom][]">Andere zelf te specificeren tekstueel</option>
+                                                            <option value="gelijkvloers is verwarmd.">gelijkvloers is verwarmd</option>
+                                                            <option value="gelijkvloers is niet verwarmd.">gelijkvloers is niet verwarmd</option>
+                                                            <option value="1ste verdiep is verwarmd.">1ste verdiep is verwarmd</option>
+                                                            <option value="1ste verdiep is indirect verwarmd.">1ste verdiep is indirect verwarmd</option>
+                                                            <option value="Ruimte onder hellend dak is verwarmd.">Ruimte onder hellend dak is verwarmd</option>
+                                                            <option value="Ruimte onder hellend dak is niet verwarmd.">Ruimte onder hellend dak is niet verwarmd</option>
+                                                            <option value="Slechts bepaalde ruimtes worden verwarmd.">Slechts bepaalde ruimtes worden verwarmd</option>
+                                                            <option value="zelf gespecificeerd">Andere zelf te specificeren tekstueel</option>
                                                         </select>
                                                         <button type="button" disabled class="btn btn-danger ml-2 remove-item"><i class="fas fa-trash-alt"></i></button>
                                                         </div>
@@ -293,10 +293,10 @@
                                                                     <select name="openingen[dakramen][eigenschappen][]"
                                                                         class="picky-animation__select form-control has-custom-input">
                                                                         <option value="" disabled selected>Eigenschappen dakramen</option>
-                                                                        <option value="Het dakraam bestaat uit een metalen frame met enkele beglazing">Het dakraam bestaat uit een metalen frame met enkele beglazing
+                                                                        <option value="Het dakraam bestaat uit een metalen frame met enkele beglazing.">Het dakraam bestaat uit een metalen frame met enkele beglazing
                                                                         </option>
-                                                                        <option value="Het dakraam is hedendaags">Het dakraam is hedendaags</option>
-                                                                        <option value="een bepaalde ruimte verwarmd">één bepaalde ruimte verwarmd</option>
+                                                                        <option value="Het dakraam is hedendaags.">Het dakraam is hedendaags</option>
+                                                                        <option value="een bepaalde ruimte verwarmd.">één bepaalde ruimte verwarmd</option>
                                                                         <option value="zelf gespecificeerd">Andere zelf te specificeren tekstueel</option>
                                                                     </select>
                                                                     <button type="button" disabled class="btn btn-danger ml-2 remove-item"><i class="fas fa-trash-alt"></i></button>
@@ -335,13 +335,13 @@
                                                                         name="openingen[deuren][eigenschappen][]"
                                                                         class="picky-animation__select form-control has-custom-input">
                                                                         <option value="" disabled selected>Eigenschappen deuren</option>
-                                                                        <option value="De afwerking van de dagkanten van de deur">De afwerking van de dagkanten van de deur
+                                                                        <option value="De afwerking van de dagkanten van de deur.">De afwerking van de dagkanten van de deur
                                                                         </option>
-                                                                        <option value="De deur bevat glas met een sterke geleiding">De deur bevat glas met een sterke geleiding</option>
-                                                                        <option value="De deur bevat een paneel met sterke geleiding">De deur bevat een paneel met sterke geleiding</option>
-                                                                        <option value="De deur(en) zijn vernieuwd">De deur(en) zijn vernieuwd</option>
-                                                                        <option value="De deur(en) zijn verouderd">De deur(en) zijn verouderd</option>
-                                                                        <option value="Infiltraties via de deur">Infiltraties via de deur</option>
+                                                                        <option value="De deur bevat glas met een sterke geleiding.">De deur bevat glas met een sterke geleiding</option>
+                                                                        <option value="De deur bevat een paneel met sterke geleiding.">De deur bevat een paneel met sterke geleiding</option>
+                                                                        <option value="De deur(en) zijn vernieuwd.">De deur(en) zijn vernieuwd</option>
+                                                                        <option value="De deur(en) zijn verouderd.">De deur(en) zijn verouderd</option>
+                                                                        <option value="Infiltraties via de deur.">Infiltraties via de deur</option>
                                                                         <option value="zelf gespecificeerd">Andere zelf te specificeren tekstueel</option>
                                                                     </select>
                                                                      <button type="button" disabled class="btn btn-danger ml-2 remove-item"><i class="fas fa-trash-alt"></i></button>
@@ -389,14 +389,14 @@
                                                                         name="openingen[poorten][eigenschappen][]"
                                                                         class="picky-animation__select form-control has-custom-input">
                                                                         <option value="" disabled selected>Eigenschappen poorten</option>
-                                                                        <option value="Sterke infiltraties via de poort">Sterke infiltraties via de poort</option>
-                                                                        <option value="De poort sluit niet zo goed">De poort sluit niet zo goed</option>
-                                                                        <option value="De afwerking van de dagkanten ontbreekt">De afwerking van de dagkanten ontbreekt</option>
-                                                                        <option value="De poort vertoond een sterke geleiding">De poort vertoond een sterke geleiding</option>
-                                                                        <option value="Er is geen afsluiting t.o.v. de spouw, groot warmteverlies">Er is geen afsluiting t.o.v. de spouw, groot warmteverlies</option>
-                                                                        <option value="De poort is geisoleerd">De poort is geïsoleerd</option>
-                                                                        <option value="De poort is niet geisoleerd">De poort is niet geïsoleerd</option>
-                                                                        <option value="De poort is vernieuwd">De poort is vernieuwd</option>
+                                                                        <option value="Sterke infiltraties via de poort.">Sterke infiltraties via de poort</option>
+                                                                        <option value="De poort sluit niet zo goed.">De poort sluit niet zo goed</option>
+                                                                        <option value="De afwerking van de dagkanten ontbreekt.">De afwerking van de dagkanten ontbreekt</option>
+                                                                        <option value="De poort vertoond een sterke geleiding.">De poort vertoond een sterke geleiding</option>
+                                                                        <option value="Er is geen afsluiting t.o.v. de spouw, groot warmteverlies.">Er is geen afsluiting t.o.v. de spouw, groot warmteverlies</option>
+                                                                        <option value="De poort is geisoleerd.">De poort is geïsoleerd</option>
+                                                                        <option value="De poort is niet geisoleerd.">De poort is niet geïsoleerd</option>
+                                                                        <option value="De poort is vernieuwd.">De poort is vernieuwd</option>
                                                                         <option value="zelf gespecificeerd">Andere zelf te specificeren tekstueel</option>
                                                                         </select>
                                                                           <button type="button" disabled class="btn btn-danger ml-2 remove-item"><i class="fas fa-trash-alt"></i></button></div>
@@ -438,10 +438,10 @@
                                                                          name="openingen[brievenbus][eigenschappen][]"
                                                                         class="picky-animation__select form-control has-custom-input">
                                                                         <option value="" disabled selected>Eigenschappen brievenbus</option>
-                                                                        <option value="Brieven aanwezig in de deur">Brieven aanwezig in de deur</option>
-                                                                        <option value="Brievenbus op de muur gemonteerd">Brievenbus op de muur gemonteerd</option>
-                                                                        <option value="Grote infiltraties">Grote infiltraties</option>
-                                                                        <option value="Brievenbus ingewerkt in de muur">Brievenbus ingewerkt in de muur</option>
+                                                                        <option value="Brieven aanwezig in de deur.">Brieven aanwezig in de deur</option>
+                                                                        <option value="Brievenbus op de muur gemonteerd.">Brievenbus op de muur gemonteerd</option>
+                                                                        <option value="Grote infiltraties.">Grote infiltraties</option>
+                                                                        <option value="Brievenbus ingewerkt in de muur.">Brievenbus ingewerkt in de muur</option>
                                                                         <option value="zelf gespecificeerd">Andere zelf te specificeren tekstueel</option>
                                                                     </select>
                                                                         <button type="button" disabled class="btn btn-danger ml-2 remove-item"><i class="fas fa-trash-alt"></i></button>
@@ -494,17 +494,17 @@
                                                        <div class="d-flex">
                                                         <select name="muren[eigenschappen][]" class="picky-animation__select form-control has-custom-input">
                                                         <option value="" disabled selected>Eigenschappen Muren</option>  
-                                                            <option value="De muren hebben geen uniforme kleur, de muur is niet of onvoldoende geisoleerd">De muren hebben geen uniforme kleur, de muur is niet of onvoldoende geïsoleerd</option>
-                                                            <option value="De muren hebben een uniforme kleur en zijn geisoleerd">De muren hebben een uniforme kleur en zijn geïsoleerd</option>
-                                                            <option value="De muren kleuren uniform, de spouw werd na geisoleerd d.m.v. spouwvulling">De muren kleuren uniform, de spouw werd na geïsoleerd d.m.v. spouwvulling</option>
+                                                            <option value="De muren hebben geen uniforme kleur, de muur is niet of onvoldoende geisoleerd.">De muren hebben geen uniforme kleur, de muur is niet of onvoldoende geïsoleerd</option>
+                                                            <option value="De muren hebben een uniforme kleur en zijn geisoleerd.">De muren hebben een uniforme kleur en zijn geïsoleerd</option>
+                                                            <option value="De muren kleuren uniform, de spouw werd na geisoleerd d.m.v. spouwvulling.">De muren kleuren uniform, de spouw werd na geïsoleerd d.m.v. spouwvulling</option>
                                                             <option value="De muren beschikken over een basisisolatie">De muren beschikken over een basisisolatie</option>
-                                                            <option value="De kleur van de muren kan varieren in functie van stooktemperatuur">De kleur van de muren kan variëren in functie van stooktemperatuur</option>
-                                                            <option value="De kleur van de muren kan varieren als de aanpalende ruimte is verwarmd of niet ">De kleur van de muren kan variëren als de aanpalende ruimte is verwarmd of niet </option>
-                                                            <option value="Men kan warmtestromen vaststellen in de spouw">Men kan warmtestromen vaststellen in de spouw</option>
-                                                            <option value="De muur is begroeid met beplantingen">De muur is begroeid met beplantingen</option>
-                                                            <option value="De muur is op bepaalde plaatsen vochtig">De muur is op bepaalde plaatsen vochtig</option>
-                                                            <option value="Er is een afkoeling van de muur door de wind">Er is een afkoeling van de muur door de wind</option>
-                                                            <option value="Binnenhoek vertonen een grotere warmteuitstraling">Binnenhoek vertonen een grotere warmteuitstraling</option>
+                                                            <option value="De kleur van de muren kan varieren in functie van stooktemperatuur.">De kleur van de muren kan variëren in functie van stooktemperatuur</option>
+                                                            <option value="De kleur van de muren kan varieren als de aanpalende ruimte is verwarmd of niet.">De kleur van de muren kan variëren als de aanpalende ruimte is verwarmd of niet </option>
+                                                            <option value="Men kan warmtestromen vaststellen in de spouw.">Men kan warmtestromen vaststellen in de spouw</option>
+                                                            <option value="De muur is begroeid met beplantingen.">De muur is begroeid met beplantingen</option>
+                                                            <option value="De muur is op bepaalde plaatsen vochtig.">De muur is op bepaalde plaatsen vochtig</option>
+                                                            <option value="Er is een afkoeling van de muur door de wind.">Er is een afkoeling van de muur door de wind</option>
+                                                            <option value="Binnenhoek vertonen een grotere warmteuitstraling.">Binnenhoek vertonen een grotere warmteuitstraling</option>
                                                             <option value="zelf gespecificeerd">Andere zelf te specificeren tekstueel</option>
 
                                                         </select>
@@ -555,18 +555,18 @@
                                                       <div class="d-flex">
                                                         <select name="daken[eigenschappen][]" class="picky-animation__select form-control has-custom-input">
                                                         <option value="" disabled selected>Eigenschappen dak</option>    
-                                                        <option value="Het dak heeft een uniforme kleur, dit impliceert wellicht een vorm van isolatie, hoe kouder het dak, hoe donkerder de kleur, hoe groter de isolatiewaarde">Het dak heeft een uniforme kleur, dit impliceert wellicht een vorm van isolatie, hoe kouder het dak, hoe donkerder de kleur, hoe groter de isolatiewaarde</option>
-                                                            <option value="De kleur van het dak dient men te interpreteren in functie van de onderliggende temperatuur, ruimte onder het dak is niet verwarmd">De kleur van het dak dient men te interpreteren in functie van de onderliggende temperatuur, ruimte onder het dak is niet verwarmd
+                                                        <option value="Het dak heeft een uniforme kleur, dit impliceert wellicht een vorm van isolatie, hoe kouder het dak, hoe donkerder de kleur, hoe groter de isolatiewaarde.">Het dak heeft een uniforme kleur, dit impliceert wellicht een vorm van isolatie, hoe kouder het dak, hoe donkerder de kleur, hoe groter de isolatiewaarde</option>
+                                                            <option value="De kleur van het dak dient men te interpreteren in functie van de onderliggende temperatuur, ruimte onder het dak is niet verwarmd.">De kleur van het dak dient men te interpreteren in functie van de onderliggende temperatuur, ruimte onder het dak is niet verwarmd
                                                             </option>
-                                                            <option value="De kleur van het dak dient men te interpreteren in functie van de onderliggende temperatuur, ruimte onder het dak is verwarmd">De kleur van het dak dient men te interpreteren in functie van de onderliggende temperatuur, ruimte onder het dak is verwarmd
+                                                            <option value="De kleur van het dak dient men te interpreteren in functie van de onderliggende temperatuur, ruimte onder het dak is verwarmd.">De kleur van het dak dient men te interpreteren in functie van de onderliggende temperatuur, ruimte onder het dak is verwarmd
                                                             </option>
-                                                            <option value="Een dakdeel is beter geisoleerd dan het andere dakdeel">Één dakdeel is beter geïsoleerd dan het andere dakdeel</option>
-                                                            <option value="De dakisolatie bevat niet conformiteiten (vb ontbrekende stukken isolatie, losgekomen isolatie, slecht geplaatste isolatie">De dakisolatie bevat niet conformiteiten (vb ontbrekende stukken isolatie, losgekomen isolatie, slecht geplaatste isolatie</option>
-                                                            <option value="De aansluiting van de dakramen aan de dakisolatie">De aansluiting van de dakramen aan de dakisolatie</option>
-                                                            <option value="De aansluiting van de dakramen aan de dakisolatie">Het dak heeft geen uniforme kleur, het dak is waarschijnlijk niet geïsoleerd of de isolatie is slecht geplaatst</option>
-                                                            <option value="Warmteuitstraling (reflectie) van naast gelegen muur op het dakdeel">Warmteuitstraling (reflectie) van naast gelegen muur op het dakdeel</option>
+                                                            <option value="Een dakdeel is beter geisoleerd dan het andere dakdeel.">Één dakdeel is beter geïsoleerd dan het andere dakdeel</option>
+                                                            <option value="De dakisolatie bevat niet conformiteiten (vb ontbrekende stukken isolatie, losgekomen isolatie, slecht geplaatste isolatie.">De dakisolatie bevat niet conformiteiten (vb ontbrekende stukken isolatie, losgekomen isolatie, slecht geplaatste isolatie</option>
+                                                            <option value="De aansluiting van de dakramen aan de dakisolatie.">De aansluiting van de dakramen aan de dakisolatie</option>
+                                                            <option value="Het dak heeft geen uniforme kleur, het dak is waarschijnlijk niet geïsoleerd of de isolatie is slecht geplaatst.">Het dak heeft geen uniforme kleur, het dak is waarschijnlijk niet geïsoleerd of de isolatie is slecht geplaatst</option>
+                                                            <option value="Warmteuitstraling (reflectie) van naast gelegen muur op het dakdeel.">Warmteuitstraling (reflectie) van naast gelegen muur op het dakdeel</option>
                                                             <option value="Reflecties van metalen delen zoals lood, zinkwerk, koper, …">Reflecties van metalen delen zoals lood, zinkwerk, koper, …</option>
-                                                            <option value="Opgelet reflecties door glazuurde pannen, hierdoor lijkt het dak beter geisoleerd">Opgelet reflecties door glazuurde pannen, hierdoor lijkt het dak beter geïsoleerd</option>
+                                                            <option value="Opgelet reflecties door glazuurde pannen, hierdoor lijkt het dak beter geisoleerd.">Opgelet reflecties door glazuurde pannen, hierdoor lijkt het dak beter geïsoleerd</option>
                                                             <option value="zelf gespecificeerd">Andere zelf te specificeren tekstueel</option>
                                                         </select>
                                                          <button type="button" disabled class="btn btn-danger ml-2 remove-item"><i class="fas fa-trash-alt"></i></button></div>
@@ -611,11 +611,11 @@
                                                      <div class="d-flex">
                                                         <select name="energiebronnen[eigenschappen][]" class="pick-animation__select form-control has-custom-input">
                                                         <option value="" disabled selected>Eigenschappen hernieuwbare energie</option>    
-                                                        <option value="Geen hernieuwbare energie vastgesteld, investeer en geniet van de gratis zonne energie, uw dak leunt zich tot zonnepanelen en zonneboiler">Geen hernieuwbare energie vastgesteld, investeer en geniet van de gratis zonne energie, uw dak leunt zich tot zonnepanelen en zonneboiler</option>
-                                                            <option value="Geen hernieuwbare energie vastgesteld, maar is wel aanwezig op een andere dakdeel">Geen hernieuwbare energie vastgesteld, maar is wel aanwezig op een andere dakdeel</option>
-                                                            <option value="Zonnepanelen zijn waarneembaar op het dak">Zonnepanelen zijn waarneembaar op het dak
+                                                        <option value="Geen hernieuwbare energie vastgesteld, investeer en geniet van de gratis zonne energie, uw dak leunt zich tot zonnepanelen en zonneboiler.">Geen hernieuwbare energie vastgesteld, investeer en geniet van de gratis zonne energie, uw dak leunt zich tot zonnepanelen en zonneboiler</option>
+                                                            <option value="Geen hernieuwbare energie vastgesteld, maar is wel aanwezig op een andere dakdeel.">Geen hernieuwbare energie vastgesteld, maar is wel aanwezig op een andere dakdeel</option>
+                                                            <option value="Zonnepanelen zijn waarneembaar op het dak.">Zonnepanelen zijn waarneembaar op het dak
                                                             </option>
-                                                            <option value="Zonneboiler is waarneembaar op het dak">Zonneboiler is waarneembaar op het dak</option>
+                                                            <option value="Zonneboiler is waarneembaar op het dak.">Zonneboiler is waarneembaar op het dak</option>
                                                             <option value="zelf gespecificeerd">Andere zelf te specificeren tekstueel</option>
                                                         </select>
                                                          <button type="button" disabled class="btn btn-danger ml-2 remove-item"><i class="fas fa-trash-alt"></i></button></div>
