@@ -59,17 +59,40 @@ function submitForm(e) {
   e.preventDefault();
   let form = document.querySelector(".multisteps-form__form");
   addHouseImagesToForm(form);
-  form.submit();
+  if (formIsValid()) {
+    form.submit();
+  } else {
+    alert("Gelieve alle gegevens in te vullen");
+  }
+}
+
+function formIdValid() {
+  let form = document.querySelector(".multisteps-form__form");
+  let inputFields = form.querySelectorAll("input");
+  console.log(inputFields);
+
+  return false;
 }
 
 function addHouseImagesToForm(form) {
   let secondaryHouseImages = document.querySelectorAll(
     ".house-image-list li img"
   );
-  let imagesContainer = form.querySelector(".house-images-input-container");
+
+  let hiddenImagesContainer = form.querySelector(
+    ".house-images-input-container"
+  );
+  let primaryHouseImage = document.querySelector(".house-image img");
+  let primaryHouseImageInputField = createHiddenInputField(
+    primaryHouseImage.src,
+    "images[]"
+  );
+  hiddenImagesContainer.appendChild(primaryHouseImageInputField);
 
   secondaryHouseImages.forEach(image => {
-    imagesContainer.appendChild(createHiddenInputField(image.src, "images[]"));
+    hiddenImagesContainer.appendChild(
+      createHiddenInputField(image.src, "images[]")
+    );
   });
 }
 
@@ -126,6 +149,8 @@ function addItem(e) {
 
   //adding new item
   list.appendChild(newListItem);
+
+  list.insertBefore(newListItem, list.firstElementChild);
 
   //set waarneming-box color
   changeBoxColor(null, newListItem.querySelector(".waarneming-box"));

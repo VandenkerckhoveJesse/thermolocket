@@ -29,7 +29,7 @@ p {
   margin-right: 0 !important;
 }
 
-main>.row {
+main > .row {
   margin-top: 30px;
 }
 
@@ -120,27 +120,31 @@ div.form-row.mt-4 {
   background-color: white;
 }
 
-.waarneming-box option:first-child {
-  background-color: #0f8000;
+.waarneming-box option:nth-child(1) {
+  background-color: white;
 }
 
 .waarneming-box option:nth-child(2) {
-  background-color: #9bbb58;
+  background-color: #0f8000;
 }
 
 .waarneming-box option:nth-child(3) {
-  background-color: #fffc06;
+  background-color: #9bbb58;
 }
 
 .waarneming-box option:nth-child(4) {
-  background-color: #f89645;
+  background-color: #fffc06;
 }
 
 .waarneming-box option:nth-child(5) {
-  background-color: #ff2503;
+  background-color: #f89645;
 }
 
 .waarneming-box option:nth-child(6) {
+  background-color: #ff2503;
+}
+
+.waarneming-box option:nth-child(7) {
   background-color: white;
 }
 
@@ -156,7 +160,7 @@ div.form-row.mt-4 {
   padding-top: 45px;
 }
 
-.house-image>img {
+.house-image > img {
   border-radius: 20px;
   vertical-align: middle;
   border-style: none;
@@ -241,7 +245,9 @@ div.form-row.mt-4 {
   height: 50px;
   content: "";
   transform: translateX(-50%);
-  transition: all 0.15s linear 0s, transform 0.15s cubic-bezier(0.05, 1.09, 0.16, 1.4) 0s, -webkit-transform 0.15s cubic-bezier(0.05, 1.09, 0.16, 1.4) 0s;
+  transition: all 0.15s linear 0s,
+    transform 0.15s cubic-bezier(0.05, 1.09, 0.16, 1.4) 0s,
+    -webkit-transform 0.15s cubic-bezier(0.05, 1.09, 0.16, 1.4) 0s;
   border: 2px solid currentColor;
   border-radius: 50%;
   background-color: #fff;
@@ -275,9 +281,8 @@ div.form-row.mt-4 {
   background-position: 12px 12px !important;
 }
 
-
 .multisteps-form__progress-btn.js-active:before {
-  background-color:white;
+  background-color: white;
 }
 
 .gegevens-nav.js-active:before {
@@ -285,7 +290,7 @@ div.form-row.mt-4 {
 }
 
 .gevel-nav:before {
-  background-image: url("../media/gevel-icon.svg") ;
+  background-image: url("../media/gevel-icon.svg");
 }
 
 .gevel-nav.js-active:before {
