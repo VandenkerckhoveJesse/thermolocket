@@ -53,7 +53,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-11 m-auto">
-                                    <form class="multisteps-form__form" method="POST" action="">
+                                    <form class="multisteps-form__form" method="POST" action="./pdfconverter/generatePdf.php">
                                         <div class="multisteps-form__panel shadow pb-4 px-4 rounded bg-white js-active gegevens"
                                             >
                                             <h3 class="multisteps-form__title">Basisgegevens</h3>
@@ -130,8 +130,8 @@
                                                 <div class="form-row mt-4">
                                                     <p>Was de woning verwarmd:</p>
                                                     <div id="verwarmd" class="col-12 col-sm-6">
-                                                        <input type="radio" name="gegevens[verwarmd]" id="verwarmd-true" value="true"><label for="verwarmd-true">Ja</label>
-                                                        <input type="radio" name="gegevens[verwarmd]" id="verwarmd-false" value="false"><label for="verwarmd-false">Nee</label>
+                                                        <input type="radio" name="gegevens[verwarmd]" id="verwarmd-true" value="woning is verwarmd"><label for="verwarmd-true">Ja</label>
+                                                        <input type="radio" name="gegevens[verwarmd]" id="verwarmd-false" value="woning is niet verwarmd"><label for="verwarmd-false">Nee</label>
                                                     </div>
 
                                                 </div>
@@ -143,6 +143,7 @@
                                                         <div class="list-item">
                                                       <div class="d-flex">
                                                         <select  name="gegevens[verwarming][eigenschappen][]" class="pick-animation__select form-control has-custom-input">
+                                                            <option value="" disabled selected>Waar was er verwarming op dat moment</option>
                                                             <option value="gelijkvloers-verwarmd">gelijkvloers is verwarmd</option>
                                                             <option value="gelijkvloers-niet-verwarmd">gelijkvloers is niet verwarmd</option>
                                                             <option value="1ste-verdiep-verwarmd">1ste verdiep is verwarmd</option>
@@ -178,7 +179,7 @@
                                                         <input type="checkbox" id="optie1" name="gevel[eigenschappen][]" value="Verwarmingslichaam duidelijk waarneembaar"> 
                                                         <label for="optie1">Verwarmingslichaam duidelijk waarneembaar</label>
                                                         <br>
-                                                        <input type="checkbox" id="optie2" name="gevel[eigenschappen][]" value="fvoer van de ketel is waarneembaar">
+                                                        <input type="checkbox" id="optie2" name="gevel[eigenschappen][]" value="Afvoer van de ketel is waarneembaar">
                                                         <label for="optie2">Afvoer van de ketel is waarneembaar</label>
                                                         <br>
                                                         <input type="checkbox" id="optie3" name="gevel[eigenschappen][]" value="Schoorsteen was in werking">
@@ -246,14 +247,15 @@
                                                                     <select
                                                                         name="openingen[ramen][eigenschappen][]"
                                                                         class="picky-animation__select form-control has-custom-input">
-                                                                        <option value="sterke-geleiding">De ramen tonen een sterke geleiding van warmte, de woning bevat nog oude beglazing.</option>
-                                                                        <option value="vernieuwd">De ramen zijn vernieuwd</option>
-                                                                        <option value="rolluiken-extra-bescherming">De ramen bevatten rolluiken en geven extra bescherming</option>
-                                                                        <option value="afwerking-rolluikkasten">De afwerking van de rolluikkasten op vlak van isolatie en luchtdichtheid</option>
-                                                                        <option value="afwerking-dagkanten">De afwerking van de dagkanten van de ramen</option>
-                                                                        <option value="luchttoevoerroosters">De luchttoevoerroosters zijn waarneembaar op de foto</option>
-                                                                        <option value="raam-open">Raam stond open tijdens onze gevelscan</option>
-                                                                        <option value="sterke-infiltraties">Oude ramen hebben sterke infiltraties (geen of versleten dichtingen)</option>
+                                                                        <option value="" disabled selected>Eigenschappen ramen</option>
+                                                                        <option value="De ramen tonen een sterke geleiding van warmte, de woning bevat nog oude beglazing.">De ramen tonen een sterke geleiding van warmte, de woning bevat nog oude beglazing</option>
+                                                                        <option value="De ramen zijn vernieuwd.">De ramen zijn vernieuwd</option>
+                                                                        <option value="De ramen bevatten rolluiken en geven extra bescherming.">De ramen bevatten rolluiken en geven extra bescherming</option>
+                                                                        <option value="De afwerking van de rolluikkasten op vlak van isolatie en luchtdichtheid.">De afwerking van de rolluikkasten op vlak van isolatie en luchtdichtheid</option>
+                                                                        <option value="De afwerking van de dagkanten van de ramen.">De afwerking van de dagkanten van de ramen</option>
+                                                                        <option value="De luchttoevoerroosters zijn waarneembaar op de foto.">De luchttoevoerroosters zijn waarneembaar op de foto</option>
+                                                                        <option value="Raam stond open tijdens onze gevelscan.">Raam stond open tijdens onze gevelscan</option>
+                                                                        <option value="Andere zelf te specificeren tekstueel.">Oude ramen hebben sterke infiltraties (geen of versleten dichtingen)</option>
                                                                         <option value="custom">Andere zelf te specificeren tekstueel</option>
                                                                     </select>
                                                                      <button type="button" disabled class="btn btn-danger ml-2 remove-item"><i class="fas fa-trash-alt"></i></button>
@@ -261,6 +263,7 @@
                                                                 </div>
                                                                 <div class="col-12 mb-2">
                                                                     <select name="openingen[ramen][waarnemingen][]" class="pick-animation__select form-control waarneming-box">
+                                                                        <option value="" disabled selected>Waarneming</option>
                                                                         <option value="schitterend">schitterend</option>
                                                                         <option value="mooi-resultaat">mooi-resultaat
                                                                         </option>
@@ -289,6 +292,7 @@
                                                                    <div class="d-flex">
                                                                     <select name="openingen[dakramen][eigenschappen][]"
                                                                         class="picky-animation__select form-control has-custom-input">
+                                                                        <option value="" disabled selected>Eigenschappen dakramen</option>
                                                                         <option value="metalen-frame">Het dakraam bestaat uit een metalen frame met enkele beglazing
                                                                         </option>
                                                                         <option value="hedendaags">Het dakraam is hedendaags</option>
@@ -301,7 +305,8 @@
                                                                 </div>
                                                                 <div class="col-12 mb-2">
                                                                     <select name="openingen[dakramen][waarnemingen][]" class="pick-animation__select form-control waarneming-box">
-                                                                        <option value="schitterend">schitterend</option>
+                                                                    <option value="" disabled selected>Waarneming</option>    
+                                                                    <option value="schitterend">schitterend</option>
                                                                         <option value="mooi-resultaat">mooi-resultaat
                                                                         </option>
                                                                         <option value="goed-op-weg">goed-op-weg</option>
@@ -330,6 +335,7 @@
                                                                     <select
                                                                         name="openingen[deuren][eigenschappen][]"
                                                                         class="picky-animation__select form-control has-custom-input">
+                                                                        <option value="" disabled selected>Eigenschappen deuren</option>
                                                                         <option value="dagkanten">De afwerking van de dagkanten van de deur
                                                                         </option>
                                                                         <option value="glas-sterke-geleiding">De deur bevat glas met een sterke geleiding</option>
@@ -345,7 +351,8 @@
                                                                 </div>
                                                                 <div class="col-12 mb-2">
                                                                     <select name="openingen[deuren][waarnemingen][]" class="pick-animation__select form-control waarneming-box">
-                                                                        <option value="schitterend">schitterend</option>
+                                                                    <option value="" disabled selected>Waarneming</option>    
+                                                                    <option value="schitterend">schitterend</option>
                                                                         <option value="mooi-resultaat">mooi-resultaat
                                                                         </option>
                                                                         <option value="goed-op-weg">goed-op-weg</option>
@@ -383,6 +390,7 @@
                                                                     <select
                                                                         name="openingen[poorten][eigenschappen][]"
                                                                         class="picky-animation__select form-control has-custom-input">
+                                                                        <option value="" disabled selected>Eigenschappen poorten</option>
                                                                         <option value="infiltratie-poort">Sterke infiltraties via de poort</option>
                                                                         <option value="poort-sluit-niet-goed">De poort sluit niet zo goed</option>
                                                                         <option value="afwerking-dagkanten-ontbreekt">De afwerking van de dagkanten ontbreekt</option>
@@ -398,7 +406,8 @@
                                                                 </div>
                                                                 <div class="col-12 mb-2">
                                                                     <select name="openingen[poorten][waarnemingen][]" class="pick-animation__select form-control waarneming-box">
-                                                                        <option value="schitterend">schitterend</option>
+                                                                    <option value="" disabled selected>Waarneming</option>    
+                                                                    <option value="schitterend">schitterend</option>
                                                                         <option value="mooi-resultaat">mooi-resultaat
                                                                         </option>
                                                                         <option value="goed-op-weg">goed-op-weg</option>
@@ -443,7 +452,8 @@
                                                                 </div>
                                                                 <div class="col-12 mb-2">
                                                                     <select name="openingen[brievenbus][waarnemingen][]" class="pick-animation__select form-control waarneming-box">
-                                                                        <option value="schitterend">schitterend</option>
+                                                                    <option value="" disabled selected>Waarneming</option>    
+                                                                    <option value="schitterend">schitterend</option>
                                                                         <option value="mooi-resultaat">mooi-resultaat
                                                                         </option>
                                                                         <option value="goed-op-weg">goed-op-weg</option>
@@ -545,7 +555,8 @@
                                                         <div class="col-12 mb-2">
                                                       <div class="d-flex">
                                                         <select name="daken[eigenschappen][]" class="picky-animation__select form-control has-custom-input">
-                                                            <option value="dak-uniformekleur">Het dak heeft een uniforme kleur, dit impliceert wellicht een vorm van isolatie, hoe kouder het dak, hoe donkerder de kleur, hoe groter de isolatiewaarde</option>
+                                                        <option value="" disabled selected>Eigenschappen dak</option>    
+                                                        <option value="dak-uniformekleur">Het dak heeft een uniforme kleur, dit impliceert wellicht een vorm van isolatie, hoe kouder het dak, hoe donkerder de kleur, hoe groter de isolatiewaarde</option>
                                                             <option value="dak-niet-verwarmd">De kleur van het dak dient men te interpreteren in functie van de onderliggende temperatuur, ruimte onder het dak is niet verwarmd
                                                             </option>
                                                             <option value="ruimte-onder-dak-verwarmd">De kleur van het dak dient men te interpreteren in functie van de onderliggende temperatuur, ruimte onder het dak is verwarmd
@@ -563,7 +574,8 @@
                                                     </div>
                                                     <div class="col-12 mb-2">
                                                         <select name="daken[waarnemingen][]" class="pick-animation__select form-control waarneming-box">
-                                                            <option value="schitterend">schitterend</option>
+                                                        <option value="" disabled selected>Waarneming</option>    
+                                                        <option value="schitterend">schitterend</option>
                                                             <option value="mooi-resultaat">mooi-resultaat</option>
                                                             <option value="goed-op-weg">goed-op-weg</option>
                                                             <option value="aanpakken">aanpakken</option>
@@ -599,7 +611,8 @@
                                                         <div class="col-12 mb-2">
                                                      <div class="d-flex">
                                                         <select name="energiebronnen[eigenschappen][]" class="pick-animation__select form-control has-custom-input">
-                                                            <option value="gratis-zonne-energie">Geen hernieuwbare energie vastgesteld, investeer en geniet van de gratis zonne energie, uw dak leunt zich tot zonnepanelen en zonneboiler</option>
+                                                        <option value="" disabled selected>Eigenschappen hernieuwbare energie</option>    
+                                                        <option value="gratis-zonne-energie">Geen hernieuwbare energie vastgesteld, investeer en geniet van de gratis zonne energie, uw dak leunt zich tot zonnepanelen en zonneboiler</option>
                                                             <option value="aanwezig-ander-dakdeel">Geen hernieuwbare energie vastgesteld, maar is wel aanwezig op een andere dakdeel                                                      </option>
                                                             <option value="zonnepanelen">Zonnepanelen zijn waarneembaar op het dak
                                                             </option>
@@ -610,7 +623,8 @@
                                                     </div>
                                                     <div class="col-12 mb-2">
                                                         <select name="energiebronnen[waarnemingen][]" name="energie-status" class="pick-animation__select form-control waarneming-box">
-                                                            <option value="schitterend">schitterend</option>
+                                                        <option value="" disabled selected>Waarneming</option>    
+                                                        <option value="schitterend">schitterend</option>
                                                             <option value="mooi-resultaat">mooi-resultaat</option>
                                                             <option value="goed-op-weg">goed-op-weg</option>
                                                             <option value="aanpakken">aanpakken</option>
