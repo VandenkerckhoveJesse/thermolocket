@@ -112,9 +112,9 @@ function getGevel(){
     foreach($values['eigenschappen'] as $item){
         $this->MultiCell(190, 10, $item);
     }
-
-
     $this->Addpage();
+
+
 
 }
 }
@@ -138,6 +138,7 @@ function getRamen(){
         $this->MultiCell(190,10, $waarnemingen[$i]);
         if(sizeof($custom) > 1){
         $this->MultiCell(190,10, $custom[$i]);
+        $this->Ln(5);
         }
     }
 }
@@ -160,6 +161,7 @@ function dakramen(){
         $this->MultiCell(190,10, $waarnemingen[$i]);
         if(sizeof($custom) > 1){
         $this->MultiCell(190,10, $custom[$i]);
+        $this->Ln(5);
         }
     }
 }
@@ -181,6 +183,7 @@ function deuren(){
         $this->MultiCell(190,10, $waarnemingen[$i]);
         if(sizeof($custom) > 1){
         $this->MultiCell(190,10, $custom[$i]);
+        $this->Ln(5);
         }
     }
 }
@@ -202,6 +205,7 @@ function poorten(){
             $this->MultiCell(190,10, $waarnemingen[$i]);
             if(sizeof($custom) > 1){
             $this->MultiCell(190,10, $custom[$i]);
+            $this->Ln(5);
             }
         }
 }
@@ -223,6 +227,7 @@ function brievenbus(){
             $this->MultiCell(190,10, $waarnemingen[$i]);
             if(sizeof($custom) > 1){
             $this->MultiCell(190,10, $custom[$i]);
+            $this->Ln(5);
             }
         }
 }
@@ -231,7 +236,7 @@ function brievenbus(){
 function getMuren(){
     $values = $_POST['muren'];
     if(sizeof($values) > 1){
-    
+    $this->AddPage();
     $eigenschappen = $values['eigenschappen'];
     $waarnemingen = $values['waarnemingen'];
     $custom = $values['eigenschappen-custom'];
@@ -246,6 +251,7 @@ function getMuren(){
         $this->MultiCell(190,10, $waarnemingen[$i]);
         if(sizeof($custom) > 1){
         $this->MultiCell(190,10, $custom[$i]);
+        $this->Ln(5);
         }
     }
     }
@@ -254,7 +260,7 @@ function getMuren(){
 function getDak(){
     $values = $_POST['daken'];
     if(sizeof($values) > 1){
-    
+    $this->AddPage();
     $eigenschappen = $values['eigenschappen'];
     $waarnemingen = $values['waarnemingen'];
     $custom = $values['eigenschappen-custom'];
@@ -269,15 +275,16 @@ function getDak(){
         $this->MultiCell(190,10, $waarnemingen[$i]);
         if(sizeof($custom) > 1){
         $this->MultiCell(190,10, $custom[$i]);
+        $this->Ln(5);
         }
     }
-    $this->AddPage();
     }
 }
 
 function getEnergiebronnen(){
     $values =$_POST['energiebronnen'];
     if(sizeof($values) > 1){
+    $this->AddPage();
     $eigenschappen = $values['eigenschappen'];
     $waarnemingen = $values['waarnemingen'];
     $custom = $values['eigenschappen-custom'];
@@ -292,139 +299,12 @@ function getEnergiebronnen(){
         $this->MultiCell(190,10, $waarnemingen[$i]);
         if(sizeof($custom) > 1){
         $this->MultiCell(190,10, $custom[$i]);
+        $this->Ln(5);
         }
     }
     $this->AddPage();
     }
 }
-
-/*
-function getRamen(){
-    $values = $_POST['openingen'];
-    $ramen = $values['ramen'];
-    
-    if(sizeof($ramen) > 1){
-    $eigenschappen = $ramen['eigenschappen'];
-    $waarnemingen = $ramen['waarnemingen'];
-    $i = 0;
-    
-    foreach( array_combine($eigenschappen,$waarnemingen) as $eigenschap => $waarneming){
-        $this->MultiCell(190,10, $eigenschap);
-        
-        $this->MultiCell(190,10, "Waarneming: " . $waarneming);
-        $this->Ln(10);
-        if (isset($ramen['eigenschappen-custom'])){
-            $custom = $ramen['eigenschappen-custom'];
-            for($i; $i < sizeof($custom); $i++)
-                $this->MultiCell(190,10, $custom[$i]);
-            }
-        }
-    }
-    }
-    
-
-    
-
-
-
-function dakramen(){
-    $values = $_POST['openingen'];
-    $dakramen = $values['dakramen'];
-    if(sizeof($dakramen) > 1){
-    $eigenschappen = $dakramen['eigenschappen'];
-    $waarnemingen = $dakramen['waarnemingen'];
-    $i = 0;
-    $this->Line(10, 56, 200, 56);
-    $this->SetFont('Arial', 'B', 18);
-    $this->MultiCell(190, 10, 'Dakramen');
-    $this->SetFont('Arial', '', 14);
-    foreach( array_combine($eigenschappen,$waarnemingen) as $eigenschap => $waarneming){
-        $this->MultiCell(190,10, $eigenschap);
-        $this->MultiCell(190,10, "Waarneming: " . $waarneming);
-        $this->Ln(10);
-        if (isset($dakramen['eigenschappen-custom'])){
-            $custom = $dakramen['eigenschappen-custom'];
-            for($i; $i < sizeof($custom); $i++)
-                $this->MultiCell(190,10, $custom[$i]);
-            }
-        }
-    }
-    }
-
-
-function deuren(){
-    $values = $_POST['openingen'];
-    $deuren = $values['deuren'];
-    if(sizeof($deuren) > 1){
-    $eigenschappen = $deuren['eigenschappen'];
-    $waarnemingen = $deuren['waarnemingen'];
-    $i = 0;
-    $this->Line(10, 56, 200, 56);
-    $this->SetFont('Arial', 'B', 18);
-    $this->MultiCell(190, 10, 'Deuren');
-    $this->SetFont('Arial', '', 14);
-    foreach( array_combine($eigenschappen,$waarnemingen) as $eigenschap => $waarneming){
-        $this->MultiCell(190,10, $eigenschap);
-        $this->MultiCell(190,10, "Waarneming: " . $waarneming);
-        $this->Ln(10);
-        if (isset($deuren['eigenschappen-custom'])){
-            $custom = $deuren['eigenschappen-custom'];
-            for($i; $i < sizeof($custom); $i++)
-                $this->MultiCell(190,10, $custom[$i]);
-            }
-        }
-}
-}
-
-function poorten(){
-    $values = $_POST['openingen'];
-    $poorten = $values['poorten'];
-    if(sizeof($poorten) > 1){
-    $eigenschappen = $poorten['eigenschappen'];
-    $waarnemingen = $poorten['waarnemingen'];
-    $i = 0;
-    $this->Line(10, 56, 200, 56);
-    $this->SetFont('Arial', 'B', 18);
-    $this->MultiCell(190, 10, 'Poorten');
-    $this->SetFont('Arial', '', 14);
-    foreach( array_combine($eigenschappen,$waarnemingen) as $eigenschap => $waarneming){
-        $this->MultiCell(190,10, $eigenschap);
-        $this->MultiCell(190,10, "Waarneming: " . $waarneming);
-        $this->Ln(10);
-        if (isset($poorten['eigenschappen-custom'])){
-            $custom = $poorten['eigenschappen-custom'];
-            for($i; $i < sizeof($custom); $i++)
-                $this->MultiCell(190,10, $custom[$i]);
-            }
-        }
-}
-}
-
-
-function brievenbus(){
-    $values = $_POST['openingen'];
-    $brievenbus = $values['brievenbus'];
-    if(sizeof($brievenbus) > 1){
-    $eigenschappen = $brievenbus['eigenschappen'];
-    $waarnemingen = $brievenbus['waarnemingen'];
-    $i = 0;
-    $this->Line(10, 56, 200, 56);
-    $this->SetFont('Arial', 'B', 18);
-    $this->MultiCell(190, 10, 'Brievenbus');
-    $this->SetFont('Arial', '', 14);
-    foreach( array_combine($eigenschappen,$waarnemingen) as $eigenschap => $waarneming){
-        $this->MultiCell(190,10, $eigenschap);
-        $this->MultiCell(190,10, "Waarneming: " . $waarneming);
-        $this->Ln(10);
-        if (isset($brievenbus['eigenschappen-custom'])){
-            $custom = $brievenbus['eigenschappen-custom'];
-            for($i; $i < sizeof($custom); $i++)
-                $this->MultiCell(190,10, $custom[$i]);
-            }
-        }
-}
-}
-*/
 
 
 
@@ -434,90 +314,11 @@ function getOpeningen(){
     $this->deuren();
     $this->poorten();
     $this->brievenbus();
-    $this->AddPage();
 
 }
 
 
-/*
-function getMuren(){
-    $values = $_POST['muren'];
-    if(sizeof($values) > 1){
-    
-    $eigenschappen = $values['eigenschappen'];
-    $waarnemingen = $values['waarnemingen'];
-    $i = 0;
-    $this->SetFont('Arial','B', 18);
-    $this->MultiCell(100, 10, 'Muren');
-    $this->Line(10, 56, 200, 56);
-    $this->SetFont('Arial', 'B', 13);
-    $this->MultiCell(190, 10, 'De gelateerde verwarmingzaken die plaatsgevonden zijn:');
-    $this->SetFont('Arial', '', 14);
-       foreach(array_combine($eigenschappen,$waarnemingen) as $eigenschap => $waarneming){
-        $this->MultiCell(190,10, $eigenschap);
-        $this->MultiCell(190,10, "Waarneming: " . $waarneming);
-        if (isset($values['eigenschappen-custom'])){
-            $custom = $values['eigenschappen-custom'];
-            for($i; $i < sizeof($custom); $i++)
-                $this->MultiCell(190,10, $custom[$i]);
-            }
-        }
-    $this->Addpage();
-}
-}
-    
 
-function getDak(){
-    $values = $_POST['daken'];
-    if(sizeof($values) > 1){
-    
-    $eigenschappen = $values['eigenschappen'];
-    $waarnemingen = $values['waarnemingen'];
-    $i = 0;
-    $this->SetFont('Arial','B', 18);
-    $this->MultiCell(100, 10, 'Daken');
-    $this->Line(10, 56, 200, 56);
-    $this->SetFont('Arial', 'B', 13);
-    $this->MultiCell(190, 10, 'De gelateerde verwarmingzaken die plaatsgevonden zijn:');
-    $this->SetFont('Arial', '', 14);
-    foreach(array_combine($eigenschappen,$waarnemingen) as $eigenschap => $waarneming){
-        $this->MultiCell(190,10, $eigenschap);
-        $this->MultiCell(190,10, "Waarneming: " . $waarneming);
-        if (isset($values['eigenschappen-custom'])){
-            $custom = $values['eigenschappen-custom'];
-            for($i; $i < sizeof($custom); $i++)
-                $this->MultiCell(190,10, $custom[$i]);
-            }
-        }
-    $this->Addpage(); 
-}
-}
-
-function getEnergiebronnen(){
-    $values =$_POST['energiebronnen'];
-    if(sizeof($values) > 1){
-    $eigenschappen = $values['eigenschappen'];
-    $waarnemingen = $values['waarnemingen'];
-    $i = 0;
-    $this->SetFont('Arial','B', 18);
-    $this->MultiCell(100, 10, 'Energiebronnen');
-    $this->Line(10, 56, 200, 56);
-    $this->SetFont('Arial', 'B', 13);
-    $this->MultiCell(190, 10, 'De gelateerde verwarmingzaken die plaatsgevonden zijn:');
-    $this->SetFont('Arial', '', 14);
-    foreach(array_combine($eigenschappen,$waarnemingen) as $eigenschap => $waarneming){
-        $this->MultiCell(190,10, $eigenschap);
-        $this->MultiCell(190,10, "Waarneming: " . $waarneming);
-        if (isset($values['eigenschappen-custom'])){
-            $custom = $values['eigenschappen-custom'];
-            for($i; $i < sizeof($custom); $i++)
-                $this->MultiCell(190,10, $custom[$i]);
-            }
-        }
-    
-}
-}
-*/
 function getHeadImage(){
     $values = $_POST['images'];
     for($i = 0; $i < 1; $i++){
