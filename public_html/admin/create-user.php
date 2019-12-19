@@ -2,7 +2,7 @@
 include_once("../../resources/config.php");
 include_once ("../../resources/autoloader.php");
 
-Helper::authenticate("admin");
+//Helper::authenticate("admin");
 
 $pageTitle="Admin panel";
 $cssFiles=["admin.css"];

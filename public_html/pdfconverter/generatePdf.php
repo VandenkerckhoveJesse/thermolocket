@@ -13,6 +13,8 @@ function header(){
     
     $this->SetX(20);
     $this->Image("../ftp/fotos/" . $gemeente . ".JPG");
+    $this->SetX(10);
+    
 }
 function footer(){
     $this->SetY(-30);
@@ -83,7 +85,7 @@ function getContactInformation(){
             if (isset($verwarming['eigenschappen-custom'])){
                 foreach($verwarming['eigenschappen-custom'] as $item){
                     $this->Text(13,$i, $item);
-                    $i += 10;
+                    
         
                 }
             }
@@ -302,7 +304,6 @@ function getEnergiebronnen(){
         $this->Ln(5);
         }
     }
-    $this->AddPage();
     }
 }
 
@@ -320,6 +321,7 @@ function getOpeningen(){
 
 
 function getHeadImage(){
+    $this->SetX(20);
     $values = $_POST['images'];
     for($i = 0; $i < 1; $i++){
         $this->Image("../ftp/fotos/jabbeke1.JPG");
@@ -332,6 +334,7 @@ function getHeadImage(){
 function getImages(){
     $values = $_POST['images'];
     if(sizeof($values) != 1){
+        $this->AddPage();
     $y = 50;
     
     for($i = 1; $i < sizeof($values); $i++){
