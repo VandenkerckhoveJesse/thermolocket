@@ -193,7 +193,7 @@ function addItem(e) {
   //adding new item
   list.appendChild(newListItem);
 
-  list.insertBefore(newListItem, list.firstElementChild);
+  //list.insertBefore(newListItem, list.firstElementChild);
 
   //set waarneming-box color
   changeBoxColor(null, newListItem.querySelector(".waarneming-box"));
