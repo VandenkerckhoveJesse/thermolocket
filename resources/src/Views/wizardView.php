@@ -260,6 +260,11 @@
                                                                     </select>
                                                                      <button type="button" disabled class="btn btn-danger ml-2 remove-item"><i class="fas fa-trash-alt"></i></button>
                                                                    </div>
+
+                                                                   <div class="col-12">
+                                                                   <input type="text" class="d-none w-100 my-2 custom-input" name="openingen[ramen][eigenschappen-custom][]">
+                                                                   </div>
+
                                                                 </div>
                                                                 <div class="col-12 mb-2">
                                                                     <select name="openingen[ramen][waarnemingen][]" class="pick-animation__select form-control waarneming-box">
@@ -274,9 +279,7 @@
                                                                     </select>
                                                                 </div>
 
-                                                                <div class="col-12 mb-4">
-                                                                   <input type="text" class="d-none w-100 my-2 custom-input" name="openingen[ramen][eigenschappen-custom][]">
-                                                                   </div>
+                                                                
                                                                </div>
                                                             </div>
                                                         </div>
@@ -301,6 +304,10 @@
                                                                     </select>
                                                                     <button type="button" disabled class="btn btn-danger ml-2 remove-item"><i class="fas fa-trash-alt"></i></button>
                                                                    </div>
+
+                                                                   <div class="col-12">
+                                                                   <input type="text" class="d-none w-100 my-2 custom-input" name="openingen[dakramen][eigenschappen-custom][]">
+                                                                   </div>
                                                                 </div>
                                                                 <div class="col-12 mb-2">
                                                                     <select name="openingen[dakramen][waarnemingen][]" class="pick-animation__select form-control waarneming-box">
@@ -315,9 +322,7 @@
                                                                     </select>
                                                                 </div>
 
-                                                                <div class="col-12 mb-4">
-                                                                   <input type="text" class="d-none w-100 my-2 custom-input" name="openingen[dakramen][eigenschappen-custom][]">
-                                                                   </div>
+                                                                
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -346,7 +351,10 @@
                                                                     </select>
                                                                      <button type="button" disabled class="btn btn-danger ml-2 remove-item"><i class="fas fa-trash-alt"></i></button>
                                                                      </div>
-                                                                    
+                                                                     
+                                                                <div class="col-12">
+                                                                   <input type="text" class="d-none w-100 my-2 custom-input" name="openingen[deuren][eigenschappen-custom][]">
+                                                                   </div>
                                                                 </div>
                                                                 <div class="col-12 mb-2">
                                                                     <select name="openingen[deuren][waarnemingen][]" class="pick-animation__select form-control waarneming-box">
@@ -359,15 +367,6 @@
                                                                         <option value="niet-van-toepassing">niet-van-toepassing</option>
                                                                     </select>
                                                                 </div>
-
-                                                                
-                                                                <div class="col-12 mb-4">
-                                                                   <input type="text" class="d-none w-100 my-2 custom-input" name="openingen[deuren][eigenschappen-custom][]">
-                                                                   </div>
-                                                            
-
-
-
                                                                 </div>
                                                             </div>
 
@@ -400,7 +399,9 @@
                                                                         <option value="zelf gespecificeerd">Andere zelf te specificeren tekstueel</option>
                                                                         </select>
                                                                           <button type="button" disabled class="btn btn-danger ml-2 remove-item"><i class="fas fa-trash-alt"></i></button></div>
-                                                                      
+                                                                        <div class="col-12">
+                                                                   <input type="text" class="d-none w-100 my-2 custom-input" name="openingen[poorten][eigenschappen-custom][]">
+                                                                   </div>
                                                                 </div>
                                                                 <div class="col-12 mb-2">
                                                                     <select name="openingen[poorten][waarnemingen][]" class="pick-animation__select form-control waarneming-box">
@@ -413,13 +414,7 @@
                                                                         <option value="dringend-aanpakken">dringend-aanpakken</option>
                                                                         <option value="niet-van-toepassing">niet-van-toepassing</option>
                                                                     </select>
-                                                                </div>
-
-                                                                <div class="col-12 mb-4">
-                                                                   <input type="text" class="d-none w-100 my-2 custom-input" name="openingen[poorten][eigenschappen-custom][]">
-                                                                   </div>
-
-                                                                
+                                                                </div>       
                                                             </div>
                                                             </div>
                                                         </div>
@@ -446,7 +441,9 @@
                                                                     </select>
                                                                         <button type="button" disabled class="btn btn-danger ml-2 remove-item"><i class="fas fa-trash-alt"></i></button>
                                                                         </div>
-                                                                      
+                                                                        <div class="col-12">
+                                                                   <input type="text" class="d-none w-100 my-2 custom-input" name="openingen[brievenbus][eigenschappen-custom][]">
+                                                                   </div>
                                                                 </div>
                                                                 <div class="col-12 mb-2">
                                                                     <select name="openingen[brievenbus][waarnemingen][]" class="pick-animation__select form-control waarneming-box">
@@ -458,13 +455,7 @@
                                                                         <option value="dringend-aanpakken">dringend-aanpakken</option>
                                                                         <option value="niet-van-toepassing">niet-van-toepassing</option>
                                                                     </select>
-                                                                </div>
-
-                                                                <div class="col-12 mb-4">
-                                                                   <input type="text" class="d-none w-100 my-2 custom-input" name="openingen[brievenbus][eigenschappen-custom][]">
-                                                                   </div>
-
-                                                                
+                                                                </div>        
                                                             </div>
                                                             </div>
                                                         </div>
@@ -509,6 +500,10 @@
 
                                                         </select>
                                                           <button type="button" disabled class="btn btn-danger ml-2 remove-item"><i class="fas fa-trash-alt"></i></button></div>
+
+                                                            <div class="col-12">
+                                                                   <input type="text" class="d-none w-100 my-2 custom-input" name="muren[eigenschappen-custom][]">
+                                                                   </div>
                                                     </div>
                                                     <div class="col-12 mb-2">
                                                         <select name="muren[waarnemingen][]" class="pick-animation__select form-control waarneming-box">
@@ -521,12 +516,6 @@
                                                             <option value="niet-van-toepassing">niet-van-toepassing</option>
                                                         </select>
                                                     </div>
-
-                                                      <div class="col-12 mb-4">
-                                                                   <input type="text" class="d-none w-100 my-2 custom-input" name="muren[eigenschappen-custom][]">
-                                                                   </div>
-
-
                                                     </div>
                                                 </div>
 
@@ -570,6 +559,9 @@
                                                             <option value="zelf gespecificeerd">Andere zelf te specificeren tekstueel</option>
                                                         </select>
                                                          <button type="button" disabled class="btn btn-danger ml-2 remove-item"><i class="fas fa-trash-alt"></i></button></div>
+                                                         <div class="col-12">
+                                                                   <input type="text" class="d-none w-100 my-2 custom-input" name="daken[eigenschappen-custom][]">
+                                                                   </div>
                                                     </div>
                                                     <div class="col-12 mb-2">
                                                         <select name="daken[waarnemingen][]" class="pick-animation__select form-control waarneming-box">
@@ -582,12 +574,6 @@
                                                             <option value="niet-van-toepassing">niet-van-toepassing</option>
                                                         </select>
                                                     </div>
-
-                                                      <div class="col-12 mb-4">
-                                                                   <input type="text" class="d-none w-100 my-2 custom-input" name="daken[eigenschappen-custom][]">
-                                                                   </div>
-
-
                                                     </div>
                                                 </div>
                                             </div>
@@ -619,6 +605,9 @@
                                                             <option value="zelf gespecificeerd">Andere zelf te specificeren tekstueel</option>
                                                         </select>
                                                          <button type="button" disabled class="btn btn-danger ml-2 remove-item"><i class="fas fa-trash-alt"></i></button></div>
+                                                          <div class="col-12">
+                                                                   <input type="text" class="d-none w-100 my-2 custom-input" name="energiebronnen[eigenschappen-custom][]">
+                                                                   </div>
                                                     </div>
                                                     <div class="col-12 mb-2">
                                                         <select name="energiebronnen[waarnemingen][]" name="energie-status" class="pick-animation__select form-control waarneming-box">
@@ -631,11 +620,6 @@
                                                             <option value="niet-van-toepassing">niet-van-toepassing</option>
                                                         </select>
                                                     </div>
-
-                                                     <div class="col-12 mb-4">
-                                                                   <input type="text" class="d-none w-100 my-2 custom-input" name="energiebronnen[eigenschappen-custom][]">
-                                                                   </div>
-
                                                     </div>
                                                 </div>
                                             </div>
