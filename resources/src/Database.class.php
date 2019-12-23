@@ -53,6 +53,18 @@ class Database
         }
     }
 
+    public function queryLastInsertId() {
+        $sql = "SELECT LAST_INSERT_ID()";
+        try {
+            $res = Database::getInstance()->conn->prepare($sql);
+            $res->execute();
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+            throw new Exception('Query error');
+        }
+        return $res->fetch()[0];
+    }
+
 
     public function queryClass($query, $className, $values = array()) {
         try {

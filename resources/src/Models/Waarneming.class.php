@@ -6,7 +6,7 @@ class Waarneming implements Model
     private $id;
     private $eigenschap_id;
     private $woning_id;
-    private $waarneming_id;
+    private $waarneming_type_id;
 
     public static function getAll()
     {
@@ -31,7 +31,7 @@ class Waarneming implements Model
 
      public function save()
     {   
-        $query = 'UPDATE waarnemingen SET eigenschap_id= :eigenschap_id , woning_id=:woning_id, waarneming_id=:waarneming_id WHERE id = :id';
+        $query = 'UPDATE waarnemingen SET eigenschap_id= :eigenschap_id , woning_id=:woning_id, waarneming_type_id=:waarneming_type_id WHERE id = :id';
         $values = array(":id"=>$this->id,":eigenschap_id" => $this->eigenschap_id,":woning_id" => $this->woning_id, ":waarneming_id" => $this->waarneming_id);
 
         try {
@@ -43,11 +43,13 @@ class Waarneming implements Model
 
     public function add()
     {
-        $query = 'INSERT INTO waarnemingen(eigenschap_id,woning_id,waarneming_id) values(:eigenschap_id,:woning_id,:waarneming_id)';
-        $values = array(":eigenschap_id" => $this->eigenschap_id,":woning_id" => $this->woning_id, ":waarneming_id" => $this->waarneming_id);
+        $query = 'INSERT INTO waarnemingen(eigenschap_id,woning_id,waarneming_type_id) values(:eigenschap_id,:woning_id,:waarneming_type_id)';
+        $values = array(":eigenschap_id" => $this->eigenschap_id,":woning_id" => $this->woning_id, ":waarneming_type_id" => $this->waarneming_type_id);
         
         try {
             Database::getInstance()->query($query, $values);
+            $id = Database::getInstance()->queryLastInsertId();
+            return self::getById($id);
         } catch (Exception $e) {
             throw $e;
         }
@@ -115,18 +117,20 @@ class Waarneming implements Model
     /**
      * @return mixed
      */
-    public function getWaarnemingId()
+    public function getWaarnemingTypeId()
     {
-        return $this->waarneming_id;
+        return $this->waarneming_type_id;
     }
 
     /**
-     * @param mixed $waarneming_id
+     * @param mixed $waarneming_type_id
      */
-    public function setWaarnemingId($waarneming_id)
+    public function setWaarnemingTypeId($waarneming_type_id)
     {
-        $this->waarneming_id = $waarneming_id;
+        $this->waarneming_type_id = $waarneming_type_id;
     }
+
+
 
 
 

@@ -32,8 +32,6 @@ $subcategorieen = $categorie->getSubcategorieen();
 
             <div class="tab-content" id="nav-tabContent">
                 <?php foreach ($subcategorieen as $subcategorie){
-
-                    echo "<a>test</a>";
                     include("../resources/src/Views/templates/subcategorie/selectie.php");
 
 

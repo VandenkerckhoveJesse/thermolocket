@@ -72,6 +72,8 @@ class Categorie implements Model
             ":nummer" => $this->nummer, ":bus" => $this->bus);
         try {
             Database::getInstance()->query($query, $values);
+            $id = Database::getInstance()->queryLastInsertId();
+            return self::getById($id);
         } catch (Exception $e) {
             throw $e;
         }

@@ -7,13 +7,13 @@
                 <?php foreach($categorie->getEigenschappen() as $eigenschap) :
                     $id = $eigenschap->getId()
                     ?>
-                <input type="checkbox" id="<?php echo $id ?>" name="<?php echo $id ?>" value="true">
+                <input  type="checkbox" id="<?php echo $id ?>" name="eigenschappen[<?php echo $categorie->getId()?>][]" value="<?php echo $id ?>">
                 <label for="<?php echo $id ?>"><?php echo $eigenschap->getBeschrijving() ?></label>
                 <br>
                 <?php endforeach;?>
 
 
-                <input type="text" class=" w-100 my-3 custom-input" name="custom_<?php echo $categorie->getId()?>" placeholder="Geef zelf een eigenschap op (optioneel)">
+                <input type="text" class=" w-100 my-3 custom-input" name="custom[<?php echo $categorie->getId()?>][]" placeholder="Geef zelf een eigenschap op (optioneel)">
 
             </div>
         </div>

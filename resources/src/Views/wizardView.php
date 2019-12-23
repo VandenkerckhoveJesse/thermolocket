@@ -47,9 +47,7 @@
                             <div class="row">
 
                                 <div class="col-11 m-auto">
-                                    <!--CATEGORIEEN CARDS--><form class="multisteps-form__form" method="POST" action="">
-
-
+                                    <form class="multisteps-form__form" method="POST" action="create-dossier.php">
                                         <?php
                                         $waarneming_types = WaarnemingType::getAll();
                                         /*BASISGEGEVENS*/
@@ -59,7 +57,6 @@
                                         /*GEVEL*/
                                         $categorie = Categorie::getById(1);
                                         include("../resources/src/Views/templates/checkbox.php");
-
 
                                         /*OPENINGEN*/
                                         $categorie = Categorie::getById(2);

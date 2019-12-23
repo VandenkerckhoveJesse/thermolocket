@@ -49,6 +49,8 @@ class Bouwjaar implements Model
         $values = array(":top" => $this->top, ":bottom" => $this->bottom);
         try {
             Database::getInstance()->query($query, $values);
+            $id = Database::getInstance()->queryLastInsertId();
+            return self::getById($id);
         } catch (Exception $e) {
             throw $e;
         }

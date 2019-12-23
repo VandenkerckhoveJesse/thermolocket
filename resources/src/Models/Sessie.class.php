@@ -43,6 +43,7 @@ class Sessie implements Model
     public function add()
     {
         $this->save();
+        return self::getById($this->id);
     }
 
     public function delete()
