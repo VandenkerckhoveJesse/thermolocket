@@ -55,6 +55,8 @@ class Gemeente implements Model
         $values = array(":naam" => $this->naam, ":postcode" => $this->postcode);
         try {
             Database::getInstance()->query($query, $values);
+            $id = Database::getInstance()->queryLastInsertId();
+            return self::getById($id);
         } catch (Exception $e) {
             throw $e;
         }
@@ -71,46 +73,56 @@ class Gemeente implements Model
         }
     }
 
-
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
-     * Get the value of naam
-     */ 
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getNaam()
     {
         return $this->naam;
     }
 
     /**
-     * Get the value of postcode
-     */ 
+     * @param mixed $naam
+     */
+    public function setNaam($naam)
+    {
+        $this->naam = $naam;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getPostcode()
     {
         return $this->postcode;
     }
 
     /**
-     * Set the value of postcode
-     *
-     * @return  self
-     */ 
+     * @param mixed $postcode
+     */
     public function setPostcode($postcode)
     {
         $this->postcode = $postcode;
-
-        return $this;
     }
 
-    /**
-     * Set the value of naam
-     *
-     * @return  self
-     */ 
-    public function setNaam($naam)
-    {
-        $this->naam = $naam;
 
-        return $this;
-    }
+
+
 }
 

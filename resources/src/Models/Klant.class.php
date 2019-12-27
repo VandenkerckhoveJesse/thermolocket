@@ -5,7 +5,7 @@ class Klant implements Model
 {
     private $id;
     private $voornaam;
-    private $famillienaam;
+    private $familienaam;
     private $email;
     private $telefoon;
 
@@ -57,9 +57,10 @@ class Klant implements Model
     {
         $query = 'INSERT INTO klanten(voornaam,familienaam,email,telefoon) values(:voornaam,:familienaam,:email,:telefoon)';
         $values = array(":voornaam" => $this->voornaam,":familienaam" => $this->familienaam,":email" => $this->email,":telefoon" => $this->telefoon);
-        
         try {
             Database::getInstance()->query($query, $values);
+            $id = Database::getInstance()->queryLastInsertId();
+            return self::getById($id);
         } catch (Exception $e) {
             throw $e;
         }
@@ -76,85 +77,87 @@ class Klant implements Model
         }
     }
 
-
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
-     * Get the value of voornaam
-     */ 
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getVoornaam()
     {
         return $this->voornaam;
     }
 
     /**
-     * Get the value of famillienaam
-     */ 
-    public function getFamillienaam()
+     * @param mixed $voornaam
+     */
+    public function setVoornaam($voornaam)
     {
-        return $this->famillienaam;
+        $this->voornaam = $voornaam;
     }
 
     /**
-     * Get the value of email
-     */ 
+     * @return mixed
+     */
+    public function getFamilienaam()
+    {
+        return $this->familienaam;
+    }
+
+    /**
+     * @param mixed $familienaam
+     */
+    public function setFamilienaam($familienaam)
+    {
+        $this->familienaam = $familienaam;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getEmail()
     {
         return $this->email;
     }
 
     /**
-     * Get the value of telefoon
-     */ 
+     * @param mixed $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getTelefoon()
     {
         return $this->telefoon;
     }
 
     /**
-     * Set the value of telefoon
-     *
-     * @return  self
-     */ 
+     * @param mixed $telefoon
+     */
     public function setTelefoon($telefoon)
     {
         $this->telefoon = $telefoon;
-
-        return $this;
     }
 
-    /**
-     * Set the value of email
-     *
-     * @return  self
-     */ 
-    public function setEmail($email)
-    {
-        $this->email = $email;
 
-        return $this;
-    }
 
-    /**
-     * Set the value of famillienaam
-     *
-     * @return  self
-     */ 
-    public function setFamillienaam($famillienaam)
-    {
-        $this->famillienaam = $famillienaam;
 
-        return $this;
-    }
-
-    /**
-     * Set the value of voornaam
-     *
-     * @return  self
-     */ 
-    public function setVoornaam($voornaam)
-    {
-        $this->voornaam = $voornaam;
-
-        return $this;
-    }
 }

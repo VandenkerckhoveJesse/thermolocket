@@ -1,1 +1,0 @@
-INSERT INTO thermoloket.woningen (id, adres_id, bouwjaar_id) VALUES (1, 3, 1);

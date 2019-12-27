@@ -51,6 +51,8 @@ class Afbeelding implements Model
             ":richting" => $this->richting, ":nummer" => $this->nummer);
         try {
             Database::getInstance()->query($query, $values);
+            $id = Database::getInstance()->queryLastInsertId();
+            return self::getById($id);
         } catch (Exception $e) {
             throw $e;
         }

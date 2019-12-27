@@ -56,6 +56,8 @@ class Eigenschap implements Model
         
         try {
             Database::getInstance()->query($query, $values);
+            $id = Database::getInstance()->queryLastInsertId();
+            return self::getById($id);
         } catch (Exception $e) {
             throw $e;
         }
@@ -72,45 +74,55 @@ class Eigenschap implements Model
         }
     }
 
-
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
-     * Get the value of beschrijving
-     */ 
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCategorieId()
+    {
+        return $this->categorie_id;
+    }
+
+    /**
+     * @param mixed $categorie_id
+     */
+    public function setCategorieId($categorie_id)
+    {
+        $this->categorie_id = $categorie_id;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getBeschrijving()
     {
         return $this->beschrijving;
     }
 
     /**
-     * Get the value of categorie_id
-     */ 
-    public function getCategorie_id()
-    {
-        return $this->categorie_id;
-    }
-
-    /**
-     * Set the value of beschrijving
-     *
-     * @return  self
-     */ 
+     * @param mixed $beschrijving
+     */
     public function setBeschrijving($beschrijving)
     {
         $this->beschrijving = $beschrijving;
-
-        return $this;
     }
 
-    /**
-     * Set the value of categorie_id
-     *
-     * @return  self
-     */ 
-    public function setCategorie_id($categorie_id)
-    {
-        $this->categorie_id = $categorie_id;
 
-        return $this;
-    }
+
+
 }

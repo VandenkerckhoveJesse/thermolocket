@@ -6,6 +6,7 @@ class Woning implements Model
     private $id;
     private $adres_id;
     private $bouwjaar_id;
+    private $verwarmd;
 
     public static function getAll()
     {
@@ -30,8 +31,8 @@ class Woning implements Model
 
     public function save()
     {
-        $query = 'UPDATE woningen SET adres_id = :adres_id, bouwjaar_id = :bouwjaar_id WHERE id = :id';
-        $values = array(":id" => $this->id, ":adres_id" => $this->adres_id, ":bouwjaar_id" => $this->bouwjaar_id);
+        $query = 'UPDATE woningen SET adres_id = :adres_id, bouwjaar_id = :bouwjaar_id, verwarmd = :verwarmd WHERE id = :id';
+        $values = array(":id" => $this->id, ":adres_id" => $this->adres_id, ":bouwjaar_id" => $this->bouwjaar_id, ":verwarmd" => $this->verwarmd);
         try {
             Database::getInstance()->query($query, $values);
         } catch (Exception $e) {
@@ -41,11 +42,13 @@ class Woning implements Model
 
     public function add()
     {
-        $query = 'INSERT INTO woningen (adres_id, bouwjaar_id)
-                    VALUES (:adres_id , :bouwjaar_id)';
-        $values = array(":adres_id" => $this->adres_id, ":bouwjaar_id" => $this->bouwjaar_id);
+        $query = 'INSERT INTO woningen (adres_id, bouwjaar_id, verwarmd)
+                    VALUES (:adres_id , :bouwjaar_id, :verwarmd)';
+        $values = array(":adres_id" => $this->adres_id, ":bouwjaar_id" => $this->bouwjaar_id, ":verwarmd" => $this->verwarmd);
         try {
             Database::getInstance()->query($query, $values);
+            $id = Database::getInstance()->queryLastInsertId();
+            return self::getById($id);
         } catch (Exception $e) {
             throw $e;
         }
@@ -109,6 +112,24 @@ class Woning implements Model
     {
         $this->bouwjaar_id = $bouwjaar_id;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getVerwarmd()
+    {
+        return $this->verwarmd;
+    }
+
+    /**
+     * @param mixed $verwarmd
+     */
+    public function setVerwarmd($verwarmd)
+    {
+        $this->verwarmd = $verwarmd;
+    }
+
+
 
 
 }

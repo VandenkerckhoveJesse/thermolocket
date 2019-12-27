@@ -1,1 +1,0 @@
-INSERT INTO thermoloket.gemeentes (id, naam, postcode) VALUES (1, 'Jezus', 8300);

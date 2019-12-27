@@ -1,18 +1,20 @@
 <?php
 
 
-class Bouwjaar implements Model
+class WaarnemingType implements Model
 {
-
     private $id;
-    private $top;
-    private $bottom;
+    private $titel;
+    private $kleur;
+
+
+
 
     public static function getAll()
     {
-        $query = "SELECT * FROM bouwjaren";
+        $query = "SELECT * FROM waarneming_types";
         try {
-            return Database::getInstance()->queryClasses($query, "Bouwjaar");
+            return Database::getInstance()->queryClasses($query, "WaarnemingType");
         } catch (Exception $e) {
             throw $e;
         }
@@ -20,20 +22,19 @@ class Bouwjaar implements Model
 
     public static function getById($id)
     {
-        $query = "SELECT * FROM bouwjaren WHERE (id = :id)";
+        $query = "SELECT * FROM waarneming_types WHERE (id = :id)";
         $values = array(":id" => $id);
         try {
-            return Database::getInstance()->queryClass($query, "Bouwjaar", $values);
+            return Database::getInstance()->queryClass($query, "WaarWaarnemingTypeneming", $values);
         } catch (Exception $e) {
             throw $e;
         }
-
     }
 
     public function save()
     {
-        $query = 'UPDATE bouwjaren SET top = :top, bottom = :bottom WHERE id = :id';
-        $values = array(":id" => $this->id, ":top" => $this->top, ":bottom" => $this->bottom);
+        $query = 'UPDATE waarneming_types SET titel= :titel , kleur=:kleur WHERE id = :id';
+        $values = array(":id"=>$this->id,":titel" => $this->titel,":kleur" => $this->kleur);
 
         try {
             Database::getInstance()->query($query, $values);
@@ -44,9 +45,9 @@ class Bouwjaar implements Model
 
     public function add()
     {
-        $query = 'INSERT INTO bouwjaren (top, bottom)
-                    VALUES (:top , :bottom)';
-        $values = array(":top" => $this->top, ":bottom" => $this->bottom);
+        $query = 'INSERT INTO waarneming_types(titel,kleur) values(:titel,:kleur)';
+        $values = array(":titel" => $this->titel,":kleur" => $this->kleur);
+
         try {
             Database::getInstance()->query($query, $values);
             $id = Database::getInstance()->queryLastInsertId();
@@ -58,7 +59,7 @@ class Bouwjaar implements Model
 
     public function delete()
     {
-        $query = "DELETE FROM bouwjaren WHERE id = :id";
+        $query = "DELETE FROM waarneming_types WHERE id = :id";
         $values = array(':id' => $this->id);
         try {
             Database::getInstance()->query($query, $values);
@@ -86,34 +87,38 @@ class Bouwjaar implements Model
     /**
      * @return mixed
      */
-    public function getTop()
+    public function getTitel()
     {
-        return $this->top;
+        return $this->titel;
     }
 
     /**
-     * @param mixed $top
+     * @param mixed $titel
      */
-    public function setTop($top)
+    public function setTitel($titel)
     {
-        $this->top = $top;
+        $this->titel = $titel;
     }
 
     /**
      * @return mixed
      */
-    public function getBottom()
+    public function getKleur()
     {
-        return $this->bottom;
+        return $this->kleur;
     }
 
     /**
-     * @param mixed $bottom
+     * @param mixed $kleur
      */
-    public function setBottom($bottom)
+    public function setKleur($kleur)
     {
-        $this->bottom = $bottom;
+        $this->kleur = $kleur;
     }
+
+
+
+
 
 
 }

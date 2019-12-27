@@ -1,8 +1,8 @@
 create table bouwjaren
 (
     id     int auto_increment,
-    bottom varchar(6) not null,
     top    varchar(6) not null,
+    bottom varchar(6) not null,
     constraint bouwjaren_id_uindex
         unique (id)
 );
@@ -34,8 +34,8 @@ create table gemeentes
     postcode int(5)      not null,
     constraint gemeentes_id_uindex
         unique (id),
-    constraint gemeentes_postcode_uindex
-        unique (postcode)
+    constraint gemeentes_naam_uindex
+        unique (naam)
 );
 
 alter table gemeentes
@@ -138,11 +138,11 @@ alter table is_subcategorie_van
 
 create table klanten
 (
-    id          int auto_increment,
-    voornaam    varchar(50)  not null,
-    familienaam varchar(60)  not null,
-    email       varchar(120) null,
-    telefoon    varchar(30)  null,
+    id           int auto_increment,
+    voornaam     varchar(50)  not null,
+    famillienaam varchar(60)  not null,
+    email        varchar(120) null,
+    telefoon     varchar(30)  null,
     constraint klanten_id_uindex
         unique (id)
 );
@@ -164,7 +164,7 @@ create table sessies
 alter table sessies
     add primary key (id);
 
-create table waarneming_types
+create table waarnemingen
 (
     id    int auto_increment,
     titel varchar(40)                 not null,
@@ -175,15 +175,14 @@ create table waarneming_types
         unique (titel)
 );
 
-alter table waarneming_types
+alter table waarnemingen
     add primary key (id);
 
 create table woningen
 (
     id          int auto_increment,
-    adres_id    int        null,
-    bouwjaar_id int        not null,
-    verwarmd    tinyint(1) not null,
+    adres_id    int null,
+    bouwjaar_id int not null,
     constraint woningen_id_uindex
         unique (id),
     constraint adressen_woningen_fk
@@ -232,22 +231,23 @@ create table dossiers
 alter table dossiers
     add primary key (id);
 
-create table waarnemingen
+create table eigenschappen_woningen
 (
-    id                 int auto_increment,
-    eigenschap_id      int not null,
-    woning_id          int not null,
-    waarneming_type_id int not null,
+    id            int auto_increment,
+    eigenschap_id int not null,
+    woning_id     int not null,
+    waarneming_id int null,
     constraint eigenschappen_woningen_id_uindex
         unique (id),
     constraint eigenschappen_eigenschappen_woningen_fk
         foreign key (eigenschap_id) references eigenschappen (id),
     constraint waarnemingen_eigenschappen_woningen_fk
-        foreign key (waarneming_type_id) references waarneming_types (id),
+        foreign key (waarneming_id) references waarnemingen (id),
     constraint woningen_eigenschappen_woningen___fk
         foreign key (woning_id) references woningen (id)
 );
 
-alter table waarnemingen
+alter table eigenschappen_woningen
     add primary key (id);
+
 

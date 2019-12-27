@@ -53,6 +53,18 @@ class Database
         }
     }
 
+    public function queryLastInsertId() {
+        $sql = "SELECT LAST_INSERT_ID()";
+        try {
+            $res = Database::getInstance()->conn->prepare($sql);
+            $res->execute();
+        } catch(PDOException $e) {
+            echo $e->getMessage();
+            throw new Exception('Query error');
+        }
+        return $res->fetch()[0];
+    }
+
 
     public function queryClass($query, $className, $values = array()) {
         try {
@@ -69,8 +81,10 @@ class Database
     public function queryClasses($query, $className, $values = array()) {
         //todo make this more versitale with $values
         try {
-            $stmt = Database::getInstance()->conn->query($query);
-            $objects = $stmt->fetchAll(PDO::FETCH_CLASS, $className);
+            $res = Database::getInstance()->conn->prepare($query);
+            $res->setFetchMode(PDO::FETCH_CLASS, $className);
+            $res->execute($values);
+            $objects = $res->fetchAll();
             return $objects;
         } catch (PDOException $e) {
             throw new Exception("Query error");

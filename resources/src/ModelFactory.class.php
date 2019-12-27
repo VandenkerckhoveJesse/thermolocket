@@ -49,7 +49,7 @@ class ModelFactory
 
     public static function createEigenschap($categorie_id, $beschrijving) {
         $eigenschap = new Eigenschap();
-        $eigenschap->setCategorie_id($categorie_id);
+        $eigenschap->setCategorieId($categorie_id);
         $eigenschap->setBeschrijving($beschrijving);
         return $eigenschap;
     }
@@ -77,10 +77,10 @@ class ModelFactory
         return $input_type;
     }
 
-    public static function createKlant($voornaam, $famillienaam, $email, $telefoon) {
+    public static function createKlant($voornaam, $familienaam, $email, $telefoon) {
         $klant = new Klant();
         $klant->setVoornaam($voornaam);
-        $klant->setFamillienaam($famillienaam);
+        $klant->setFamilienaam($familienaam);
         $klant->setEmail($email);
         $klant->setTelefoon($telefoon);
         return $klant;
@@ -92,17 +92,26 @@ class ModelFactory
         return $sessie;
     }
 
-    public static function createWaarneming($titel, $kleur) {
+    public static function createWaarneming($eigenschap_id, $woning_id, $waarneming_type_id) {
         $waarneming = new Waarneming();
-        $waarneming->setTitel($titel);
-        $waarneming->setKleur($kleur);
+        $waarneming->setEigenschapId($eigenschap_id);
+        $waarneming->setWoningId($woning_id);
+        $waarneming->setWaarnemingTypeId($waarneming_type_id);
         return $waarneming;
     }
 
-    public static function createWoning($adres_id, $bouwjaar) {
+    public static function createWaarnemingType($titel, $kleur) {
+        $waarneming_type = new WaarnemingType();
+        $waarneming_type->setTitel($titel);
+        $waarneming_type->setKleur($kleur);
+        return $waarneming_type;
+    }
+
+    public static function createWoning($adres_id, $bouwjaar_id, $verwarmd) {
         $woning = new Woning();
         $woning->setAdresId($adres_id);
-        $woning->setBouwjaarId($bouwjaar);
+        $woning->setBouwjaarId($bouwjaar_id);
+        $woning->setVerwarmd($verwarmd);
         return $woning;
     }
 
