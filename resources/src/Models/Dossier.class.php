@@ -10,6 +10,14 @@ class Dossier implements Model
     private $datum;
     private $verwantschap;
 
+    public function getWoning() {
+        return Woning::getById($this->woning_id);
+    }
+
+    public function getKlant() {
+        return Klant::getById($this->klant_id);
+    }
+
     public static function create($klant_id,$woning_id,$gebruiker_id,$datum,$verwantschap)
     {
         $dossier = new Dossier();

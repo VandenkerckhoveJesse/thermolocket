@@ -16,9 +16,10 @@ class WizardController
             $gebruiker->getId(),
             $gegevens->verwantschap
             );
-        $dossier->add();
+        $dossier = $dossier->add();
         $this->coupleEigenschappen($obj->eigenschappen, $obj->waarnemingen, $woning->getId());
         $this->coupleCustomEigenschappen($obj->custom, $obj->waarnemingen, $woning->getId());
+        return $dossier;
     }
 
     public function coupleEigenschappen($eigenschappen, $waarnemingen, $woning_id) {
@@ -60,7 +61,7 @@ class WizardController
 
     private function createWoning($gegevens) {
         $adres = $this->createAdres($gegevens);
-        $verwarmd = $gegevens->verwarmd === "true"? true: false;
+        $verwarmd = $gegevens->verwarmd === "true"? 1: 0;
         return ModelFactory::createWoning(
             $adres->getId(),
             $gegevens->bouwjaar,

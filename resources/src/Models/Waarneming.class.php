@@ -8,6 +8,14 @@ class Waarneming implements Model
     private $woning_id;
     private $waarneming_type_id;
 
+    public function getWaarnemingType() {
+        return WaarnemingType::getById($this->waarneming_type_id);
+    }
+
+    public function getEigenschap() {
+        return Eigenschap::getById($this->eigenschap_id);
+    }
+
     public static function getAll()
     {
         $query = "SELECT * FROM waarnemingen";

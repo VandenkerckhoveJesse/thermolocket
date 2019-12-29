@@ -127,7 +127,7 @@ function addHouseImagesToForm(form) {
   );
   let primaryHouseImage = document.querySelector(".house-image img");
   let primaryHouseImageInputField = createHiddenInputField(
-    primaryHouseImage.src,
+    primaryHouseImage.id,
     "images[]"
   );
   hiddenImagesContainer.appendChild(primaryHouseImageInputField);

@@ -87,7 +87,8 @@ class Database
             $objects = $res->fetchAll();
             return $objects;
         } catch (PDOException $e) {
-            throw new Exception("Query error");
+            throw $e;
+            //throw new Exception("Query error");
         }
     }
 

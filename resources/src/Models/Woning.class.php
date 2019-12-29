@@ -8,6 +8,32 @@ class Woning implements Model
     private $bouwjaar_id;
     private $verwarmd;
 
+    public function getWaarnemingenFromCategorie($categorie_id) {
+        $query = "SELECT * FROM waarnemingen WHERE (woning_id = :woning_id) AND 
+                                                   eigenschap_id IN 
+                                                   (SELECT id FROM eigenschappen WHERE (categorie_id = :categorie_id))";
+        $values = array(":woning_id" => $this->id, ":categorie_id" => $categorie_id);
+        try {
+            return Database::getInstance()->queryClasses($query, "Waarneming", $values);
+        } catch (Exception $e) {
+            throw $e;
+        }
+    }
+
+    public function getWaarnemingen() {
+        $query = "SELECT * FROM waarnemingen WHERE (woning_id = :woning_id)";
+        $values = array(":woning_id" => $this->id);
+        try {
+            return Database::getInstance()->queryClasses($query, "Waarneming", $values);
+        } catch (Exception $e) {
+            throw $e;
+        }
+    }
+
+    public function getAdres() {
+        return Adres::getById($this->adres_id);
+    }
+
     public static function getAll()
     {
         $query = "SELECT * FROM woningen";

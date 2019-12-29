@@ -25,7 +25,7 @@ class WaarnemingType implements Model
         $query = "SELECT * FROM waarneming_types WHERE (id = :id)";
         $values = array(":id" => $id);
         try {
-            return Database::getInstance()->queryClass($query, "WaarWaarnemingTypeneming", $values);
+            return Database::getInstance()->queryClass($query, "WaarnemingType", $values);
         } catch (Exception $e) {
             throw $e;
         }
