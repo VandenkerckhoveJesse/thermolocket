@@ -1,6 +1,8 @@
 <?php
 include_once ("../resources/config.php");
 include_once ("../resources/autoloader.php");
+phpInfo();
+/*
 $controller = new WizardController();
 
 $dossier = Dossier::getById(30);
@@ -17,5 +19,5 @@ var_dump($gemeente ? $gemeente : "test");
 </head>
 <body>
 </body>
-</html>
+</html>*/
 

@@ -98,9 +98,6 @@ class myPDF extends FPDF
 
 
 
-        $empty_string = '';
-        $values = $_POST['gegevens'];
-        $verwarming = $values['verwarming'];
         $i = 225;
 
         $klant = $this->dossier->getKlant();
@@ -282,19 +279,20 @@ class myPDF extends FPDF
 
     function getHeadImage()
     {
+        /*
         $this->SetX(20);
-        $values = $_POST['images'];
+
         for ($i = 0; $i < 1; $i++) {
             $this->Image("ftp/fotos/jabbeke1.JPG");
             //$this->Image($values[$i], 25, 90, 150);
             $this->Image("ftp/fotos/jabbeke2.JPG", 22, 210);
 
-        }
+        }*/
     }
 
     function getImages()
     {
-        $values = $_POST['images'];
+        /*
         if (sizeof($values) != 1) {
             $this->AddPage();
             $y = 50;
@@ -303,7 +301,7 @@ class myPDF extends FPDF
                 $this->Image($values[$i], 20, $y, 80);
                 $y += 70;
             }
-        }
+        }*/
     }
 }
 
