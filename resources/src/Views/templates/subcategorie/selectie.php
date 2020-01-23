@@ -1,5 +1,6 @@
-<div class="tab-pane fade" id="nav-<?php echo $subcategorie->getTitel()?>"
-     role="tabpanel" aria-labelledby="nav-ramen-tab">
+
+<div class="tab-pane fade <?php if($visible){echo('show active');}?>" id="nav-<?php echo $subcategorie->getTitel()?>"
+     role="tabpanel" aria-labelledby="nav-<?php echo $subcategorie->getTitel()?>-tab">
     <div class="form-row mt-4">
         <button data-list-name="<?php echo strtolower($subcategorie->getTitel())?>" class="btn btn-dark add-item" type="button" title="Toevoegen">+ Nieuw item toevoegen</button>
     </div>

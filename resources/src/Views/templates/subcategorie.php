@@ -27,6 +27,10 @@
             </div>
             <div class="tab-content" id="nav-tabContent">
                 <?php foreach ($subcategorieen as $subcategorie){
+
+                    //make first tab visible (ramen)
+                    $visible=$subcategorie->getTitel()==="Ramen"?true:false;
+
                     include("../resources/src/Views/templates/subcategorie/selectie.php");
                 } ?>
             </div>

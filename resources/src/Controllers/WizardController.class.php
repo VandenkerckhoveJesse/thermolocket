@@ -27,9 +27,11 @@ class WizardController
         foreach($eigenschappen as $categorie_key => $categorie) {
             foreach ($categorie as $eigenschap_key => $eigenschap) {
                 if($eigenschap === "custom") continue;
-                $waarneming = isset($waarnemingen->$categorie_key) ?  $waarnemingen->$categorie_key[$eigenschap_key]: 6;
-                $new_waarneming = ModelFactory::createWaarneming($eigenschap, $woning_id, $waarneming);
-                $new_waarneming->add();
+                    $waarneming = isset($waarnemingen->$categorie_key) ?  $waarnemingen->$categorie_key[$eigenschap_key]: 6;
+                    $new_waarneming = ModelFactory::createWaarneming($eigenschap, $woning_id, $waarneming);
+                    $new_waarneming->add();
+                
+                
             }
         }
     }
