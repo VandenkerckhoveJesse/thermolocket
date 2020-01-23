@@ -1,9 +1,10 @@
-<div class="tab-pane fade" id="nav-<?php echo $subcategorie->getTitel()?>"
-     role="tabpanel" aria-labelledby="nav-ramen-tab">
+
+<div class="tab-pane fade <?php if($visible){echo('show active');}?>" id="nav-<?php echo $subcategorie->getTitel()?>"
+     role="tabpanel" aria-labelledby="nav-<?php echo $subcategorie->getTitel()?>-tab">
     <div class="form-row mt-4">
-        <button data-list-name="ramen" class="btn btn-dark add-item" type="button" title="Toevoegen">+ Nieuw item toevoegen</button>
+        <button data-list-name="<?php echo $subcategorie->getTitel()?>" class="btn btn-dark add-item" type="button" title="Toevoegen">+ Nieuw item toevoegen</button>
     </div>
-    <div class="form-row addable-list-ramen fixed-height-scrollable">
+    <div class="form-row addable-list-<?php echo $subcategorie->getTitel()?> fixed-height-scrollable">
         <div class="list-item">
             <div class="col-12 mb-2">
                 <div class="d-flex">

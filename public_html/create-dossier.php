@@ -1,14 +1,14 @@
 <?php
-include_once ("../resources/config.php");
-include_once ("../resources/autoloader.php");
+include_once("../resources/config.php");
+include_once("../resources/autoloader.php");
 include_once("pdfconverter/createPDF.php");
 
 $json = json_encode($_POST);
 $result = json_decode($json);
-printf($json);
+//printf($json);
 $controller = new WizardController();
 $dossier = $controller->createDossier($result);
-//createPDF($dossier);
+createPDF($dossier);
 
 /*
 
