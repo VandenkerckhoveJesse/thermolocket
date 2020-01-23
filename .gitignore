@@ -1,2 +1,4 @@
 .idea/
 resources/config.php
+
+resources/src/Views/wizardViewmine.php

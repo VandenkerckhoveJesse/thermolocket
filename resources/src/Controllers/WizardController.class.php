@@ -17,8 +17,11 @@ class WizardController
             $gegevens->verwantschap
             );
         $dossier = $dossier->add();
+        
+        if(array_key_exists("waarnemingen",$obj)){
         $this->coupleEigenschappen($obj->eigenschappen, $obj->waarnemingen, $woning->getId());
         $this->coupleCustomEigenschappen($obj->custom, $obj->waarnemingen, $woning->getId());
+        }
         return $dossier;
     }
 
