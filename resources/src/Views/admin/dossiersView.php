@@ -24,6 +24,7 @@
                 <th scope="col">Adres</th>
                 <th scope="col">Specialist</th>
                 <th scope="col">Datum</th>
+                <th scope="col">Genereer</th>
               </tr>
             </thead>
             <tbody>
@@ -40,6 +41,7 @@
                 <td><?php echo $adres->getFullAdres();?></td>
                 <td><?php echo $gebruiker->getNaam();?></td>
                 <td><?php echo $dossier->getDatum();?></td>
+                <td><a href="../genereer-pdf.php?id=<?php echo $dossier->getId();?>" class="button">Genereer PDF</a></td>
               </tr>
             <?php endforeach; ?>
             </tbody>
