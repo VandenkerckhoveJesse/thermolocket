@@ -1,14 +1,11 @@
 <?php
 use setasign\Fpdi\Fpdi;
 require "fpd/fpdf/fpdf181/fpdf.php";
-//require "../fpd/fpdf/fpdf181/fpdf.php";
 require "fpd/fpdi/autoload.php";
 function createPDF($dossier) {
     $pdf = new mypDF($dossier);
     $pdf->AliasNbPages();
     $pdf->AddPage();
-    //$pdf->getHeadImage();
-    //$pdf->AddPage();
     $pdf->getContactInformation();
     $pdf->AddPage();
     $pdf->getGevel();
@@ -16,21 +13,8 @@ function createPDF($dossier) {
     $pdf->getMuren();
     $pdf->getDak();
     $pdf->getEnergiebronnen();
-    //$pdf->getImages();
     $pdf->Output();
 
-/*
-    $pdf = new mypDF();
-    $pdf->AliasNbPages();
-    $pdf->AddPage();
-    $pdf->getContactInformation($db);
-    $pdf->AddPage();
-    $pdf->getGevel($db);
-    $pdf->AddPage();
-    $pdf->getOpeningen($db);
-    $pdf->getDak($db);
-    $pdf->Output();
-*/
 }
 class myPDF extends FPDF
 {
@@ -240,7 +224,7 @@ class myPDF extends FPDF
         $this->MultiCell(100, 10, 'Muren');
         $this->Line(10, 56, 200, 56);
         $this->SetFont('Arial', 'B', 13);
-        $this->MultiCell(190, 10, 'De gelateerde verwarmingszaken die plaatsgevonden zijn:');
+        $this->MultiCell(190, 10, 'De gerelateerde verwarmingszaken die plaatsgevonden zijn:');
         $this->SetFont('Arial', '', 14);
         for ($i = 0; $i < sizeof($waarnemingen); $i++) {
             $this->MultiCell(190, 10, $waarnemingen[$i]->getEigenschap()->getBeschrijving());
@@ -259,7 +243,7 @@ class myPDF extends FPDF
         $this->MultiCell(100, 10, 'Daken');
         $this->Line(10, 56, 200, 56);
         $this->SetFont('Arial', 'B', 13);
-        $this->MultiCell(190, 10, 'De gelateerde verwarmingszaken die plaatsgevonden zijn:');
+        $this->MultiCell(190, 10, 'De gerelateerde verwarmingszaken die plaatsgevonden zijn:');
         $this->SetFont('Arial', '', 14);
         for ($i = 0; $i < sizeof($waarnemingen); $i++) {
             $this->MultiCell(190, 10, $waarnemingen[$i]->getEigenschap()->getBeschrijving());
@@ -280,7 +264,7 @@ class myPDF extends FPDF
         $this->MultiCell(100, 10, 'Energiebronnen');
         $this->Line(10, 56, 200, 56);
         $this->SetFont('Arial', 'B', 13);
-        $this->MultiCell(190, 10, 'De gelateerde verwarmingszaken die plaatsgevonden zijn:');
+        $this->MultiCell(190, 10, 'De gerelateerde verwarmingszaken die plaatsgevonden zijn:');
         $this->SetFont('Arial', '', 14);
         for ($i = 0; $i < sizeof($waarnemingen); $i++) {
             $this->MultiCell(190, 10, $waarnemingen[$i]->getEigenschap()->getBeschrijving());
