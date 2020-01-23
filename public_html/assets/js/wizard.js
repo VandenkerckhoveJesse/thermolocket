@@ -168,7 +168,7 @@ function changeBoxColor(e, target) {
 function checkCustomInput(e) {
   let selectInputField = e.currentTarget;
   let listItem = selectInputField.closest(".list-item");
-  if (selectInputField.value === "zelf gespecificeerd") {
+  if (selectInputField.value === "custom") {
     showChildElement(listItem, ".custom-input");
   } else {
     hideChildElement(listItem, ".custom-input");
