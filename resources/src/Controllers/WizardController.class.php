@@ -9,7 +9,7 @@ class WizardController
         $klant = $this->createKlant($gegevens);
         $woning = $this->createWoning($gegevens);
         //todo change this now$gebruiker = $userController->sessionLogin();
-        $gebruiker = Gebruiker::getById(1);
+        $gebruiker = Gebruiker::getById(8);
         $dossier = ModelFactory::createDossier(
             $klant->getId(),
             $woning->getId(),

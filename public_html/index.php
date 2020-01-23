@@ -1,6 +1,6 @@
 <?php
 include_once("../resources/config.php");
-include_once ("../resources/autoloader.php");
+include_once("../resources/autoloader.php");
 $userController = new UserController();
 try {
     $user = $userController->sessionLogin();
