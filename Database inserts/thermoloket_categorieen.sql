@@ -1,0 +1,10 @@
+INSERT INTO thermoloket.categorieen (id, input_type_id, titel, gewicht, geactiveerd, hoofdbalk) VALUES (1, 1, 'Gevel', 0, 1, 1);
+INSERT INTO thermoloket.categorieen (id, input_type_id, titel, gewicht, geactiveerd, hoofdbalk) VALUES (2, 3, 'Openingen', 1, 1, 1);
+INSERT INTO thermoloket.categorieen (id, input_type_id, titel, gewicht, geactiveerd, hoofdbalk) VALUES (3, 2, 'Ramen', 0, 1, 0);
+INSERT INTO thermoloket.categorieen (id, input_type_id, titel, gewicht, geactiveerd, hoofdbalk) VALUES (4, 2, 'Dakramen', 1, 1, 0);
+INSERT INTO thermoloket.categorieen (id, input_type_id, titel, gewicht, geactiveerd, hoofdbalk) VALUES (5, 2, 'Deuren', 2, 1, 0);
+INSERT INTO thermoloket.categorieen (id, input_type_id, titel, gewicht, geactiveerd, hoofdbalk) VALUES (6, 2, 'Poorten', 3, 1, 0);
+INSERT INTO thermoloket.categorieen (id, input_type_id, titel, gewicht, geactiveerd, hoofdbalk) VALUES (7, 2, 'Brievenbus', 4, 1, 0);
+INSERT INTO thermoloket.categorieen (id, input_type_id, titel, gewicht, geactiveerd, hoofdbalk) VALUES (8, 2, 'Muren', 2, 1, 1);
+INSERT INTO thermoloket.categorieen (id, input_type_id, titel, gewicht, geactiveerd, hoofdbalk) VALUES (9, 2, 'Dak', 3, 1, 1);
+INSERT INTO thermoloket.categorieen (id, input_type_id, titel, gewicht, geactiveerd, hoofdbalk) VALUES (10, 2, 'Energiebronnen', 4, 1, 1);

@@ -118,21 +118,13 @@ function getValidationString(inputFields) {
 }
 
 function addHouseImagesToForm(form) {
-  let secondaryHouseImages = document.querySelectorAll(
-    ".house-image-list li img"
-  );
+  let addedHouseImages = document.querySelectorAll(".house-image-list li img");
 
   let hiddenImagesContainer = form.querySelector(
     ".house-images-input-container"
   );
-  let primaryHouseImage = document.querySelector(".house-image img");
-  let primaryHouseImageInputField = createHiddenInputField(
-    primaryHouseImage.id,
-    "images[]"
-  );
-  hiddenImagesContainer.appendChild(primaryHouseImageInputField);
 
-  secondaryHouseImages.forEach(image => {
+  addedHouseImages.forEach(image => {
     hiddenImagesContainer.appendChild(
       createHiddenInputField(image.src, "images[]")
     );
@@ -168,7 +160,7 @@ function changeBoxColor(e, target) {
 function checkCustomInput(e) {
   let selectInputField = e.currentTarget;
   let listItem = selectInputField.closest(".list-item");
-  if (selectInputField.value === "zelf gespecificeerd") {
+  if (selectInputField.value === "custom") {
     showChildElement(listItem, ".custom-input");
   } else {
     hideChildElement(listItem, ".custom-input");
@@ -396,8 +388,6 @@ function removeElement(elementId) {
 }
 
 function addImage() {
-  localStorage.setItem("mySavedImages", imageNumber);
-  let chosenImage = localStorage.getItem("mySavedImages");
   let lenghtUl = document.querySelector("ul").getElementsByTagName("li").length;
   if (lenghtUl <= 2) {
     document.querySelector("ul").innerHTML +=

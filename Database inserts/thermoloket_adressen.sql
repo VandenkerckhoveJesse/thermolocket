@@ -1,0 +1,2 @@
+INSERT INTO thermoloket.adressen (id, gemeente_id, straat, nummer, bus) VALUES (3, 1, 'Kippen', 5, null);
+INSERT INTO thermoloket.adressen (id, gemeente_id, straat, nummer, bus) VALUES (4, 1, 'Kippen', 5, null);
