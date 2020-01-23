@@ -3,21 +3,14 @@
       </header>
 <div class="container h-100">
       <div class="row h-100 ">
-        <div class="col-4 col-lg-2 sidebar p-4">
-          <nav>
-            <ul>
-              <li><a href="users.html">Gebruikers</a></li>
-              <li><a href="rapporten">Gegevens aanpassen</a></li>
-            </ul>
-          </nav>
-        </div>
+          <?php
+          include_once("sidebar.php")
+          ?>
         <div class="col-8 col-lg-10 p-4">
           <h2 class="user-count mb-5">20</h2>
 
           <form action="#">
-            <input class="mb-4" type="text" id="search-user" placeholder="Zoek een gebruiker">
             <a href="create-user.php" class="button">Maak een nieuwe gebruiker</a>
-
           </form>
 
           <table class="table users-list">
@@ -33,8 +26,8 @@
             <?php foreach($users as $user): ?>
               <tr>
                 <th class="user-list-user-id" scope="row"><?php echo $user->getId();?></th>
-                <td class="user-list-username"><?php echo $user->getName();?></td>
-                <td class="user-list-last-login"><?php echo $user->getLastLogin();?></td>
+                <td class="user-list-username"><?php echo $user->getNaam();?></td>
+                <td class="user-list-last-login"><?php echo $user->getLaatsteLogin();?></td>
                 <td><a href="edit-user.php?id=<?php echo $user->getId();?>" class="button">Beheren</a></td>
               </tr>
             <?php endforeach; ?>

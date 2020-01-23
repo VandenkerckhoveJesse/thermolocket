@@ -8,7 +8,7 @@ $pageTitle="Admin panel";
 $cssFiles=["admin.css"];
 $jsFiles=["userList.js"];
 
-$users = User::getAll();
+$users = Gebruiker::getAll();
 
 include_once("../../resources/src/Views/general/htmlStartView.php");
 include_once("../../resources/src/Views/admin/usersView.php");

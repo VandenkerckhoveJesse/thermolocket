@@ -9,6 +9,9 @@ class Adres implements Model
     private $nummer;
     private $bus;
 
+    public function getFullAdres() {
+        return $this->getGemeente()->getNaam()." ". $this->getStraat()." ".$this->getNummer();
+    }
 
     public function getGemeente() {
         return Gemeente::getById($this->gemeente_id);

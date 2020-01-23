@@ -9,6 +9,10 @@ class Klant implements Model
     private $email;
     private $telefoon;
 
+    public function getFullName() {
+        return $this->voornaam." ".$this->familienaam;
+    }
+
     public static function create($voornaam,$familienaam,$email,$telefoon)
     {
         $klant = new Klant();

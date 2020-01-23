@@ -5,14 +5,9 @@
 <div class="container h-100">
         
       <div class="row h-100 ">
-        <div class="col-4 col-lg-2 sidebar p-4">
-          <nav>
-            <ul>
-              <li><a href=".">Gebruikers</a></li>
-              <li><a href="#">Gegevens aanpassen</a></li>
-            </ul>
-          </nav>
-        </div>
+          <?php
+          include_once("sidebar.php")
+          ?>
         <div class="col-8 col-lg-10 p-4">
           <div class="row">
             <div class="col-12 col-lg-6">

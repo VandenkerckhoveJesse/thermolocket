@@ -115,7 +115,8 @@ class myPDF extends FPDF
         $this->Text(135, 147, $gemeente->getPostcode());
         $this->Text(73, 167, $this->dossier->getVerwantschap());
         $this->Text(135, 167, $adres->getBus());
-        if($this->dossier->getWoning()->getVerwarmd() === "true") {
+        //todo dit werkt niet!
+        if($this->dossier->getWoning()->getVerwarmd() === true) {
             $this->Text(73, 187, "Verwarmd");
         } else {
             $this->Text(73, 187, "Niet verwarmd");
