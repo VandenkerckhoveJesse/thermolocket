@@ -99,8 +99,7 @@ class myPDF extends FPDF
 
 
         $empty_string = '';
-        $values = $_POST['gegevens'];
-        $verwarming = $values['verwarming'];
+        
         $i = 225;
 
         $klant = $this->dossier->getKlant();
@@ -118,7 +117,7 @@ class myPDF extends FPDF
         $this->Text(135, 147, $gemeente->getPostcode());
         $this->Text(73, 167, $this->dossier->getVerwantschap());
         $this->Text(135, 167, $adres->getBus());
-        if($this->dossier->getWoning()->getVerwarmd() === "true") {
+        if($this->dossier->getWoning()->getVerwarmd() === '1') {
             $this->Text(73, 187, "Verwarmd");
         } else {
             $this->Text(73, 187, "Niet verwarmd");
@@ -135,21 +134,24 @@ class myPDF extends FPDF
     function getGevel()
     {
         $waarnemingen = $this->dossier->getWoning()->getWaarnemingenFromCategorie(1);
+        if(sizeof($waarnemingen) > 0){
         $this->SetFont('Arial', 'B', 20);
         $this->MultiCell(90, 10, 'Gevel');
         $this->Line(10, 56, 200, 56);
         $this->SetFont('Arial', 'B', 13);
-        $this->MultiCell(190, 10, 'De gerlateerde verwarmingzaken die plaatsgevonden zijn:');
+        $this->MultiCell(190, 10, 'De gerelateerde verwarmingszaken die plaatsgevonden zijn:');
         $this->SetFont('Arial', '', 14);
         foreach ($waarnemingen as $waarneming) {
             $this->MultiCell(190, 10, $waarneming->getEigenschap()->getBeschrijving());
         }
         $this->Addpage();
     }
+}   
 
     function getRamen()
     {
         $waarnemingen = $this->dossier->getWoning()->getWaarnemingenFromCategorie(3);
+        if(sizeof($waarnemingen) > 0){
         $this->Text(100, 10, sizeof($waarnemingen));
         $this->SetFont('Arial', 'B', 18);
         $this->MultiCell(190, 10, 'Openingen');
@@ -159,113 +161,164 @@ class myPDF extends FPDF
         $this->SetFont('Arial', '', 14);
         for ($i = 0; $i < sizeof($waarnemingen); $i++) {
             $this->MultiCell(190, 10, $waarnemingen[$i]->getEigenschap()->getBeschrijving());
-            $this->MultiCell(190, 10, $waarnemingen[$i]->getWaarnemingType()->getTitel());
+            $this->getColor($waarnemingen[$i]->getWaarnemingType()->getTitel());
+            $this->MultiCell(50, 10, $waarnemingen[$i]->getWaarnemingType()->getTitel(),1,1,'C',true);
         }
+    }
     }
 
     function dakramen()
     {
         $waarnemingen = $this->dossier->getWoning()->getWaarnemingenFromCategorie(4);
+        if(sizeof($waarnemingen) > 0){
         $this->Line(10, 56, 200, 56);
         $this->SetFont('Arial', 'B', 18);
         $this->MultiCell(190, 10, 'Dakramen');
         $this->SetFont('Arial', '', 14);
         for ($i = 0; $i < sizeof($waarnemingen); $i++) {
             $this->MultiCell(190, 10, $waarnemingen[$i]->getEigenschap()->getBeschrijving());
-            $this->MultiCell(190, 10, $waarnemingen[$i]->getWaarnemingType()->getTitel());
+            $this->getColor($waarnemingen[$i]->getWaarnemingType()->getTitel());
+            $this->MultiCell(50, 10, $waarnemingen[$i]->getWaarnemingType()->getTitel(),1,1,'C',true);
         }
+    }
 
     }
 
     function deuren()
     {
         $waarnemingen = $this->dossier->getWoning()->getWaarnemingenFromCategorie(5);
-
+        if(sizeof($waarnemingen) > 0){
         $this->Line(10, 56, 200, 56);
         $this->SetFont('Arial', 'B', 18);
         $this->MultiCell(190, 10, 'Deuren');
         $this->SetFont('Arial', '', 14);
         for ($i = 0; $i < sizeof($waarnemingen); $i++) {
             $this->MultiCell(190, 10, $waarnemingen[$i]->getEigenschap()->getBeschrijving());
-            $this->MultiCell(190, 10, $waarnemingen[$i]->getWaarnemingType()->getTitel());
+            $this->getColor($waarnemingen[$i]->getWaarnemingType()->getTitel());
+            $this->MultiCell(50, 10, $waarnemingen[$i]->getWaarnemingType()->getTitel(),1,1,'C',true);
         }
+    }
 
     }
 
     function poorten()
     {
         $waarnemingen = $this->dossier->getWoning()->getWaarnemingenFromCategorie(6);
-
+        if(sizeof($waarnemingen) > 0){
         $this->Line(10, 56, 200, 56);
         $this->SetFont('Arial', 'B', 18);
         $this->MultiCell(190, 10, 'Poorten');
         $this->SetFont('Arial', '', 14);
         for ($i = 0; $i < sizeof($waarnemingen); $i++) {
             $this->MultiCell(190, 10, $waarnemingen[$i]->getEigenschap()->getBeschrijving());
-            $this->MultiCell(190, 10, $waarnemingen[$i]->getWaarnemingType()->getTitel());
+            $this->getColor($waarnemingen[$i]->getWaarnemingType()->getTitel());
+            $this->MultiCell(50, 10, $waarnemingen[$i]->getWaarnemingType()->getTitel(),1,1,'C',true);
         }
+    }
     }
 
     function brievenbus()
     {
         $waarnemingen = $this->dossier->getWoning()->getWaarnemingenFromCategorie(7);
+        if(sizeof($waarnemingen) > 0){
         $this->Line(10, 56, 200, 56);
         $this->SetFont('Arial', 'B', 18);
         $this->MultiCell(190, 10, 'brievenbus');
         $this->SetFont('Arial', '', 14);
         for ($i = 0; $i < sizeof($waarnemingen); $i++) {
             $this->MultiCell(190, 10, $waarnemingen[$i]->getEigenschap()->getBeschrijving());
-            $this->MultiCell(190, 10, $waarnemingen[$i]->getWaarnemingType()->getTitel());
+            $this->getColor($waarnemingen[$i]->getWaarnemingType()->getTitel());
+            $this->MultiCell(50, 10, $waarnemingen[$i]->getWaarnemingType()->getTitel(),1,1,'C',true);
         }
+    }
     }
 
     function getMuren()
     {
         $waarnemingen = $this->dossier->getWoning()->getWaarnemingenFromCategorie(8);
+        if(sizeof($waarnemingen) > 0){
         $this->AddPage();
         $this->SetFont('Arial', 'B', 18);
         $this->MultiCell(100, 10, 'Muren');
         $this->Line(10, 56, 200, 56);
         $this->SetFont('Arial', 'B', 13);
-        $this->MultiCell(190, 10, 'De gelateerde verwarmingzaken die plaatsgevonden zijn:');
+        $this->MultiCell(190, 10, 'De gelateerde verwarmingszaken die plaatsgevonden zijn:');
         $this->SetFont('Arial', '', 14);
         for ($i = 0; $i < sizeof($waarnemingen); $i++) {
             $this->MultiCell(190, 10, $waarnemingen[$i]->getEigenschap()->getBeschrijving());
-            $this->MultiCell(190, 10, $waarnemingen[$i]->getWaarnemingType()->getTitel());
+            $this->getColor($waarnemingen[$i]->getWaarnemingType()->getTitel());
+            $this->MultiCell(50, 10, $waarnemingen[$i]->getWaarnemingType()->getTitel(),1,1,'C',true);
         }
+    }
     }
 
     function getDak()
     {
         $waarnemingen = $this->dossier->getWoning()->getWaarnemingenFromCategorie(9);
-
+        if(sizeof($waarnemingen) > 0){
         $this->AddPage();
         $this->SetFont('Arial', 'B', 18);
         $this->MultiCell(100, 10, 'Daken');
         $this->Line(10, 56, 200, 56);
         $this->SetFont('Arial', 'B', 13);
-        $this->MultiCell(190, 10, 'De gelateerde verwarmingzaken die plaatsgevonden zijn:');
+        $this->MultiCell(190, 10, 'De gelateerde verwarmingszaken die plaatsgevonden zijn:');
         $this->SetFont('Arial', '', 14);
         for ($i = 0; $i < sizeof($waarnemingen); $i++) {
             $this->MultiCell(190, 10, $waarnemingen[$i]->getEigenschap()->getBeschrijving());
-            $this->MultiCell(190, 10, $waarnemingen[$i]->getWaarnemingType()->getTitel());
+            $this->getColor($waarnemingen[$i]->getWaarnemingType()->getTitel());
+            $this->MultiCell(50, 10, $waarnemingen[$i]->getWaarnemingType()->getTitel(),1,1,'C',true);
         }
+    }
     }
 
     function getEnergiebronnen()
     {
+        
+        
         $waarnemingen = $this->dossier->getWoning()->getWaarnemingenFromCategorie(10);
+        if(sizeof($waarnemingen) > 0){
         $this->AddPage();
         $this->SetFont('Arial', 'B', 18);
         $this->MultiCell(100, 10, 'Energiebronnen');
         $this->Line(10, 56, 200, 56);
         $this->SetFont('Arial', 'B', 13);
-        $this->MultiCell(190, 10, 'De gelateerde verwarmingzaken die plaatsgevonden zijn:');
+        $this->MultiCell(190, 10, 'De gelateerde verwarmingszaken die plaatsgevonden zijn:');
         $this->SetFont('Arial', '', 14);
         for ($i = 0; $i < sizeof($waarnemingen); $i++) {
             $this->MultiCell(190, 10, $waarnemingen[$i]->getEigenschap()->getBeschrijving());
-            $this->MultiCell(190, 10, $waarnemingen[$i]->getWaarnemingType()->getTitel());
+            $this->getColor($waarnemingen[$i]->getWaarnemingType()->getTitel());
+            $this->MultiCell(50,10, $waarnemingen[$i]->getWaarnemingType()->getTitel(),1,1,'C',true);
         }
+    }
+    }
+
+    function getColor($waarden){
+        switch($waarden){
+            case 'schitterend':
+                $this->SetFillColor(0,128,0);
+                break;
+            
+            case 'mooi resultaat':
+                $this->SetFillColor(50,205,50);
+                break;
+
+            case 'goed op weg':
+                $this->SetFillColor(255,255,0);
+                break;
+
+            case 'aanpakken':
+                $this->SetFillColor(255,165,0);
+                break;
+            
+            case 'dringend aanpakken':
+                $this->SetFillColor(255,0,0); 
+                break;
+
+            case 'niet van toepassing':
+                $this->SetFillColor(255,255,255); 
+                break;
+        }
+
     }
 
 
@@ -300,8 +353,8 @@ class myPDF extends FPDF
             $y = 50;
 
             for ($i = 1; $i < sizeof($values); $i++) {
-                $this->Image($values[$i], 20, $y, 80);
-                $y += 70;
+                $this->Image($values[$i], 20, 50, 150);
+                $this->Addpage();
             }
         }
     }

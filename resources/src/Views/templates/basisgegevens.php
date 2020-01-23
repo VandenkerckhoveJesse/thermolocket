@@ -82,7 +82,9 @@
                         ?>
                         <select name="eigenschappen[<?php echo $categorie->getId()?>][]"
                                 class="pick-animation__select form-control has-custom-input">
+                             
                             <?php foreach($categorie->getEigenschappen() as $eigenschap) : ?>
+                            
                                 <option value="<?php echo $eigenschap->getId() ?>">
                                     <?php echo $eigenschap->getBeschrijving()?>
                                 </option>

@@ -1,0 +1,7 @@
+INSERT INTO thermoloket.gebruikers (id, naam, wachtwoord, laatste_login, email, ingeschakeld) VALUES (1, 'jesse2', '$2y$10$scffjhhI3zjgyOOmkGZGK.dA1QIuRcRJ.7b/gTe8jPIGhql88pZlq', null, 'jessevdkk', 0);
+INSERT INTO thermoloket.gebruikers (id, naam, wachtwoord, laatste_login, email, ingeschakeld) VALUES (2, 'Vincentje2', '$2y$10$48SEPumuhgC8BG7PdSIyK.ZQH8USqD5XDnEMCbhUARX2Be1JORUOy', null, 'jessevincent2', 0);
+INSERT INTO thermoloket.gebruikers (id, naam, wachtwoord, laatste_login, email, ingeschakeld) VALUES (3, 'enabled', '$2y$10$T51wvsYmB.R3Vr0tVHa8cu4PzVW0JxxPbCcw9xBMpd9g939zedpc.', null, 'enabled', 1);
+INSERT INTO thermoloket.gebruikers (id, naam, wachtwoord, laatste_login, email, ingeschakeld) VALUES (4, 'leonard', '$2y$10$.y9veIu2Urisi4ea2CBLQeaXb9rDCkBTAnavKHWi7ZLY5LjRNf7um', null, 'leonard', 1);
+INSERT INTO thermoloket.gebruikers (id, naam, wachtwoord, laatste_login, email, ingeschakeld) VALUES (5, 'user', '$2y$10$IGmr8KQ5h4QMRCVNOtyhK.coOX5lawGZ4nqVOwzqIrG0gLwkD4aSG', null, 'user', 1);
+INSERT INTO thermoloket.gebruikers (id, naam, wachtwoord, laatste_login, email, ingeschakeld) VALUES (6, 'lol', '$2y$10$QHhA7i8mL3XwCXF8ZAS/sOUAGqr.gFkF1/16vRJ7W16GSdezFuari', null, 'lol', 1);
+INSERT INTO thermoloket.gebruikers (id, naam, wachtwoord, laatste_login, email, ingeschakeld) VALUES (7, 'admin', '$2y$10$6d6rG9XZF7Zj79acZA3c1eTHmR3YrGp0heoOqhqYZ7BhtczFzLHQK', null, 'admin', 1);

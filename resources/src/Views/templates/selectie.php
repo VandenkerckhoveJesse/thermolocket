@@ -3,13 +3,14 @@
     <h3 class="multisteps-form__title"><?php echo $categorie->getTitel()?></h3>
     <div class="multisteps-form__content">
         <div class="form-row mt-4">
-            <button data-list-name="muren" class="btn btn-dark add-item" type="button" title="Toevoegen">+ Nieuw item toevoegen</button>
+            <button data-list-name="<?php echo strtolower($categorie->getTitel())?>" class="btn btn-dark add-item" type="button" title="Toevoegen">+ Nieuw item toevoegen</button>
         </div>
-        <div class="form-row mt-2 addable-list-<?php echo $categorie->getTitel()?> fixed-height-scrollable">
+        <div class="form-row mt-2 addable-list-<?php echo strtolower($categorie->getTitel())?> fixed-height-scrollable">
             <div class="list-item">
                 <div class="col-12 mb-2">
                     <div class="d-flex">
                         <select name="eigenschappen[<?php echo $categorie->getId()?>][]" class="picky-animation__select form-control has-custom-input">
+                           <option value="" selected disabled>kies een eigenschap </option>
                             <?php foreach($categorie->getEigenschappen() as $eigenschap) : ?>
                                 <option value="<?php echo $eigenschap->getId() ?>">
                                     <?php echo $eigenschap->getBeschrijving()?>
@@ -24,6 +25,7 @@
                 </div>
                 <div class="col-12 mb-2">
                     <select name="waarnemingen[<?php echo $categorie->getId()?>][]" class="pick-animation__select form-control waarneming-box">
+                    <option value="" selected disabled>kies een waarnmening </option>
                         <?php foreach($waarneming_types as $waarneming_type):?>
                             <option value="<?php echo $waarneming_type->getId() ?>"><?php echo $waarneming_type->getTitel() ?></option>
                         <?php endforeach;?>

@@ -1,0 +1,9 @@
+
+RewriteEngine On
+
+
+
+#wizard
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^%{REQUEST_URI}/wizard/([0-9a-zA-Z_-]*)/([0-9a-zA-Z_-]*)/([0-9a-zA-Z_-]*)/([0-9]*)$ wizard.php?city=$1&subcity=$2&side=$3&id=$4 [QSA]
+RewriteRule ^%{REQUEST_URI}/wizard/([0-9a-zA-Z_-]*)/([0-9a-zA-Z_-]*)/([0-9]*)$ wizard.php?city=$1&subcity=$1&side=$2&id=$3 [QSA]

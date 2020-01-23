@@ -23,10 +23,11 @@ class WizardController
     }
 
     public function coupleEigenschappen($eigenschappen, $waarnemingen, $woning_id) {
+        
         foreach($eigenschappen as $categorie_key => $categorie) {
             foreach ($categorie as $eigenschap_key => $eigenschap) {
                 if($eigenschap === "custom") continue;
-                $waarneming = $waarnemingen->$categorie_key ?  $waarnemingen->$categorie_key[$eigenschap_key]: 6;
+                $waarneming = isset($waarnemingen->$categorie_key) ?  $waarnemingen->$categorie_key[$eigenschap_key]: 6;
                 $new_waarneming = ModelFactory::createWaarneming($eigenschap, $woning_id, $waarneming);
                 $new_waarneming->add();
             }
@@ -37,7 +38,7 @@ class WizardController
         foreach($custom_eigenschappen as $categorie_key => $categorie) {
             foreach ($categorie as $eigenschap_key => $eigenschap) {
                 if($eigenschap === "") continue;
-                $waarneming = $waarnemingen->$categorie_key ?  $waarnemingen->$categorie_key[$eigenschap_key]: 6;
+                $waarneming = isset($waarnemingen->$categorie_key) ?  $waarnemingen->$categorie_key[$eigenschap_key]: 6;
                 $new_eigenschap = ModelFactory::createEigenschap($categorie_key, $eigenschap)->add();
                 $new_waarneming = ModelFactory::createWaarneming(
                     $new_eigenschap->getId(),
